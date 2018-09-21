@@ -294,7 +294,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">4</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">2</span></a>
   </li>
 
       
@@ -391,7 +391,7 @@
                 
               
 
-              <time title="创建时间：2018-09-21 20:50:11 / 修改时间：20:50:12" itemprop="dateCreated datePublished" datetime="2018-09-21T20:50:11+08:00">2018-09-21</time>
+              <time title="创建时间：2018-09-21 20:50:11 / 修改时间：21:50:35" itemprop="dateCreated datePublished" datetime="2018-09-21T20:50:11+08:00">2018-09-21</time>
             
 
             
@@ -430,8 +430,7 @@
       
       
         
-          
-            <h2 id="—数论—"><a href="#—数论—" class="headerlink" title="—数论—"></a><strong>—数论—</strong></h2><p>一 、素数<br>1.素数筛法<br>(1)  线性筛选法——欧拉筛法<br>欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。<br>代码实现：`</p>
+          <h2 id="—-数论—"><a href="#—-数论—" class="headerlink" title="—-数论—-"></a><strong>—-数论—-</strong></h2><p>一 、素数<br>1.素数筛法<br>(1)  线性筛选法——欧拉筛法<br>欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。<br>代码实现：`</p>
 <pre><code>#include &lt;stdio.h&gt;
 #include &lt;string.h&gt;
 #define MAXN 100000
@@ -464,265 +463,14 @@ int main(void)
     }
     return 0;
 }
-</code></pre><p>2 小应用：求n的阶乘的因子数，题目n的范围（1000）；<br>数论的原理，n的阶乘的因子个数等于n的素因子个数的幂的乘积；<br>代码实现：</p>
-<pre><code>#include&lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long LL;
-int k[1005]; 
-const LL mod=1e9+7;
-int main()
-{
-    int n;
-    cin&gt;&gt;n;
-    for(int i=2;i&lt;=n;i++)
-    {
-        int l=i;
-        for(int j=2;j&lt;=l;j++)
-        {
-            while(l%j==0)
-            {
-                k[j]++;
-                l/=j;
-            }    
-        }
-        if(l) k[l]++;
-    }
-    LL sum=1;
-    for(int i=2;i&lt;=n;i++)
-    {
-        if(k[i])
-        {
-            sum*=(k[i]+1);
-            sum=sum%mod;
-        }
-    }                    
-    printf(&quot;%lld\n&quot;,sum%mod);
-    return 0;
-}
-</code></pre><p>3.查找出小于等于MAXN的素数（生成连续素数表）</p>
-<pre><code>/*
- *  素数筛选，查找出小于等于MAXN的素数
- *  prime[0]存素数的个数
- */
-
-const int MAXN = 100000;
-int prime[MAXN + 1];
-
-void getPrime()
-{
-    memset(prime, 0, sizeof(prime));
-    for (int i = 2; i &lt;= MAXN; i++)
-    {
-        if (!prime[i])
-        {
-            prime[++prime[0]] = i;
-        }
-        for (int j = 1; j &lt;= prime[0] &amp;&amp; prime[j] &lt;= MAXN / i; j++)
-        {
-            prime[prime[j] * i] = 1;
-            if (i % prime[j] == 0)
-            {
-                break;
-            }
-        }
-    }
-}
-</code></pre><p> 4.同时得到欧拉函数表和素数表（线性筛）</p>
-<pre><code> /*
- *  同时得到欧拉函数和素数表
- */
-const int MAXN = 10000000;
-
-bool check[MAXN + 10];
-int phi[MAXN + 10];
-int prime[MAXN + 10];
-int tot;    //  素数个数
-
-void phi_and_prime_table(int N)
-{
-    memset(check, false, sizeof(check));
-    phi[1] = 1;
-    tot = 0;
-    for (int i = 2; i &lt;= N; i++)
-    {
-        if (!check[i])
-        {
-            prime[tot++] = i;
-            phi[i] = i - 1;
-        }
-        for (int j = 0; j &lt; tot; j++)
-        {
-            if (i * prime[j] &gt; N)
-            {
-                break;
-            }
-            check[i * prime[j]] = true;
-            if (i % prime[j] == 0)
-            {
-                phi[i * prime[j]] = phi[i] * prime[j];
-                break;
-            }
-            else
-            {
-                phi[i * prime[j]] = phi[i] * (prime[j] - 1);
-            }
-        }
-    }
-    return ;
-}
-</code></pre><p>二、GCD &amp;&amp; exgcd<br>1.GCD: 公式：gcd(a,b) = gcd(b, a%b)<br>求a,b 最大公约数<br>代码实现:</p>
-<pre><code>ll gcd(ll a, ll b)
-{
-    if(b == 0)
-        return a;
-    return gcd(b, a % b);
-}
-</code></pre><p>   2.EXGCD:<br>   公式： ax+by=c;<br>   功能：用来解二元一次方程组；<br>   注意事项：a,b均为正数;<br>   取最小正整数解：<br>   例题：。设青蛙A的出发点坐标是x，青蛙B的出发点坐标是y。青蛙A一次能跳m米，青蛙B一次能跳n米，两只青蛙跳一次所花费的时间相同。纬度线总长L米。现在要你求出它们跳了几次以后才会碰面。</p>
-<pre><code>#include&lt;cstdio&gt;
-#include&lt;cmath&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;queue&gt;
-#include&lt;stack&gt;
-#include&lt;string&gt;
-#define LL long long 
-#define INF 0x3f3f3f3f
-#define PI acos(-1.0)
-using namespace std;
-LL exgcd(LL a,LL b,LL &amp;x,LL &amp;y)
-{
-    if(!b)
-    {
-        x=1;
-        y=0;
-        return a;
-    }
-    LL r=exgcd(b,a%b,x,y);
-    LL t=y;
-    y=x-(a/b)*y;
-    x=t;
-    return r;
-}
-int main()
-{
-    LL a,b,x,y,n,m,l,k1,k2;//k2就是方程的一个x的解
-    cin&gt;&gt;x&gt;&gt;y&gt;&gt;m&gt;&gt;n&gt;&gt;l;
-    LL d=x-y;
-    a=l;
-    b=n-m;
-    LL c=exgcd(a,b,k1,k2);//c是最大公约数
-    if(d%c)//方程有解的条件
-        printf(&quot;Impossible&quot;);
-    else{
-        LL s=k2*d/c;
-
-        LL v=a/c;//对结果取余的最小的范围
-        printf(&quot;%lld\n&quot;,(s%v+v)%v);
-    }
-    return 0;
-}
-</code></pre><p>  三、唯一分解定理</p>
-<p>任何大于１的自然数，都可以唯一分解成有限个质数的乘积</p>
-<p>例如对于大于1的自然数n，<br><img src="https://img-blog.csdn.net/20160503212912754" alt="在这里插入图片描述"><br>这里Pi均为质数，其指数ai是正整数。<br>这样的分解称为的标准分解式。<br>1.找出一个数n的所有素因子</p>
-<pre><code>typedef long long ll;
-ll fac[10050], num;//素因数,素因数的个数
-void init(ll n) {//唯一分解定理
-    num = 0;
-    ll cpy = n;
-    int m = (int)sqrt(n + 0.5);
-    for (int i = 2; i &lt;= m; ++i) {
-        if (cpy % i == 0) {
-            fac[num++] = i;
-            while (cpy % i == 0) cpy /= i;
-        }
-    }
-    if (cpy &gt; 1) fac[num++] = cpy;
-}
-</code></pre><p>2.约数和定理&amp;&amp;约数个数定理<br>(1) 约数个数定理<br>约数个数定理可以计算出一个数约数的个数<br>根据唯一分解定理：<br><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/s=231/sign=e19b382db04543a9f11bfdcf2f168a7b/a8ec8a13632762d0a5814266a7ec08fa503dc6a8.jpg" alt="在这里插入图片描述"><br>则n的正约数的个数就是<br><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s=316/sign=ca4b36d4d243ad4ba22e40c1b4035a89/8ad4b31c8701a18b94aed93e9d2f07082838fe7e.jpg" alt="在这里插入图片描述"><br>将378000分解质因数378000=2^ 4×3^ 3×5^ 3×7^1<br>由约数个数定理可知378000共有正约数(4+1)×(3+1)×(3+1)×(1+1)=160个。<br>代码实现</p>
-<pre><code>int prime[maxn],nprime;    
-int vis[maxn];    
-
-void getprime(){  
-    nprime = 0;  
-    memset(vis,0,sizeof(vis));  
-    for(int i = 2; i &lt;= 450; i++){  
-        int t = 450/i;  
-        for(int j = 2; j &lt;=t; j++)  
-            vis[i*j] = 1;  
-    }  
-    for(int i = 2; i &lt;= 450; i++){  
-        if(!vis[i])  
-            prime[nprime++] = i;  
-    }  
-}  
-
-int factor_count(int n){    
-    int ans = 1,sum;    
-    int k = sqrt(n*1.0);    
-    for(int i = 0; prime[i] &lt; k; i++){    
-        if(n % prime[i] == 0){    
-            sum = 0;    
-            while(n % prime[i] == 0){    
-                sum++;    
-                n /= prime[i];    
-            }    
-            ans *= (a+1);   //ans为n的约数的个数 
-        }    
-    }    
-    if(n &gt; 1)    
-        ans *= 2;    
-    return ans;    
-}    
-</code></pre><p>(2)约数和定理<br>n的(a₁+1)(a₂+1)(a₃+1)…(ak+1)个正约数的和为<br>f(n)=(p1 ^ 0+p1 ^ 1+p1 ^ 2+…p1^ a1)(p2 ^ 0+p2 ^ 1+p2 ^ +…p2 ^ a2)…(pk ^ 0+pk^1+pk ^ 2+…pk ^ ak）<br>代码实现：</p>
-<pre><code>int prime[maxn],nprime;
-int vis[maxn];
-
-void getprime(){
-    nprime = 0;
-    memset(vis,0,sizeof(vis));
-    for(int i = 2; i &lt;= 450; i++){
-        int t = 450/i;
-        for(int j = 2; j &lt;=t; j++)
-            vis[i*j] = 1;
-    }
-    for(int i = 2; i &lt;= 450; i++){
-        if(!vis[i])
-            prime[nprime++] = i;
-    }
-}
-
-int pow_mod(int a,int n,int MOD){
-    int ans = 1;
-    while(n){
-        if(n&amp;1)
-            ans = (ans*a)%MOD;
-        n &gt;&gt;= 1;
-        a = (a*a)%MOD;
-    }
-    return ans;
-}
-
-int factor_sum(int n){
-    int ans = 1,sum;
-    int k = sqrt(n*1.0);
-    for(int i = 0; prime[i] &lt; k; i++){
-        if(n % prime[i] == 0){
-            sum = 0;
-            while(n%prime[i] == 0){
-                sum++;
-                n /= prime[i];
-            }
-            ans *= (pow_mod(prime[i],sum+1,MOD)-1)/(prime[i]-1);
-        }
-    }
-    if(n &gt; 1)
-        ans *= ans(n*n-1)/(n-1);
-    return ans;
-}
 </code></pre>
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/uncategorized/1模板/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -843,7 +591,7 @@ int factor_sum(int n){
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-09-21 20:36:15" itemprop="dateModified" datetime="2018-09-21T20:36:15+08:00">2018-09-21</time>
+                <time title="修改时间：2018-09-21 21:49:38" itemprop="dateModified" datetime="2018-09-21T21:49:38+08:00">2018-09-21</time>
               
             
           </span>
@@ -877,345 +625,14 @@ int factor_sum(int n){
       
       
         
-          
-            <h1 id="DP"><a href="#DP" class="headerlink" title="DP"></a><strong>DP</strong></h1><h2 id="01背包（每种物品只有一个）"><a href="#01背包（每种物品只有一个）" class="headerlink" title="01背包（每种物品只有一个）"></a><strong>01背包（每种物品只有一个）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//n 物品数量，v 背包容量 </span><br><span class="line">//size 单个物品体积，value 单个物品价值</span><br><span class="line">void bag01()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	for(int j=v;j&gt;=size[i];j--)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="完全背包（每种物品有无穷多）"><a href="#完全背包（每种物品有无穷多）" class="headerlink" title="完全背包（每种物品有无穷多）"></a><strong>完全背包（每种物品有无穷多）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void complete()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	for(int j=size[i];j&lt;=v;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="多重背包（每种物品数量有限）"><a href="#多重背包（每种物品数量有限）" class="headerlink" title="多重背包（每种物品数量有限）"></a><strong>多重背包（每种物品数量有限）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//n 物品数量，v 背包容量 </span><br><span class="line">//size 单个物品体积，value 单个物品价值，num 该物品的数量 </span><br><span class="line">void multiply()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        int d1=1,d2=num[i];  </span><br><span class="line">        while(d1&lt;d2)  </span><br><span class="line">        &#123;  </span><br><span class="line">            for(int j=v;j&gt;=d1*size[i];j--)  </span><br><span class="line">            &#123;  </span><br><span class="line">                dp[j]=max(dp[j],dp[j-d1*size[i]]+value[i]*d1);  </span><br><span class="line">            &#125;  </span><br><span class="line">            d2-=d1;  </span><br><span class="line">            d1*=2;  </span><br><span class="line">        &#125;  </span><br><span class="line">        for(int j=v;j&gt;=d2*size[i];j--) dp[j]=max(dp[j],dp[j-d2*size[i]]+value[i]*d2);  </span><br><span class="line">    &#125; </span><br><span class="line">    cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="LIS（最长上升子序列）"><a href="#LIS（最长上升子序列）" class="headerlink" title="LIS（最长上升子序列）"></a><strong>LIS（最长上升子序列）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//这个是计算连续的上升序列  如：1，2，3,4这种</span><br><span class="line">void lis(int n)//n是数组元素的个数</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		b[a[i]]=b[a[i]-1]+1;</span><br><span class="line">		ans=std::max(ans,b[a[i]]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//这个计算的是递增的（不需要连续递增）如：1,3,5,7这种</span><br><span class="line">int a[maxn];</span><br><span class="line">int dp[maxn];</span><br><span class="line">int n;</span><br><span class="line">void longest()</span><br><span class="line">&#123;</span><br><span class="line">	dp[0]=a[0];</span><br><span class="line">	int pos;</span><br><span class="line">	int L=1;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		pos=lower_bound(dp,dp+L,a[i])-dp;</span><br><span class="line">		dp[pos]=a[i];</span><br><span class="line">		L=max(L,pos+1);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;L&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="LCS（最长公共子序列）"><a href="#LCS（最长公共子序列）" class="headerlink" title="LCS（最长公共子序列）"></a><strong>LCS（最长公共子序列）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">//状态转移方程：</span><br><span class="line">// if( s[i]==t[j] ) </span><br><span class="line">//     dp[i+1][j+1] = dp[i][j] + 1; </span><br><span class="line">// else </span><br><span class="line">//     dp[i+1][j+1] = max(dp[i+1][j], dp[i][j+1]); </span><br><span class="line">int dp[maxn][maxn];</span><br><span class="line">char a[maxn],b[maxn];</span><br><span class="line">int vis[maxn][maxn];//只求长度的时候可以去掉</span><br><span class="line">// 如果要输出公共子序列，把int改成void，并把return去掉</span><br><span class="line">int LCS()</span><br><span class="line">&#123;</span><br><span class="line">	int len1,len2,i,j;</span><br><span class="line">	len1=strlen(a);</span><br><span class="line">	len2=strlen(b);</span><br><span class="line">	memset(dp,0,sizeof(dp));</span><br><span class="line">	for(i=1;i&lt;=len1;i++)</span><br><span class="line">		for(j=1;j&lt;=len2;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(a[i-1]==b[j-1])</span><br><span class="line">				dp[i][j]=dp[i-1][j-1]+1;</span><br><span class="line">			else if(dp[i-1][j]&gt;=dp[i][j-1])</span><br><span class="line">			&#123;</span><br><span class="line">				dp[i][j]=dp[i-1][j];</span><br><span class="line">				vis[i][j]=1;</span><br><span class="line">			&#125;</span><br><span class="line">			else </span><br><span class="line">			&#123;</span><br><span class="line">				dp[i][j]=dp[i][j-1];</span><br><span class="line">				vis[i][j]=-1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	return dp[len1][len2];</span><br><span class="line">&#125;</span><br><span class="line">// 这个函数可以将LCS打印出来</span><br><span class="line">void Print(int i, int j)//i，j分别代表a，b字符串的长度</span><br><span class="line">&#123;</span><br><span class="line">	if(i==0||j==0)</span><br><span class="line">		return;</span><br><span class="line">	if(!vis[i][j])//如果a[i]和b[j]子母相同，输出</span><br><span class="line">	&#123;</span><br><span class="line">		Print(i-1,j-1);</span><br><span class="line">		printf(&quot;%c&quot;,a[i-1]);</span><br><span class="line">	&#125;</span><br><span class="line">	else if(vis[i][j]==1)//如果dp[i-1][j]&gt;dp[i][j-1]</span><br><span class="line">		Print(i-1,j);</span><br><span class="line">	else//如果dp[i][j-1]&gt;=dp[i-1][j]</span><br><span class="line">		Print(i,j-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="数论"><a href="#数论" class="headerlink" title="数论"></a><strong>数论</strong></h1><h2 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a><strong>GCD</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int gcd(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">	return b==0?a:gcd(b,a%b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="LCM"><a href="#LCM" class="headerlink" title="LCM"></a><strong>LCM</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int lcm(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">	return a/gcd(a,b)*b;//如果先运算a*b，很可能超数据范围</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a><strong>快速幂</strong></h2><p><em>时间复杂度O(log(n))</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int Pow(int a,int b,int c)</span><br><span class="line">&#123;</span><br><span class="line">	int res=1;</span><br><span class="line">	while(b&gt;0)</span><br><span class="line">	&#123;</span><br><span class="line">		if(b&amp;1) res=res*a%c;</span><br><span class="line">		a=a*a%c;</span><br><span class="line">		b&gt;&gt;=1;</span><br><span class="line">	&#125;</span><br><span class="line">	return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="中国剩余定理（CRT）"><a href="#中国剩余定理（CRT）" class="headerlink" title="中国剩余定理（CRT）"></a><strong>中国剩余定理（CRT）</strong></h2><p><em>求M%A=a,M%B=b,…中的M，其中A,B,C…互质</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//chu是除数，yu是余数</span><br><span class="line">//注意只适用于除数两两互质</span><br><span class="line">#define ll long long</span><br><span class="line">int ex_gcd(ll a, ll b, ll &amp;x, ll &amp;y) </span><br><span class="line">&#123;</span><br><span class="line">    ll d;</span><br><span class="line">    if(b == 0) </span><br><span class="line">	&#123;</span><br><span class="line">		x = 1; </span><br><span class="line">		y = 0;</span><br><span class="line">		 return a;</span><br><span class="line">	&#125;</span><br><span class="line">    d = ex_gcd(b, a % b, y, x);</span><br><span class="line">    y -= a / b * x;</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br><span class="line">ll chinese_remainder(ll b[], ll w[], ll len) </span><br><span class="line">&#123; </span><br><span class="line">    ll i, d, x, y, m, n, ret;</span><br><span class="line">    ret = 0; n = 1; </span><br><span class="line">    for(i=0; i &lt; len ;i++) </span><br><span class="line">    	n *= w[i];</span><br><span class="line">    for(i=0; i &lt; len ;i++) </span><br><span class="line">    &#123; </span><br><span class="line">        m = n / w[i];</span><br><span class="line">        d=ex_gcd(w[i], m, x, y);</span><br><span class="line">        ret = (ret + y*m*b[i]) % n;</span><br><span class="line">    &#125;</span><br><span class="line">    return (n + ret%n) % n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="中国剩余定理扩展"><a href="#中国剩余定理扩展" class="headerlink" title="中国剩余定理扩展"></a><strong>中国剩余定理扩展</strong></h2><p><em>求M%A=a,M%B=b,…中的M，其中A,B,C…不互质</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">ll a[maxn],b[maxn];//a是除数，b是余数</span><br><span class="line">ll ex_gcd(ll a,ll b,ll &amp;x,ll &amp;y) </span><br><span class="line">&#123;</span><br><span class="line">    ll d;</span><br><span class="line">    if(b==0) </span><br><span class="line">	&#123;</span><br><span class="line">		x=1; </span><br><span class="line">		y=0;</span><br><span class="line">		 return a;</span><br><span class="line">	&#125;</span><br><span class="line">    d=ex_gcd(b,a%b,y,x);</span><br><span class="line">    y-=a/b*x;</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br><span class="line">ll ex_crt(ll *a, ll *b, int n)</span><br><span class="line">&#123;</span><br><span class="line">    ll M=a[1],R=b[1],x,y;</span><br><span class="line">    for (int i=2;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ll d=ex_gcd(M,a[i],x,y);</span><br><span class="line">        if((b[i]-R)%d) </span><br><span class="line">        	return -1;</span><br><span class="line">        x=(b[i]-R)/d*x%(a[i]/d);</span><br><span class="line">        R+=x*M;</span><br><span class="line">        M=M/d*a[i];</span><br><span class="line">        R%=M;</span><br><span class="line">    &#125;</span><br><span class="line">    return R&gt;0?R:R+M;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="EX-GCD"><a href="#EX-GCD" class="headerlink" title="EX_GCD"></a><strong>EX_GCD</strong></h2><p><em>一般用来求解不定方程，求解线性同余方程，求解模的逆元等</em><br><em>引理：存在 x , y 使得 gcd(a,b)=ax+by</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int exgcd(int a,int b,int &amp;x,int &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">	// 无最大公约数</span><br><span class="line">	if(a==0&amp;&amp;b==0)</span><br><span class="line">		return -1;</span><br><span class="line">	if(b==0)</span><br><span class="line">	&#123;</span><br><span class="line">		x=1;y=0;</span><br><span class="line">		return a;</span><br><span class="line">	&#125;</span><br><span class="line">	int d=exgcd(a,a%b,y,x);</span><br><span class="line">	y-=a/b*x;</span><br><span class="line">	return d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="求逆元"><a href="#求逆元" class="headerlink" title="求逆元"></a><strong>求逆元</strong></h2><h3 id="EX-GCD求逆元"><a href="#EX-GCD求逆元" class="headerlink" title="EX_GCD求逆元"></a><em>EX_GCD求逆元</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//要求a和m互质</span><br><span class="line">// ax = 1(mod m)</span><br><span class="line">int mod_reverse(int a,int m)</span><br><span class="line">&#123;</span><br><span class="line">	int x,y;</span><br><span class="line">	int d=exgcd(a,m,x,y);</span><br><span class="line">	if(d==1)</span><br><span class="line">		return (x%m+m)%m;</span><br><span class="line">	else</span><br><span class="line">		return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="简洁写法"><a href="#简洁写法" class="headerlink" title="简洁写法"></a><em>简洁写法</em></h3><p><em>注意：这个只能求a&lt;m的情况，而且必须保证a和m互质</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//求 ax = 1( mod m) 的 x 值，就是逆元 (0&lt;a&lt;m)</span><br><span class="line">int inv(int a,int m)</span><br><span class="line">&#123;</span><br><span class="line">	if(a==1)</span><br><span class="line">		return 1;</span><br><span class="line">	return inv(m%a,m)*(m-m/a)%m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="利用欧拉函数求逆元"><a href="#利用欧拉函数求逆元" class="headerlink" title="利用欧拉函数求逆元"></a><em>利用欧拉函数求逆元</em></h3><p><em>x和m互质（m可以不是素数）；时间复杂度O(sqrt(n))</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">//求欧拉函数值</span><br><span class="line">int eurler_phi(int n)</span><br><span class="line">&#123;</span><br><span class="line">    int res = n;</span><br><span class="line">    for(int i = 2; i * i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(n % i == 0)</span><br><span class="line">        &#123;</span><br><span class="line">            res = res / i * (i - 1);</span><br><span class="line">            while(n % i == 0) n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n != 1) </span><br><span class="line">        res = res / n * (n - 1);</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">//求逆元</span><br><span class="line">int inv(int a,int m)</span><br><span class="line">&#123;</span><br><span class="line">    return Pow(a,eurler_phi(m)-1,m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="线性时间求逆元"><a href="#线性时间求逆元" class="headerlink" title="线性时间求逆元"></a><em>线性时间求逆元</em></h3><p><em>时间复杂度O(n)</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// 逆元打表</span><br><span class="line">int inv[maxn];</span><br><span class="line">inv[1] = 1;</span><br><span class="line">for(int i=2;i&lt;maxn;i++)</span><br><span class="line">    inv[i]=(mod-mod/ i)*inv[mod%i]%mod;</span><br></pre></td></tr></table></figure></p>
-<h3 id="快速幂求逆元"><a href="#快速幂求逆元" class="headerlink" title="快速幂求逆元"></a><em>快速幂求逆元</em></h3><p><em>原理是费马小定理，要求m为素数</em></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// a和m互质，m为素数</span><br><span class="line">int inv(int a,int m)</span><br><span class="line">&#123;</span><br><span class="line">	return Pow(a,m-2,m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="二分乘法（快速乘）"><a href="#二分乘法（快速乘）" class="headerlink" title="二分乘法（快速乘）"></a><strong>二分乘法（快速乘）</strong></h2><p><em>用来解决乘法的结果远超int范围，但需要的结果有取余的乘法运算</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ll qmul(ll a,ll b,ll m)</span><br><span class="line">&#123;</span><br><span class="line">    ll ans=0;</span><br><span class="line">    ll k=a;</span><br><span class="line">    ll f=1;//f是用来存负号的</span><br><span class="line">    if(k&lt;0)</span><br><span class="line">    	&#123;f=-1;k=-k;&#125;</span><br><span class="line">    if(b&lt;0)</span><br><span class="line">    	&#123;f*=-1;b=-b;&#125;</span><br><span class="line">    while(b)&#123;</span><br><span class="line">        if(b&amp;1)</span><br><span class="line">            ans=(ans+k)%m;</span><br><span class="line">        k=(k+k)%m;</span><br><span class="line">        b&gt;&gt;=1;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans*f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a><strong>欧拉函数</strong></h2><p><em>对于正整数N,少于或等于N ([1,N]),且与N互质的正整数(包括1)的个数，记作φ(n)。</em><br><em>欧拉函数公式：φ(N)=N</em>(1-1/P1)<em>(1-1/P2)</em>…<em>(1-1/Pn)</em></p>
-<h3 id="直接求"><a href="#直接求" class="headerlink" title="直接求"></a><em>直接求</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int Eular(int n)</span><br><span class="line">&#123;</span><br><span class="line">	int eu = n;</span><br><span class="line">	for (int i = 2 ; i * i &lt;= n ; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (n % i == 0)</span><br><span class="line">		&#123;</span><br><span class="line">			eu -= eu / i;</span><br><span class="line">			while (n % i == 0)</span><br><span class="line">				n /= i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (n &gt; 1)		//n本身也是个质因子</span><br><span class="line">		eu -= eu / n;</span><br><span class="line">	return eu; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="打表求"><a href="#打表求" class="headerlink" title="打表求"></a><em>打表求</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void Eular()</span><br><span class="line">&#123;</span><br><span class="line">	euler[1]=1;</span><br><span class="line">	for(int i=2;i&lt;maxn;i++)</span><br><span class="line">		euler[i]=i;</span><br><span class="line">	for(int i=2;i&lt;maxn;i++)</span><br><span class="line">		if(euler[i]==i)</span><br><span class="line">			for(int j=i;j&lt;maxn;j+=i)</span><br><span class="line">				euler[j]=euler[j]/i*(i-1);//先进行除法是为了防止中间数据的溢出</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="唯一分解定理"><a href="#唯一分解定理" class="headerlink" title="唯一分解定理"></a><strong>唯一分解定理</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// pri记录质因子，k记录质因子个数</span><br><span class="line">int pri[maxn],k;</span><br><span class="line">void resolve(int n)</span><br><span class="line">&#123;</span><br><span class="line">	k=0;</span><br><span class="line">	int N=n;</span><br><span class="line">	for(int i=2;i*i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(N%i==0)</span><br><span class="line">		&#123;</span><br><span class="line">			pri[k++]=i;</span><br><span class="line">			while(N%i==0)</span><br><span class="line">				N/=i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if(N&gt;1)</span><br><span class="line">		num[k++]=N;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="元根"><a href="#元根" class="headerlink" title="元根"></a><strong>元根</strong></h2><p>**</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-    <div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://friends-a.github.io/uncategorized/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="执念">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="执念">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/uncategorized/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-13 19:39:23" itemprop="dateCreated datePublished" datetime="2018-09-13T19:39:23+08:00">2018-09-13</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-09-10 12:35:03" itemprop="dateModified" datetime="2018-09-10T12:35:03+08:00">2018-09-10</time>
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-      
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-    <div>
-	  
-	</div>
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://friends-a.github.io/uncategorized/AA/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="执念">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="执念">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/uncategorized/AA/" itemprop="url">
-                  博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-09-10 13:03:03 / 修改时间：17:53:38" itemprop="dateCreated datePublished" datetime="2018-09-10T13:03:03+08:00">2018-09-10</time>
-            
-
-            
-              
-
-              
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-      
-      
-        
-          
-            
-          
+          <h1 id="DP"><a href="#DP" class="headerlink" title="DP"></a><strong>DP</strong></h1><h2 id="01背包（每种物品只有一个）"><a href="#01背包（每种物品只有一个）" class="headerlink" title="01背包（每种物品只有一个）"></a><strong>01背包（每种物品只有一个）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//n 物品数量，v 背包容量 </span><br><span class="line">//size 单个物品体积，value 单个物品价值</span><br><span class="line">void bag01()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	for(int j=v;j&gt;=size[i];j--)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/uncategorized/模板/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1305,7 +722,7 @@ int factor_sum(int n){
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1388,7 +805,7 @@ int factor_sum(int n){
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.4k字</span>
+  <span class="post-count">博客全站共3.7k字</span>
 </div>
 
   <span class="post-meta-divider">|</span>
@@ -1553,6 +970,45 @@ int factor_sum(int n){
   
 
   
+  
+
+  
+  
+    
+      
+    
+      
+        
+      
+    
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
 
   
   
