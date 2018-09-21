@@ -136,20 +136,25 @@
 
 
 
-  <meta name="description" content="—-数论—-一 、素数1.素数筛法(1)  线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：` #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;string.h&amp;gt; #define MAXN 100000 #define MAXL 1000000 int prime[MAXN]; _Bool c">
+  <meta name="description" content="—-数论—-素数素数筛法1.线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="执念">
 <meta property="og:url" content="https://friends-a.github.io/uncategorized/1模板/index.html">
 <meta property="og:site_name" content="执念">
-<meta property="og:description" content="—-数论—-一 、素数1.素数筛法(1)  线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：` #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;string.h&amp;gt; #define MAXN 100000 #define MAXL 1000000 int prime[MAXN]; _Bool c">
+<meta property="og:description" content="—-数论—-素数素数筛法1.线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdn.net/20160503212912754">
 <meta property="og:image" content="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/s=231/sign=e19b382db04543a9f11bfdcf2f168a7b/a8ec8a13632762d0a5814266a7ec08fa503dc6a8.jpg">
 <meta property="og:image" content="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s=316/sign=ca4b36d4d243ad4ba22e40c1b4035a89/8ad4b31c8701a18b94aed93e9d2f07082838fe7e.jpg">
-<meta property="og:updated_time" content="2018-09-21T13:50:35.045Z">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?f%28n%29=%5Cprod%20%28p_i%5E%7Ba_i%7D%2b1%29">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?n=%5Cprod%20p_i%5E%7Ba_i%">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?O%28n%5E%7B%5Cfrac%7B2%7D%7B3%7D%7D%29">
+<meta property="og:image" content="http://latex.codecogs.com/gif.latex?O%28n%5E%7B%5Cfrac%7B3%7D%7B4%7D%7D%29">
+<meta property="og:image" content="https://img-blog.csdn.net/20170126225758146">
+<meta property="og:updated_time" content="2018-09-21T14:04:10.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="执念">
-<meta name="twitter:description" content="—-数论—-一 、素数1.素数筛法(1)  线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：` #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;string.h&amp;gt; #define MAXN 100000 #define MAXL 1000000 int prime[MAXN]; _Bool c">
+<meta name="twitter:description" content="—-数论—-素数素数筛法1.线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：">
 <meta name="twitter:image" content="https://img-blog.csdn.net/20160503212912754">
 
 
@@ -394,7 +399,7 @@
                 
               
 
-              <time title="创建时间：2018-09-21 20:50:11 / 修改时间：21:50:35" itemprop="dateCreated datePublished" datetime="2018-09-21T20:50:11+08:00">2018-09-21</time>
+              <time title="创建时间：2018-09-21 20:50:11 / 修改时间：22:04:10" itemprop="dateCreated datePublished" datetime="2018-09-21T20:50:11+08:00">2018-09-21</time>
             
 
             
@@ -442,298 +447,42 @@
       
       
       
-        <h2 id="—-数论—"><a href="#—-数论—" class="headerlink" title="—-数论—-"></a><strong>—-数论—-</strong></h2><p>一 、素数<br>1.素数筛法<br>(1)  线性筛选法——欧拉筛法<br>欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。<br>代码实现：`</p>
-<pre><code>#include &lt;stdio.h&gt;
-#include &lt;string.h&gt;
-#define MAXN 100000
-#define MAXL 1000000
-int prime[MAXN];
-_Bool check[MAXL];
-
-int main(void)
-{
-    int n, count;
-    while (~scanf(&quot;%d&quot;, &amp;n))
-    {
-        memset(check, 0, sizeof(check));
-        count = 0;
-        for (int i = 2; i &lt;= n; i++)
-        {
-            if (!check[i])
-                prime[count++] = i;
-            for (int j = 0; j &lt; count; j++)
-            {
-                if (i*prime[j] &gt; MAXL)
-                    break; // 过大的时候跳出
-                check[i*prime[j]] = 1;
-                if ((i%prime[j]) == 0) // 如果i是一个合数，而且i % prime[j] == 0
-                    break; 
-            }
-        }
-        for (int i = 0; i &lt; count; i++)
-            printf(&quot;%d\n&quot;, prime[i]);
-    }
-    return 0;
-}
-</code></pre><a id="more"></a>
-<p>2 小应用：求n的阶乘的因子数，题目n的范围（1000）；<br>数论的原理，n的阶乘的因子个数等于n的素因子个数的幂的乘积；<br>代码实现：</p>
-<pre><code>#include&lt;bits/stdc++.h&gt;
-using namespace std;
-typedef long long LL;
-int k[1005]; 
-const LL mod=1e9+7;
-int main()
-{
-    int n;
-    cin&gt;&gt;n;
-    for(int i=2;i&lt;=n;i++)
-    {
-        int l=i;
-        for(int j=2;j&lt;=l;j++)
-        {
-            while(l%j==0)
-            {
-                k[j]++;
-                l/=j;
-            }    
-        }
-        if(l) k[l]++;
-    }
-    LL sum=1;
-    for(int i=2;i&lt;=n;i++)
-    {
-        if(k[i])
-        {
-            sum*=(k[i]+1);
-            sum=sum%mod;
-        }
-    }                    
-    printf(&quot;%lld\n&quot;,sum%mod);
-    return 0;
-}
-</code></pre><p>3.查找出小于等于MAXN的素数（生成连续素数表）</p>
-<pre><code>/*
- *  素数筛选，查找出小于等于MAXN的素数
- *  prime[0]存素数的个数
- */
-
-const int MAXN = 100000;
-int prime[MAXN + 1];
-
-void getPrime()
-{
-    memset(prime, 0, sizeof(prime));
-    for (int i = 2; i &lt;= MAXN; i++)
-    {
-        if (!prime[i])
-        {
-            prime[++prime[0]] = i;
-        }
-        for (int j = 1; j &lt;= prime[0] &amp;&amp; prime[j] &lt;= MAXN / i; j++)
-        {
-            prime[prime[j] * i] = 1;
-            if (i % prime[j] == 0)
-            {
-                break;
-            }
-        }
-    }
-}
-</code></pre><p> 4.同时得到欧拉函数表和素数表（线性筛）</p>
-<pre><code> /*
- *  同时得到欧拉函数和素数表
- */
-const int MAXN = 10000000;
-
-bool check[MAXN + 10];
-int phi[MAXN + 10];
-int prime[MAXN + 10];
-int tot;    //  素数个数
-
-void phi_and_prime_table(int N)
-{
-    memset(check, false, sizeof(check));
-    phi[1] = 1;
-    tot = 0;
-    for (int i = 2; i &lt;= N; i++)
-    {
-        if (!check[i])
-        {
-            prime[tot++] = i;
-            phi[i] = i - 1;
-        }
-        for (int j = 0; j &lt; tot; j++)
-        {
-            if (i * prime[j] &gt; N)
-            {
-                break;
-            }
-            check[i * prime[j]] = true;
-            if (i % prime[j] == 0)
-            {
-                phi[i * prime[j]] = phi[i] * prime[j];
-                break;
-            }
-            else
-            {
-                phi[i * prime[j]] = phi[i] * (prime[j] - 1);
-            }
-        }
-    }
-    return ;
-}
-</code></pre><p>二、GCD &amp;&amp; exgcd<br>1.GCD: 公式：gcd(a,b) = gcd(b, a%b)<br>求a,b 最大公约数<br>代码实现:</p>
-<pre><code>ll gcd(ll a, ll b)
-{
-    if(b == 0)
-        return a;
-    return gcd(b, a % b);
-}
-</code></pre><p>   2.EXGCD:<br>   公式： ax+by=c;<br>   功能：用来解二元一次方程组；<br>   注意事项：a,b均为正数;<br>   取最小正整数解：<br>   例题：。设青蛙A的出发点坐标是x，青蛙B的出发点坐标是y。青蛙A一次能跳m米，青蛙B一次能跳n米，两只青蛙跳一次所花费的时间相同。纬度线总长L米。现在要你求出它们跳了几次以后才会碰面。</p>
-<pre><code>#include&lt;cstdio&gt;
-#include&lt;cmath&gt;
-#include&lt;cstring&gt;
-#include&lt;algorithm&gt;
-#include&lt;iostream&gt;
-#include&lt;vector&gt;
-#include&lt;queue&gt;
-#include&lt;stack&gt;
-#include&lt;string&gt;
-#define LL long long 
-#define INF 0x3f3f3f3f
-#define PI acos(-1.0)
-using namespace std;
-LL exgcd(LL a,LL b,LL &amp;x,LL &amp;y)
-{
-    if(!b)
-    {
-        x=1;
-        y=0;
-        return a;
-    }
-    LL r=exgcd(b,a%b,x,y);
-    LL t=y;
-    y=x-(a/b)*y;
-    x=t;
-    return r;
-}
-int main()
-{
-    LL a,b,x,y,n,m,l,k1,k2;//k2就是方程的一个x的解
-    cin&gt;&gt;x&gt;&gt;y&gt;&gt;m&gt;&gt;n&gt;&gt;l;
-    LL d=x-y;
-    a=l;
-    b=n-m;
-    LL c=exgcd(a,b,k1,k2);//c是最大公约数
-    if(d%c)//方程有解的条件
-        printf(&quot;Impossible&quot;);
-    else{
-        LL s=k2*d/c;
-
-        LL v=a/c;//对结果取余的最小的范围
-        printf(&quot;%lld\n&quot;,(s%v+v)%v);
-    }
-    return 0;
-}
-</code></pre><p>  三、唯一分解定理</p>
+        <h2 id="—-数论—"><a href="#—-数论—" class="headerlink" title="—-数论—-"></a><strong>—-数论—-</strong></h2><h2 id="素数"><a href="#素数" class="headerlink" title="素数"></a><strong>素数</strong></h2><h3 id="素数筛法"><a href="#素数筛法" class="headerlink" title="素数筛法"></a><strong>素数筛法</strong></h3><h4 id="1-线性筛选法——欧拉筛法"><a href="#1-线性筛选法——欧拉筛法" class="headerlink" title="1.线性筛选法——欧拉筛法"></a>1.线性筛选法——欧拉筛法</h4><p>欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。<br>代码实现：<br><a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#define MAXN 100000</span><br><span class="line">#define MAXL 1000000</span><br><span class="line">int prime[MAXN];</span><br><span class="line">_Bool check[MAXL];</span><br><span class="line"> </span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    int n, count;</span><br><span class="line">    while (~scanf(&quot;%d&quot;, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        memset(check, 0, sizeof(check));</span><br><span class="line">        count = 0;</span><br><span class="line">        for (int i = 2; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (!check[i])</span><br><span class="line">                prime[count++] = i;</span><br><span class="line">            for (int j = 0; j &lt; count; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if (i*prime[j] &gt; MAXL)</span><br><span class="line">                    break; // 过大的时候跳出</span><br><span class="line">                check[i*prime[j]] = 1;</span><br><span class="line">                if ((i%prime[j]) == 0) // 如果i是一个合数，而且i % prime[j] == 0</span><br><span class="line">                    break; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; count; i++)</span><br><span class="line">            printf(&quot;%d\n&quot;, prime[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-小应用：求n的阶乘的因子数，题目n的范围（1000）；"><a href="#2-小应用：求n的阶乘的因子数，题目n的范围（1000）；" class="headerlink" title="2.小应用：求n的阶乘的因子数，题目n的范围（1000）；"></a>2.小应用：求n的阶乘的因子数，题目n的范围（1000）；</h4><p>数论的原理，n的阶乘的因子个数等于n的素因子个数的幂的乘积；<br>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long LL;</span><br><span class="line">int k[1005]; </span><br><span class="line">const LL mod=1e9+7;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(int i=2;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int l=i;</span><br><span class="line">        for(int j=2;j&lt;=l;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            while(l%j==0)</span><br><span class="line">            &#123;</span><br><span class="line">                k[j]++;</span><br><span class="line">                l/=j;</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">        if(l) k[l]++;</span><br><span class="line">    &#125;</span><br><span class="line">    LL sum=1;</span><br><span class="line">    for(int i=2;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(k[i])</span><br><span class="line">        &#123;</span><br><span class="line">            sum*=(k[i]+1);</span><br><span class="line">            sum=sum%mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;                   </span><br><span class="line">    printf(&quot;%lld\n&quot;,sum%mod);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="3-查找出小于等于MAXN的素数（生成连续素数表）"><a href="#3-查找出小于等于MAXN的素数（生成连续素数表）" class="headerlink" title="3.查找出小于等于MAXN的素数（生成连续素数表）"></a>3.查找出小于等于MAXN的素数（生成连续素数表）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line"> *  素数筛选，查找出小于等于MAXN的素数</span><br><span class="line"> *  prime[0]存素数的个数</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">const int MAXN = 100000;</span><br><span class="line">int prime[MAXN + 1];</span><br><span class="line"></span><br><span class="line">void getPrime()</span><br><span class="line">&#123;</span><br><span class="line">    memset(prime, 0, sizeof(prime));</span><br><span class="line">    for (int i = 2; i &lt;= MAXN; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (!prime[i])</span><br><span class="line">        &#123;</span><br><span class="line">            prime[++prime[0]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int j = 1; j &lt;= prime[0] &amp;&amp; prime[j] &lt;= MAXN / i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            prime[prime[j] * i] = 1;</span><br><span class="line">            if (i % prime[j] == 0)</span><br><span class="line">            &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="4-同时得到欧拉函数表和素数表（线性筛）"><a href="#4-同时得到欧拉函数表和素数表（线性筛）" class="headerlink" title="4.同时得到欧拉函数表和素数表（线性筛）"></a>4.同时得到欧拉函数表和素数表（线性筛）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"> /*</span><br><span class="line"> *  同时得到欧拉函数和素数表</span><br><span class="line"> */</span><br><span class="line">const int MAXN = 10000000;</span><br><span class="line"></span><br><span class="line">bool check[MAXN + 10];</span><br><span class="line">int phi[MAXN + 10];</span><br><span class="line">int prime[MAXN + 10];</span><br><span class="line">int tot;    //  素数个数</span><br><span class="line"></span><br><span class="line">void phi_and_prime_table(int N)</span><br><span class="line">&#123;</span><br><span class="line">    memset(check, false, sizeof(check));</span><br><span class="line">    phi[1] = 1;</span><br><span class="line">    tot = 0;</span><br><span class="line">    for (int i = 2; i &lt;= N; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (!check[i])</span><br><span class="line">        &#123;</span><br><span class="line">            prime[tot++] = i;</span><br><span class="line">            phi[i] = i - 1;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int j = 0; j &lt; tot; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (i * prime[j] &gt; N)</span><br><span class="line">            &#123;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            check[i * prime[j]] = true;</span><br><span class="line">            if (i % prime[j] == 0)</span><br><span class="line">            &#123;</span><br><span class="line">                phi[i * prime[j]] = phi[i] * prime[j];</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            else</span><br><span class="line">            &#123;</span><br><span class="line">                phi[i * prime[j]] = phi[i] * (prime[j] - 1);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>二、GCD &amp;&amp; exgcd<br>1.GCD: 公式：gcd(a,b) = gcd(b, a%b)<br>求a,b 最大公约数<br>代码实现:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ll gcd(ll a, ll b)</span><br><span class="line">&#123;</span><br><span class="line">    if(b == 0)</span><br><span class="line">        return a;</span><br><span class="line">    return gcd(b, a % b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>   2.EXGCD:<br>   公式： ax+by=c;<br>   功能：用来解二元一次方程组；<br>   注意事项：a,b均为正数;<br>   取最小正整数解：<br>   例题：。设青蛙A的出发点坐标是x，青蛙B的出发点坐标是y。青蛙A一次能跳m米，青蛙B一次能跳n米，两只青蛙跳一次所花费的时间相同。纬度线总长L米。现在要你求出它们跳了几次以后才会碰面。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">#define LL long long </span><br><span class="line">#define INF 0x3f3f3f3f</span><br><span class="line">#define PI acos(-1.0)</span><br><span class="line">using namespace std;</span><br><span class="line">LL exgcd(LL a,LL b,LL &amp;x,LL &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">    if(!b)</span><br><span class="line">    &#123;</span><br><span class="line">        x=1;</span><br><span class="line">        y=0;</span><br><span class="line">        return a;</span><br><span class="line">    &#125;</span><br><span class="line">    LL r=exgcd(b,a%b,x,y);</span><br><span class="line">    LL t=y;</span><br><span class="line">    y=x-(a/b)*y;</span><br><span class="line">    x=t;</span><br><span class="line">    return r;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    LL a,b,x,y,n,m,l,k1,k2;//k2就是方程的一个x的解</span><br><span class="line">    cin&gt;&gt;x&gt;&gt;y&gt;&gt;m&gt;&gt;n&gt;&gt;l;</span><br><span class="line">    LL d=x-y;</span><br><span class="line">    a=l;</span><br><span class="line">    b=n-m;</span><br><span class="line">    LL c=exgcd(a,b,k1,k2);//c是最大公约数</span><br><span class="line">    if(d%c)//方程有解的条件</span><br><span class="line">        printf(&quot;Impossible&quot;);</span><br><span class="line">    else&#123;</span><br><span class="line">        LL s=k2*d/c;</span><br><span class="line">        </span><br><span class="line">        LL v=a/c;//对结果取余的最小的范围</span><br><span class="line">        printf(&quot;%lld\n&quot;,(s%v+v)%v);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  三、唯一分解定理</p>
 <p>任何大于１的自然数，都可以唯一分解成有限个质数的乘积</p>
 <p>例如对于大于1的自然数n，<br><img src="https://img-blog.csdn.net/20160503212912754" alt="在这里插入图片描述"><br>这里Pi均为质数，其指数ai是正整数。<br>这样的分解称为的标准分解式。<br>1.找出一个数n的所有素因子</p>
-<pre><code>typedef long long ll;
-ll fac[10050], num;//素因数,素因数的个数
-void init(ll n) {//唯一分解定理
-    num = 0;
-    ll cpy = n;
-    int m = (int)sqrt(n + 0.5);
-    for (int i = 2; i &lt;= m; ++i) {
-        if (cpy % i == 0) {
-            fac[num++] = i;
-            while (cpy % i == 0) cpy /= i;
-        }
-    }
-    if (cpy &gt; 1) fac[num++] = cpy;
-}
-</code></pre><p>2.约数和定理&amp;&amp;约数个数定理<br>(1) 约数个数定理<br>约数个数定理可以计算出一个数约数的个数<br>根据唯一分解定理：<br><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/s=231/sign=e19b382db04543a9f11bfdcf2f168a7b/a8ec8a13632762d0a5814266a7ec08fa503dc6a8.jpg" alt="在这里插入图片描述"><br>则n的正约数的个数就是<br><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s=316/sign=ca4b36d4d243ad4ba22e40c1b4035a89/8ad4b31c8701a18b94aed93e9d2f07082838fe7e.jpg" alt="在这里插入图片描述"><br>将378000分解质因数378000=2^ 4×3^ 3×5^ 3×7^1<br>由约数个数定理可知378000共有正约数(4+1)×(3+1)×(3+1)×(1+1)=160个。<br>代码实现</p>
-<pre><code>int prime[maxn],nprime;    
-int vis[maxn];    
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">typedef long long ll;</span><br><span class="line">ll fac[10050], num;//素因数,素因数的个数</span><br><span class="line">void init(ll n) &#123;//唯一分解定理</span><br><span class="line">    num = 0;</span><br><span class="line">    ll cpy = n;</span><br><span class="line">    int m = (int)sqrt(n + 0.5);</span><br><span class="line">    for (int i = 2; i &lt;= m; ++i) &#123;</span><br><span class="line">        if (cpy % i == 0) &#123;</span><br><span class="line">            fac[num++] = i;</span><br><span class="line">            while (cpy % i == 0) cpy /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (cpy &gt; 1) fac[num++] = cpy;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.约数和定理&amp;&amp;约数个数定理<br>(1) 约数个数定理<br>约数个数定理可以计算出一个数约数的个数<br>根据唯一分解定理：<br><img src="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/s=231/sign=e19b382db04543a9f11bfdcf2f168a7b/a8ec8a13632762d0a5814266a7ec08fa503dc6a8.jpg" alt="在这里插入图片描述"><br>则n的正约数的个数就是<br><img src="https://gss3.bdstatic.com/-Po3dSag_xI4khGkpoWK1HF6hhy/baike/s=316/sign=ca4b36d4d243ad4ba22e40c1b4035a89/8ad4b31c8701a18b94aed93e9d2f07082838fe7e.jpg" alt="在这里插入图片描述"><br>将378000分解质因数378000=2^ 4×3^ 3×5^ 3×7^1<br>由约数个数定理可知378000共有正约数(4+1)×(3+1)×(3+1)×(1+1)=160个。<br>代码实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">int prime[maxn],nprime;    </span><br><span class="line">int vis[maxn];    </span><br><span class="line">    </span><br><span class="line">void getprime()&#123;  </span><br><span class="line">    nprime = 0;  </span><br><span class="line">    memset(vis,0,sizeof(vis));  </span><br><span class="line">    for(int i = 2; i &lt;= 450; i++)&#123;  </span><br><span class="line">        int t = 450/i;  </span><br><span class="line">        for(int j = 2; j &lt;=t; j++)  </span><br><span class="line">            vis[i*j] = 1;  </span><br><span class="line">    &#125;  </span><br><span class="line">    for(int i = 2; i &lt;= 450; i++)&#123;  </span><br><span class="line">        if(!vis[i])  </span><br><span class="line">            prime[nprime++] = i;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">    </span><br><span class="line">int factor_count(int n)&#123;    </span><br><span class="line">    int ans = 1,sum;    </span><br><span class="line">    int k = sqrt(n*1.0);    </span><br><span class="line">    for(int i = 0; prime[i] &lt; k; i++)&#123;    </span><br><span class="line">        if(n % prime[i] == 0)&#123;    </span><br><span class="line">            sum = 0;    </span><br><span class="line">            while(n % prime[i] == 0)&#123;    </span><br><span class="line">                sum++;    </span><br><span class="line">                n /= prime[i];    </span><br><span class="line">            &#125;    </span><br><span class="line">            ans *= (a+1);   //ans为n的约数的个数 </span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;    </span><br><span class="line">    if(n &gt; 1)    </span><br><span class="line">        ans *= 2;    </span><br><span class="line">    return ans;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(2)约数和定理<br>n的(a₁+1)(a₂+1)(a₃+1)…(ak+1)个正约数的和为<br>f(n)=(p1 ^ 0+p1 ^ 1+p1 ^ 2+…p1^ a1)(p2 ^ 0+p2 ^ 1+p2 ^ +…p2 ^ a2)…(pk ^ 0+pk^1+pk ^ 2+…pk ^ ak）<br>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">int prime[maxn],nprime;</span><br><span class="line">int vis[maxn];</span><br><span class="line"> </span><br><span class="line">void getprime()&#123;</span><br><span class="line">    nprime = 0;</span><br><span class="line">    memset(vis,0,sizeof(vis));</span><br><span class="line">    for(int i = 2; i &lt;= 450; i++)&#123;</span><br><span class="line">        int t = 450/i;</span><br><span class="line">        for(int j = 2; j &lt;=t; j++)</span><br><span class="line">            vis[i*j] = 1;</span><br><span class="line">    &#125;</span><br><span class="line">    for(int i = 2; i &lt;= 450; i++)&#123;</span><br><span class="line">        if(!vis[i])</span><br><span class="line">            prime[nprime++] = i;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int pow_mod(int a,int n,int MOD)&#123;</span><br><span class="line">    int ans = 1;</span><br><span class="line">    while(n)&#123;</span><br><span class="line">        if(n&amp;1)</span><br><span class="line">            ans = (ans*a)%MOD;</span><br><span class="line">        n &gt;&gt;= 1;</span><br><span class="line">        a = (a*a)%MOD;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int factor_sum(int n)&#123;</span><br><span class="line">    int ans = 1,sum;</span><br><span class="line">    int k = sqrt(n*1.0);</span><br><span class="line">    for(int i = 0; prime[i] &lt; k; i++)&#123;</span><br><span class="line">        if(n % prime[i] == 0)&#123;</span><br><span class="line">            sum = 0;</span><br><span class="line">            while(n%prime[i] == 0)&#123;</span><br><span class="line">                sum++;</span><br><span class="line">                n /= prime[i];</span><br><span class="line">            &#125;</span><br><span class="line">            ans *= (pow_mod(prime[i],sum+1,MOD)-1)/(prime[i]-1);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if(n &gt; 1)</span><br><span class="line">        ans *= ans(n*n-1)/(n-1);</span><br><span class="line">    return ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>杜教筛:<br>   有些时候也有一些奇形怪状的函数比如<br> <img src="http://latex.codecogs.com/gif.latex?f%28n%29=%5Cprod%20%28p_i%5E%7Ba_i%7D%2b1%29" alt="在这里插入图片描述">，其中是pi质数，ai&gt;0且<img src="http://latex.codecogs.com/gif.latex?n=%5Cprod%20p_i%5E%7Ba_i%" alt="在这里插入图片描述">。<br>接着，出题人给了你一个挺大的n，n一般来说都有10^10左右。<br>最后，他想让你输出的值（可能会对一个大数取模）。<br>杜教筛差不多就是拿来解决这类问题哒..它给出了一个比较通用的技巧使得可以<img src="http://latex.codecogs.com/gif.latex?O%28n%5E%7B%5Cfrac%7B2%7D%7B3%7D%7D%29" alt="在这里插入图片描述">在或者<img src="http://latex.codecogs.com/gif.latex?O%28n%5E%7B%5Cfrac%7B3%7D%7B4%7D%7D%29" alt="在这里插入图片描述">的时间复杂度内求的答案。<br>例如：<img src="https://img-blog.csdn.net/20170126225758146" alt="在这里插入图片描述"><br>f(i,j)是一个积性函数，求前缀和，可以用杜教筛</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstdlib&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include &lt;tr1/unordered_map&gt;</span><br><span class="line">typedef long long ll;</span><br><span class="line">using namespace std;</span><br><span class="line">using namespace std::tr1;</span><br><span class="line"> </span><br><span class="line">const int P=1000000007;</span><br><span class="line">const int inv2=(P+1)/2;</span><br><span class="line">const int inv3=(P+1)/3;</span><br><span class="line">const int maxn=1000000;</span><br><span class="line"> </span><br><span class="line">int prime[2000000],num;</span><br><span class="line">int miu[maxn+5];</span><br><span class="line">ll sumd[maxn+5],t1[maxn+5],t2[maxn+5]; int d[maxn+5];</span><br><span class="line"> </span><br><span class="line">inline void Pre()&#123;</span><br><span class="line">  miu[1]=1; sumd[1]=1;</span><br><span class="line">  for (int i=2;i&lt;=maxn;i++)&#123;</span><br><span class="line">    if (!d[i]) d[i]=prime[++num]=i,sumd[i]=1+i,t1[i]=1+i,t2[i]=i,miu[i]=-1;</span><br><span class="line">    for (int j=1;j&lt;=num &amp;&amp; (ll)i*prime[j]&lt;=maxn;j++)&#123;</span><br><span class="line">      d[i*prime[j]]=prime[j]; int k=i*prime[j];</span><br><span class="line">      if (i%prime[j]==0)&#123;</span><br><span class="line">    miu[k]=0;</span><br><span class="line">    t2[k]=t2[i]*prime[j],t1[k]=t1[i]+t2[k],sumd[k]=sumd[i]/t1[i]*t1[k];</span><br><span class="line">    break;</span><br><span class="line">      &#125;</span><br><span class="line">      miu[i*prime[j]]=miu[i]*miu[prime[j]];</span><br><span class="line">      sumd[k]=sumd[i]*sumd[prime[j]],t1[k]=1+prime[j],t2[k]=prime[j];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  for (int i=1;i&lt;=maxn;i++)</span><br><span class="line">    miu[i]=((ll)i*((P+miu[i])%P)%P+miu[i-1])%P,(sumd[i]+=sumd[i-1])%=P;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">unordered_map&lt;ll,int&gt; S;</span><br><span class="line"> </span><br><span class="line">inline void add(int &amp;x,int y)&#123;</span><br><span class="line">  x+=y; if (x&gt;=P) x-=P;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">inline int sum1(ll n)&#123; return (n+1)%P*(n%P)%P*inv2%P;&#125;</span><br><span class="line">inline int sum1(ll l,ll r)&#123; return (l+r)%P*((r-l+1)%P)%P*inv2%P; &#125;</span><br><span class="line"> </span><br><span class="line">inline int Sum(ll n)&#123;</span><br><span class="line">  if (n&lt;=maxn) return miu[n];</span><br><span class="line">  if (S.find(n)!=S.end()) return S[n];</span><br><span class="line">  int tem=1; ll l,r;</span><br><span class="line">  for (l=2;l*l&lt;=n;l++) add(tem,P-l*Sum(n/l)%P);</span><br><span class="line">  for (ll t=n/l;l&lt;=n;l=r+1,t--)</span><br><span class="line">    r=n/t,add(tem,P-(ll)sum1(l,r)*Sum(t)%P);</span><br><span class="line">  return S[n]=tem;</span><br><span class="line">&#125;</span><br><span class="line">/*</span><br><span class="line">inline int F(ll n)&#123;</span><br><span class="line">  int t1=0,t2=0; ll l,r;</span><br><span class="line">  for (l=1;l*l&lt;=n;l++) add(t1,l%P*(n/l)%P),add(t2,sum1(n/l)%P);</span><br><span class="line">  for (ll t=n/l;l&lt;=n;l=r+1,t--)</span><br><span class="line">    r=n/t,add(t1,(ll)sum1(l,r)*(n/l)%P),add(t2,(r-l+1)%P*sum1(n/l)%P);</span><br><span class="line">  return (ll)t1*t2%P;</span><br><span class="line">&#125;</span><br><span class="line">*/</span><br><span class="line"> </span><br><span class="line">inline int F(ll n)&#123;</span><br><span class="line">  if (n&lt;=maxn) return (ll)sumd[n]*sumd[n]%P;</span><br><span class="line">  int t1=0; ll l,r;</span><br><span class="line">  for (l=1;l*l&lt;=n;l++) add(t1,l%P*(n/l)%P);</span><br><span class="line">  for (ll t=n/l;l&lt;=n;l=r+1,t--)</span><br><span class="line">    r=n/t,add(t1,(ll)sum1(l,r)*(n/l)%P);</span><br><span class="line">  return (ll)t1*t1%P;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main()&#123;</span><br><span class="line">  ll n,l,r; int Ans=0;</span><br><span class="line">  freopen(&quot;t.in&quot;,&quot;r&quot;,stdin);</span><br><span class="line">  freopen(&quot;t.out&quot;,&quot;w&quot;,stdout);</span><br><span class="line">  Pre();</span><br><span class="line">  scanf(&quot;%lld&quot;,&amp;n);</span><br><span class="line">  for (l=1;l*l&lt;=n;l++) add(Ans,(ll)(Sum(l)+P-Sum(l-1))%P*F(n/l)%P);</span><br><span class="line">  for (ll t=n/l;l&lt;=n;l=r+1,t--)</span><br><span class="line">    r=n/t,add(Ans,(ll)(Sum(r)+P-Sum(l-1))%P*F(n/l)%P);</span><br><span class="line">  printf(&quot;%d\n&quot;,Ans);</span><br><span class="line">  return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  黑科技之BM<br>  线性递推式，给出前几项自动可得出n项的值；前面的不用动 ，只需更改main函数中的 初值<br>  代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">  #include &lt;cstdio&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">#include &lt;cmath&gt;</span><br><span class="line">#include &lt;algorithm&gt;</span><br><span class="line">#include &lt;vector&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;map&gt;</span><br><span class="line">#include &lt;set&gt;</span><br><span class="line">#include &lt;cassert&gt;</span><br><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define rep(i,a,n) for (int i=a;i&lt;n;i++)</span><br><span class="line">#define per(i,a,n) for (int i=n-1;i&gt;=a;i--)</span><br><span class="line">#define pb push_back</span><br><span class="line">#define mp make_pair</span><br><span class="line">#define all(x) (x).begin(),(x).end()</span><br><span class="line">#define fi first</span><br><span class="line">#define se second</span><br><span class="line">#define SZ(x) ((int)(x).size())</span><br><span class="line">typedef vector&lt;int&gt; VI;</span><br><span class="line">typedef long long ll;</span><br><span class="line">typedef pair&lt;int,int&gt; PII;</span><br><span class="line">const ll mod=1e9+7;</span><br><span class="line">ll powmod(ll a,ll b) &#123;ll res=1;a%=mod; assert(b&gt;=0); for(;b;b&gt;&gt;=1)&#123;if(b&amp;1)res=res*a%mod;a=a*a%mod;&#125;return res;&#125;</span><br><span class="line">// head</span><br><span class="line">int _,n;</span><br><span class="line">namespace linear_seq &#123;</span><br><span class="line">    const int N=10010;</span><br><span class="line">    ll res[N],base[N],_c[N],_md[N];</span><br><span class="line"> </span><br><span class="line">    vector&lt;int&gt; Md;</span><br><span class="line">    void mul(ll *a,ll *b,int k) &#123;</span><br><span class="line">        rep(i,0,k+k) _c[i]=0;</span><br><span class="line">        rep(i,0,k) if (a[i]) rep(j,0,k) _c[i+j]=(_c[i+j]+a[i]*b[j])%mod;</span><br><span class="line">        for (int i=k+k-1;i&gt;=k;i--) if (_c[i])</span><br><span class="line">            rep(j,0,SZ(Md)) _c[i-k+Md[j]]=(_c[i-k+Md[j]]-_c[i]*_md[Md[j]])%mod;</span><br><span class="line">        rep(i,0,k) a[i]=_c[i];</span><br><span class="line">    &#125;</span><br><span class="line">    int solve(ll n,VI a,VI b) &#123; // a 系数 b 初值 b[n+1]=a[0]*b[n]+...</span><br><span class="line">//        printf(&quot;%d\n&quot;,SZ(b));</span><br><span class="line">        ll ans=0,pnt=0;</span><br><span class="line">        int k=SZ(a);</span><br><span class="line">        assert(SZ(a)==SZ(b));</span><br><span class="line">        rep(i,0,k) _md[k-1-i]=-a[i];_md[k]=1;</span><br><span class="line">        Md.clear();</span><br><span class="line">        rep(i,0,k) if (_md[i]!=0) Md.push_back(i);</span><br><span class="line">        rep(i,0,k) res[i]=base[i]=0;</span><br><span class="line">        res[0]=1;</span><br><span class="line">        while ((1ll&lt;&lt;pnt)&lt;=n) pnt++;</span><br><span class="line">        for (int p=pnt;p&gt;=0;p--) &#123;</span><br><span class="line">            mul(res,res,k);</span><br><span class="line">            if ((n&gt;&gt;p)&amp;1) &#123;</span><br><span class="line">                for (int i=k-1;i&gt;=0;i--) res[i+1]=res[i];res[0]=0;</span><br><span class="line">                rep(j,0,SZ(Md)) res[Md[j]]=(res[Md[j]]-res[k]*_md[Md[j]])%mod;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        rep(i,0,k) ans=(ans+res[i]*b[i])%mod;</span><br><span class="line">        if (ans&lt;0) ans+=mod;</span><br><span class="line">        return ans;</span><br><span class="line">    &#125;</span><br><span class="line">    VI BM(VI s) &#123;</span><br><span class="line">        VI C(1,1),B(1,1);</span><br><span class="line">        int L=0,m=1,b=1;</span><br><span class="line">        rep(n,0,SZ(s)) &#123;</span><br><span class="line">            ll d=0;</span><br><span class="line">            rep(i,0,L+1) d=(d+(ll)C[i]*s[n-i])%mod;</span><br><span class="line">            if (d==0) ++m;</span><br><span class="line">            else if (2*L&lt;=n) &#123;</span><br><span class="line">                VI T=C;</span><br><span class="line">                ll c=mod-d*powmod(b,mod-2)%mod;</span><br><span class="line">                while (SZ(C)&lt;SZ(B)+m) C.pb(0);</span><br><span class="line">                rep(i,0,SZ(B)) C[i+m]=(C[i+m]+c*B[i])%mod;</span><br><span class="line">                L=n+1-L; B=T; b=d; m=1;</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                ll c=mod-d*powmod(b,mod-2)%mod;</span><br><span class="line">                while (SZ(C)&lt;SZ(B)+m) C.pb(0);</span><br><span class="line">                rep(i,0,SZ(B)) C[i+m]=(C[i+m]+c*B[i])%mod;</span><br><span class="line">                ++m;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return C;</span><br><span class="line">    &#125;</span><br><span class="line">    int gao(VI a,ll n) &#123;</span><br><span class="line">        VI c=BM(a);</span><br><span class="line">        c.erase(c.begin());</span><br><span class="line">        rep(i,0,SZ(c)) c[i]=(mod-c[i])%mod;</span><br><span class="line">        return solve(n,c,VI(a.begin(),a.begin()+SZ(c)));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int T;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;T);</span><br><span class="line">    while (T--)</span><br><span class="line">    &#123;</span><br><span class="line">        vector&lt;int&gt;v;</span><br><span class="line">        v.push_back(3);</span><br><span class="line">        v.push_back(9);</span><br><span class="line">        v.push_back(20);</span><br><span class="line">        v.push_back(46);</span><br><span class="line">        v.push_back(106);</span><br><span class="line">        v.push_back(244);</span><br><span class="line">        v.push_back(560);</span><br><span class="line">        v.push_back(1286);</span><br><span class="line">        v.push_back(2956);</span><br><span class="line">        v.push_back(6794);</span><br><span class="line">        v.push_back(15610);</span><br><span class="line">        v.push_back(35866);</span><br><span class="line">        //VI&#123;1,2,4,7,13,24&#125;</span><br><span class="line">        ll n;</span><br><span class="line">        scanf(&quot;%lld&quot;,&amp;n);</span><br><span class="line">        printf(&quot;%lld\n&quot;,linear_seq::gao(v,n-1));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>斯特林近似公式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;       </span><br><span class="line">using namespace std;     </span><br><span class="line">typedef long long ll;     </span><br><span class="line">#define PI 3.1415926      </span><br><span class="line">ll n,t;      </span><br><span class="line">void solve()      </span><br><span class="line">&#123;      </span><br><span class="line">    ll a=(ll) ((0.5 * log ( 2 * PI * n) + n * log(n) - n-0.0005) / log(10));      </span><br><span class="line">    printf(&quot;%lld\n&quot;,a+1); //是2 不是22，上传时貌似出问题了     </span><br><span class="line">&#125;      </span><br><span class="line">int main()      </span><br><span class="line">&#123;      </span><br><span class="line">    scanf(&quot;%lld&quot;,&amp;t);    </span><br><span class="line">    while(t--)&#123;    </span><br><span class="line">         scanf(&quot;%lld&quot;,&amp;n);      </span><br><span class="line">        solve();      </span><br><span class="line">    &#125;    </span><br><span class="line">    return 0;      </span><br><span class="line">&#125;//n! = sqrt((2 * n * PI) * (n / e ) ^ n)</span><br></pre></td></tr></table></figure>
+<p>   卡特兰数<br>   1.求n对括号合法的匹配的方式<br>   C（n,2n）-C（n+1,2n）<br> 2.卡特兰数公式</p>
+<p>令h(0)=1,h(1)=1，catalan数满足递推式：h(n)= h(0)<em>h(n-1)+h(1)</em>h(n-2) + … +h(n-1)*h(0) (n&gt;=2)</p>
+<p>另类递推式[2]：h(n)=h(n-1)<em>(4</em>n-2)/(n+1);</p>
+<p>递推关系的解为：h(n)=C(2n,n)/(n+1) (n=0,1,2,…)</p>
+<p>递推关系的另类解为：h(n)=c(2n,n)-c(2n,n-1)(n=0,1,2,…)<br>3.可以利用卡特兰数解决的常见问题：</p>
+<p>一个栈(无穷大)的进栈序列为1，2，3，…，n，有多少个不同的出栈序列?</p>
+<p>在n*n的格子中，只在下三角行走，每次横或竖走一格，有多少中走法？</p>
+<p>将一个凸n+2边形区域分成三角形区域的方法数？</p>
+<p>圆上选择2n个点,将这些点成对连接起来使得所得到的n条线段不相交的方法数？</p>
+<p>有2n个人排成一行进入剧场。入场费5元。其中只有n个人有一张5元钞票，另外n人只有10元钞票，剧院无其它钞票，问有多少中方法使得只要有10元的人买票，售票处就有5元的钞票找零？<br>代码实现：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include&lt;string.h&gt;</span><br><span class="line">int a[105][1000];//大数运算 </span><br><span class="line">int b[105]; //储存对应卡特兰数有多少位 </span><br><span class="line">void catalan() //求卡特兰数</span><br><span class="line">&#123;</span><br><span class="line">    int i, j, len, carry, temp;</span><br><span class="line">    a[1][0] = b[1] = 1;</span><br><span class="line">    len = 1;</span><br><span class="line">    for(i = 2; i &lt;= 100; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(j = 0; j &lt; len; j++) //乘法</span><br><span class="line">        a[i][j] = a[i-1][j]*(4*(i-1)+2);</span><br><span class="line">        carry = 0;</span><br><span class="line">        for(j = 0; j &lt; len; j++) //处理相乘结果</span><br><span class="line">        &#123;</span><br><span class="line">            temp = a[i][j] + carry;</span><br><span class="line">            a[i][j] = temp % 10;</span><br><span class="line">            carry = temp / 10;</span><br><span class="line">        &#125;</span><br><span class="line">        while(carry) //进位处理</span><br><span class="line">        &#123;</span><br><span class="line">            a[i][len++] = carry % 10;</span><br><span class="line">            carry /= 10;</span><br><span class="line">        &#125;</span><br><span class="line">        carry = 0;</span><br><span class="line">        for(j = len-1; j &gt;= 0; j--) //除法</span><br><span class="line">        &#123;</span><br><span class="line">            temp = carry*10 + a[i][j];</span><br><span class="line">            a[i][j] = temp/(i+1);</span><br><span class="line">            carry = temp%(i+1);</span><br><span class="line">        &#125;</span><br><span class="line">        while(!a[i][len-1]) //高位零处理</span><br><span class="line">        len --;</span><br><span class="line">        b[i] = len;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">int main() &#123;</span><br><span class="line">    catalan();</span><br><span class="line">    for(int i=1;i&lt;=100;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int j=b[i]-1;j&gt;=0;j--)</span><br><span class="line">        &#123;</span><br><span class="line">            printf(&quot;%d&quot;,a[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        printf(&quot;\n&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-void getprime(){  
-    nprime = 0;  
-    memset(vis,0,sizeof(vis));  
-    for(int i = 2; i &lt;= 450; i++){  
-        int t = 450/i;  
-        for(int j = 2; j &lt;=t; j++)  
-            vis[i*j] = 1;  
-    }  
-    for(int i = 2; i &lt;= 450; i++){  
-        if(!vis[i])  
-            prime[nprime++] = i;  
-    }  
-}  
-
-int factor_count(int n){    
-    int ans = 1,sum;    
-    int k = sqrt(n*1.0);    
-    for(int i = 0; prime[i] &lt; k; i++){    
-        if(n % prime[i] == 0){    
-            sum = 0;    
-            while(n % prime[i] == 0){    
-                sum++;    
-                n /= prime[i];    
-            }    
-            ans *= (a+1);   //ans为n的约数的个数 
-        }    
-    }    
-    if(n &gt; 1)    
-        ans *= 2;    
-    return ans;    
-}    
-</code></pre><p>(2)约数和定理<br>n的(a₁+1)(a₂+1)(a₃+1)…(ak+1)个正约数的和为<br>f(n)=(p1 ^ 0+p1 ^ 1+p1 ^ 2+…p1^ a1)(p2 ^ 0+p2 ^ 1+p2 ^ +…p2 ^ a2)…(pk ^ 0+pk^1+pk ^ 2+…pk ^ ak）<br>代码实现：</p>
-<pre><code>int prime[maxn],nprime;
-int vis[maxn];
-
-void getprime(){
-    nprime = 0;
-    memset(vis,0,sizeof(vis));
-    for(int i = 2; i &lt;= 450; i++){
-        int t = 450/i;
-        for(int j = 2; j &lt;=t; j++)
-            vis[i*j] = 1;
-    }
-    for(int i = 2; i &lt;= 450; i++){
-        if(!vis[i])
-            prime[nprime++] = i;
-    }
-}
-
-int pow_mod(int a,int n,int MOD){
-    int ans = 1;
-    while(n){
-        if(n&amp;1)
-            ans = (ans*a)%MOD;
-        n &gt;&gt;= 1;
-        a = (a*a)%MOD;
-    }
-    return ans;
-}
-
-int factor_sum(int n){
-    int ans = 1,sum;
-    int k = sqrt(n*1.0);
-    for(int i = 0; prime[i] &lt; k; i++){
-        if(n % prime[i] == 0){
-            sum = 0;
-            while(n%prime[i] == 0){
-                sum++;
-                n /= prime[i];
-            }
-            ans *= (pow_mod(prime[i],sum+1,MOD)-1)/(prime[i]-1);
-        }
-    }
-    if(n &gt; 1)
-        ans *= ans(n*n-1)/(n-1);
-    return ans;
-}
-</code></pre>
       
     </div>
 
@@ -930,7 +679,7 @@ int factor_sum(int n){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#—-数论—"><span class="nav-number">1.</span> <span class="nav-text">—-数论—-</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#—-数论—"><span class="nav-number">1.</span> <span class="nav-text">—-数论—-</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#素数"><span class="nav-number">2.</span> <span class="nav-text">素数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#素数筛法"><span class="nav-number">2.1.</span> <span class="nav-text">素数筛法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-线性筛选法——欧拉筛法"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.线性筛选法——欧拉筛法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-小应用：求n的阶乘的因子数，题目n的范围（1000）；"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.小应用：求n的阶乘的因子数，题目n的范围（1000）；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查找出小于等于MAXN的素数（生成连续素数表）"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.查找出小于等于MAXN的素数（生成连续素数表）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-同时得到欧拉函数表和素数表（线性筛）"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.同时得到欧拉函数表和素数表（线性筛）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -980,7 +729,7 @@ int factor_sum(int n){
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共3.7k字</span>
+  <span class="post-count">博客全站共6.8k字</span>
 </div>
 
   <span class="post-meta-divider">|</span>
