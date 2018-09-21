@@ -29,9 +29,9 @@
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 <script>
     (function(){
-        if('Wangzy'){
-            if (prompt('请输入文章密码') !== 'Wangzy'){
-                alert('密码不对哦(*❦ω❦)');
+        if('Wangzy666'){
+            if (prompt('模板处于内测阶段，请输入邀请码(～￣▽￣)～ ') !== 'Wangzy666'){
+                alert('邀请码似乎不对哦(*❦ω❦)');
                 history.back();
             }
         }
@@ -146,17 +146,17 @@
 
 
 
-  <meta name="description" content="DP01背包（每种物品只有一个）1234567891011//n 物品数量，v 背包容量 //size 单个物品体积，value 单个物品价值void bag01()&amp;#123;	for(int i=0;i&amp;lt;n;i++)	for(int j=v;j&amp;gt;=size[i];j--)	&amp;#123;		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);	&amp;#125;">
+  <meta name="description" content="DP01背包（每种物品只有一个）1234567891011//n 物品数量，v 背包容量 //size 单个物品体积，value 单个物品价值void bag01()&amp;#123;    for(int i=0;i&amp;lt;n;i++)    for(int j=v;j&amp;gt;=size[i];j--)    &amp;#123;        dp[j]=max(dp[j],dp[j-size[i]]+va">
 <meta property="og:type" content="article">
-<meta property="og:title" content="模板整理">
+<meta property="og:title" content="模板整理（未完成）">
 <meta property="og:url" content="https://friends-a.github.io/uncategorized/模板/index.html">
 <meta property="og:site_name" content="执念">
-<meta property="og:description" content="DP01背包（每种物品只有一个）1234567891011//n 物品数量，v 背包容量 //size 单个物品体积，value 单个物品价值void bag01()&amp;#123;	for(int i=0;i&amp;lt;n;i++)	for(int j=v;j&amp;gt;=size[i];j--)	&amp;#123;		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);	&amp;#125;">
+<meta property="og:description" content="DP01背包（每种物品只有一个）1234567891011//n 物品数量，v 背包容量 //size 单个物品体积，value 单个物品价值void bag01()&amp;#123;    for(int i=0;i&amp;lt;n;i++)    for(int j=v;j&amp;gt;=size[i];j--)    &amp;#123;        dp[j]=max(dp[j],dp[j-size[i]]+va">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-21T16:06:51.743Z">
+<meta property="og:updated_time" content="2018-09-21T16:14:21.061Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="模板整理">
-<meta name="twitter:description" content="DP01背包（每种物品只有一个）1234567891011//n 物品数量，v 背包容量 //size 单个物品体积，value 单个物品价值void bag01()&amp;#123;	for(int i=0;i&amp;lt;n;i++)	for(int j=v;j&amp;gt;=size[i];j--)	&amp;#123;		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);	&amp;#125;">
+<meta name="twitter:title" content="模板整理（未完成）">
+<meta name="twitter:description" content="DP01背包（每种物品只有一个）1234567891011//n 物品数量，v 背包容量 //size 单个物品体积，value 单个物品价值void bag01()&amp;#123;    for(int i=0;i&amp;lt;n;i++)    for(int j=v;j&amp;gt;=size[i];j--)    &amp;#123;        dp[j]=max(dp[j],dp[j-size[i]]+va">
 
 
 
@@ -173,7 +173,7 @@
   };
 </script>
 
-  <title>模板整理 | 执念</title>
+  <title>模板整理（未完成） | 执念</title>
   
 
 
@@ -375,7 +375,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">模板整理
+          <h1 class="post-title" itemprop="name headline">模板整理（未完成）
               
             
           </h1>
@@ -452,7 +452,7 @@
       
       
       
-        <h1 id="DP"><a href="#DP" class="headerlink" title="DP"></a><strong>DP</strong></h1><h2 id="01背包（每种物品只有一个）"><a href="#01背包（每种物品只有一个）" class="headerlink" title="01背包（每种物品只有一个）"></a><strong>01背包（每种物品只有一个）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//n 物品数量，v 背包容量 </span><br><span class="line">//size 单个物品体积，value 单个物品价值</span><br><span class="line">void bag01()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	for(int j=v;j&gt;=size[i];j--)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="DP"><a href="#DP" class="headerlink" title="DP"></a><strong>DP</strong></h1><h2 id="01背包（每种物品只有一个）"><a href="#01背包（每种物品只有一个）" class="headerlink" title="01背包（每种物品只有一个）"></a><strong>01背包（每种物品只有一个）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//n 物品数量，v 背包容量 </span><br><span class="line">//size 单个物品体积，value 单个物品价值</span><br><span class="line">void bag01()</span><br><span class="line">&#123;</span><br><span class="line">    for(int i=0;i&lt;n;i++)</span><br><span class="line">    for(int j=v;j&gt;=size[i];j--)</span><br><span class="line">    &#123;</span><br><span class="line">        dp[j]=max(dp[j],dp[j-size[i]]+value[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="完全背包（每种物品有无穷多）"><a href="#完全背包（每种物品有无穷多）" class="headerlink" title="完全背包（每种物品有无穷多）"></a><strong>完全背包（每种物品有无穷多）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void complete()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	for(int j=size[i];j&lt;=v;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="多重背包（每种物品数量有限）"><a href="#多重背包（每种物品数量有限）" class="headerlink" title="多重背包（每种物品数量有限）"></a><strong>多重背包（每种物品数量有限）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//n 物品数量，v 背包容量 </span><br><span class="line">//size 单个物品体积，value 单个物品价值，num 该物品的数量 </span><br><span class="line">void multiply()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        int d1=1,d2=num[i];  </span><br><span class="line">        while(d1&lt;d2)  </span><br><span class="line">        &#123;  </span><br><span class="line">            for(int j=v;j&gt;=d1*size[i];j--)  </span><br><span class="line">            &#123;  </span><br><span class="line">                dp[j]=max(dp[j],dp[j-d1*size[i]]+value[i]*d1);  </span><br><span class="line">            &#125;  </span><br><span class="line">            d2-=d1;  </span><br><span class="line">            d1*=2;  </span><br><span class="line">        &#125;  </span><br><span class="line">        for(int j=v;j&gt;=d2*size[i];j--) dp[j]=max(dp[j],dp[j-d2*size[i]]+value[i]*d2);  </span><br><span class="line">    &#125; </span><br><span class="line">    cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -508,11 +508,11 @@
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/uncategorized/模板/">模板整理</a></p>
+  <p><span>本文标题:</span><a href="/uncategorized/模板/">模板整理（未完成）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
   <p><span>发布时间:</span>2018年09月20日 - 12:09</p>
   <p><span>最后更新:</span>2018年09月22日 - 00:09</p>
-  <p><span>原始链接:</span><a href="/uncategorized/模板/" title="模板整理">https://friends-a.github.io/uncategorized/模板/</a>
+  <p><span>原始链接:</span><a href="/uncategorized/模板/" title="模板整理（未完成）">https://friends-a.github.io/uncategorized/模板/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://friends-a.github.io/uncategorized/模板/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
@@ -545,7 +545,7 @@
     <strong>本文作者： </strong>执念</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://friends-a.github.io/uncategorized/模板/" title="模板整理">https://friends-a.github.io/uncategorized/模板/</a>
+    <a href="https://friends-a.github.io/uncategorized/模板/" title="模板整理（未完成）">https://friends-a.github.io/uncategorized/模板/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>

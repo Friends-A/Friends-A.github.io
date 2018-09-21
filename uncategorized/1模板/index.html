@@ -29,9 +29,9 @@
 <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 <script>
     (function(){
-        if('Wangzy'){
-            if (prompt('请输入文章密码') !== 'Wangzy'){
-                alert('密码不对哦(*❦ω❦)');
+        if('Wangzy666'){
+            if (prompt('模板处于内测阶段，请输入邀请码(～￣▽￣)～ ') !== 'Wangzy666'){
+                alert('邀请码似乎不对哦(*❦ω❦)');
                 history.back();
             }
         }
@@ -146,12 +146,12 @@
 
 
 
-  <meta name="description" content="—-数论—-**素数素数筛法1.线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：">
+  <meta name="description" content="数论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="模板（未完成）">
 <meta property="og:url" content="https://friends-a.github.io/uncategorized/1模板/index.html">
 <meta property="og:site_name" content="执念">
-<meta property="og:description" content="—-数论—-**素数素数筛法1.线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：">
+<meta property="og:description" content="数论">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://img-blog.csdn.net/20160503212912754">
 <meta property="og:image" content="https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/s=231/sign=e19b382db04543a9f11bfdcf2f168a7b/a8ec8a13632762d0a5814266a7ec08fa503dc6a8.jpg">
@@ -161,10 +161,10 @@
 <meta property="og:image" content="http://latex.codecogs.com/gif.latex?O%28n%5E%7B%5Cfrac%7B2%7D%7B3%7D%7D%29">
 <meta property="og:image" content="http://latex.codecogs.com/gif.latex?O%28n%5E%7B%5Cfrac%7B3%7D%7B4%7D%7D%29">
 <meta property="og:image" content="https://img-blog.csdn.net/20170126225758146">
-<meta property="og:updated_time" content="2018-09-21T16:09:16.396Z">
+<meta property="og:updated_time" content="2018-09-21T16:14:24.697Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模板（未完成）">
-<meta name="twitter:description" content="—-数论—-**素数素数筛法1.线性筛选法——欧拉筛法欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。代码实现：">
+<meta name="twitter:description" content="数论">
 <meta name="twitter:image" content="https://img-blog.csdn.net/20160503212912754">
 
 
@@ -461,7 +461,8 @@
       
       
       
-        <h2 id="—-数论—"><a href="#—-数论—" class="headerlink" title="—-数论—-**"></a>—-数论—-**</h2><h2 id="素数"><a href="#素数" class="headerlink" title="素数"></a><strong>素数</strong></h2><h3 id="素数筛法"><a href="#素数筛法" class="headerlink" title="素数筛法"></a><strong>素数筛法</strong></h3><h4 id="1-线性筛选法——欧拉筛法"><a href="#1-线性筛选法——欧拉筛法" class="headerlink" title="1.线性筛选法——欧拉筛法"></a>1.线性筛选法——欧拉筛法</h4><p>欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。<br>代码实现：<br><a id="more"></a></p>
+        <h2 id="数论"><a href="#数论" class="headerlink" title="数论"></a><strong>数论</strong></h2><a id="more"></a>
+<h2 id="素数"><a href="#素数" class="headerlink" title="素数"></a><strong>素数</strong></h2><h3 id="素数筛法"><a href="#素数筛法" class="headerlink" title="素数筛法"></a><strong>素数筛法</strong></h3><h4 id="1-线性筛选法——欧拉筛法"><a href="#1-线性筛选法——欧拉筛法" class="headerlink" title="1.线性筛选法——欧拉筛法"></a>1.线性筛选法——欧拉筛法</h4><p>欧拉筛法通过红色标记部分保证每个合数只会被它的最小质因数筛去，时间复杂度降低到O(n)。<br>代码实现：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#define MAXN 100000</span><br><span class="line">#define MAXL 1000000</span><br><span class="line">int prime[MAXN];</span><br><span class="line">_Bool check[MAXL];</span><br><span class="line"> </span><br><span class="line">int main(void)</span><br><span class="line">&#123;</span><br><span class="line">    int n, count;</span><br><span class="line">    while (~scanf(&quot;%d&quot;, &amp;n))</span><br><span class="line">    &#123;</span><br><span class="line">        memset(check, 0, sizeof(check));</span><br><span class="line">        count = 0;</span><br><span class="line">        for (int i = 2; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (!check[i])</span><br><span class="line">                prime[count++] = i;</span><br><span class="line">            for (int j = 0; j &lt; count; j++)</span><br><span class="line">            &#123;</span><br><span class="line">                if (i*prime[j] &gt; MAXL)</span><br><span class="line">                    break; // 过大的时候跳出</span><br><span class="line">                check[i*prime[j]] = 1;</span><br><span class="line">                if ((i%prime[j]) == 0) // 如果i是一个合数，而且i % prime[j] == 0</span><br><span class="line">                    break; </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        for (int i = 0; i &lt; count; i++)</span><br><span class="line">            printf(&quot;%d\n&quot;, prime[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2-小应用：求n的阶乘的因子数，题目n的范围（1000）；"><a href="#2-小应用：求n的阶乘的因子数，题目n的范围（1000）；" class="headerlink" title="2.小应用：求n的阶乘的因子数，题目n的范围（1000）；"></a>2.小应用：求n的阶乘的因子数，题目n的范围（1000）；</h4><p>数论的原理，n的阶乘的因子个数等于n的素因子个数的幂的乘积；<br>代码实现：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">typedef long long LL;</span><br><span class="line">int k[1005]; </span><br><span class="line">const LL mod=1e9+7;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(int i=2;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        int l=i;</span><br><span class="line">        for(int j=2;j&lt;=l;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            while(l%j==0)</span><br><span class="line">            &#123;</span><br><span class="line">                k[j]++;</span><br><span class="line">                l/=j;</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">        if(l) k[l]++;</span><br><span class="line">    &#125;</span><br><span class="line">    LL sum=1;</span><br><span class="line">    for(int i=2;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if(k[i])</span><br><span class="line">        &#123;</span><br><span class="line">            sum*=(k[i]+1);</span><br><span class="line">            sum=sum%mod;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;                   </span><br><span class="line">    printf(&quot;%lld\n&quot;,sum%mod);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -584,8 +585,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/uncategorized/模板/" rel="next" title="模板整理">
-                <i class="fa fa-chevron-left"></i> 模板整理
+              <a href="/uncategorized/模板/" rel="next" title="模板整理（未完成）">
+                <i class="fa fa-chevron-left"></i> 模板整理（未完成）
               </a>
             
           </div>
@@ -771,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#—-数论—"><span class="nav-number">1.</span> <span class="nav-text">—-数论—-**</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#素数"><span class="nav-number">2.</span> <span class="nav-text">素数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#素数筛法"><span class="nav-number">2.1.</span> <span class="nav-text">素数筛法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-线性筛选法——欧拉筛法"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.线性筛选法——欧拉筛法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-小应用：求n的阶乘的因子数，题目n的范围（1000）；"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.小应用：求n的阶乘的因子数，题目n的范围（1000）；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查找出小于等于MAXN的素数（生成连续素数表）"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.查找出小于等于MAXN的素数（生成连续素数表）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-同时得到欧拉函数表和素数表（线性筛）"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.同时得到欧拉函数表和素数表（线性筛）</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论"><span class="nav-number">1.</span> <span class="nav-text">数论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#素数"><span class="nav-number">2.</span> <span class="nav-text">素数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#素数筛法"><span class="nav-number">2.1.</span> <span class="nav-text">素数筛法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-线性筛选法——欧拉筛法"><span class="nav-number">2.1.1.</span> <span class="nav-text">1.线性筛选法——欧拉筛法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-小应用：求n的阶乘的因子数，题目n的范围（1000）；"><span class="nav-number">2.1.2.</span> <span class="nav-text">2.小应用：求n的阶乘的因子数，题目n的范围（1000）；</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-查找出小于等于MAXN的素数（生成连续素数表）"><span class="nav-number">2.1.3.</span> <span class="nav-text">3.查找出小于等于MAXN的素数（生成连续素数表）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-同时得到欧拉函数表和素数表（线性筛）"><span class="nav-number">2.1.4.</span> <span class="nav-text">4.同时得到欧拉函数表和素数表（线性筛）</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
