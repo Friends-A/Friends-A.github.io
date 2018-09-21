@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+
+
+<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+</script>
+
+
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E93FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="执念">
+<meta property="og:url" content="https://friends-a.github.io/index.html">
+<meta property="og:site_name" content="执念">
+<meta property="og:locale" content="zh-CN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="执念">
+
+
+
+
+
+
+  <link rel="canonical" href="https://friends-a.github.io/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>执念</title>
+  
+
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0bf57fa7e4419fcbd5be3bf5eab34b44";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+    <a href="https://github.com/Friends-A"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">执念</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">风沙销寒骨，执念盼青州</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home menu-item-active">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">0</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">0</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">3</span></a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://friends-a.github.io/uncategorized/模板/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="执念">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="执念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/模板/" itemprop="url">
+                  模板整理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-20 12:29:38" itemprop="dateCreated datePublished" datetime="2018-09-20T12:29:38+08:00">2018-09-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-21 15:38:03" itemprop="dateModified" datetime="2018-09-21T15:38:03+08:00">2018-09-21</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+      
+        
+          
+            <h1 id="DP"><a href="#DP" class="headerlink" title="DP"></a><strong>DP</strong></h1><h2 id="01背包（每种物品只有一个）"><a href="#01背包（每种物品只有一个）" class="headerlink" title="01背包（每种物品只有一个）"></a><strong>01背包（每种物品只有一个）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">//n 物品数量，v 背包容量 </span><br><span class="line">//size 单个物品体积，value 单个物品价值</span><br><span class="line">void bag01()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	for(int j=v;j&gt;=size[i];j--)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="完全背包（每种物品有无穷多）"><a href="#完全背包（每种物品有无穷多）" class="headerlink" title="完全背包（每种物品有无穷多）"></a><strong>完全背包（每种物品有无穷多）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">void complete()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	for(int j=size[i];j&lt;=v;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		dp[j]=max(dp[j],dp[j-size[i]]+value[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="多重背包（每种物品数量有限）"><a href="#多重背包（每种物品数量有限）" class="headerlink" title="多重背包（每种物品数量有限）"></a><strong>多重背包（每种物品数量有限）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//n 物品数量，v 背包容量 </span><br><span class="line">//size 单个物品体积，value 单个物品价值，num 该物品的数量 </span><br><span class="line">void multiply()</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=0;i&lt;n;i++)  </span><br><span class="line">    &#123;  </span><br><span class="line">        int d1=1,d2=num[i];  </span><br><span class="line">        while(d1&lt;d2)  </span><br><span class="line">        &#123;  </span><br><span class="line">            for(int j=v;j&gt;=d1*size[i];j--)  </span><br><span class="line">            &#123;  </span><br><span class="line">                dp[j]=max(dp[j],dp[j-d1*size[i]]+value[i]*d1);  </span><br><span class="line">            &#125;  </span><br><span class="line">            d2-=d1;  </span><br><span class="line">            d1*=2;  </span><br><span class="line">        &#125;  </span><br><span class="line">        for(int j=v;j&gt;=d2*size[i];j--) dp[j]=max(dp[j],dp[j-d2*size[i]]+value[i]*d2);  </span><br><span class="line">    &#125; </span><br><span class="line">    cout&lt;&lt;dp[v]&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="LIS（最长上升子序列）"><a href="#LIS（最长上升子序列）" class="headerlink" title="LIS（最长上升子序列）"></a><strong>LIS（最长上升子序列）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//这个是计算连续的上升序列  如：1，2，3,4这种</span><br><span class="line">void lis(int n)//n是数组元素的个数</span><br><span class="line">&#123;</span><br><span class="line">	for(int i=1;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		b[a[i]]=b[a[i]-1]+1;</span><br><span class="line">		ans=std::max(ans,b[a[i]]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">//这个计算的是递增的（不需要连续递增）如：1,3,5,7这种</span><br><span class="line">int a[maxn];</span><br><span class="line">int dp[maxn];</span><br><span class="line">int n;</span><br><span class="line">void longest()</span><br><span class="line">&#123;</span><br><span class="line">	dp[0]=a[0];</span><br><span class="line">	int pos;</span><br><span class="line">	int L=1;</span><br><span class="line">	for(int i=0;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		pos=lower_bound(dp,dp+L,a[i])-dp;</span><br><span class="line">		dp[pos]=a[i];</span><br><span class="line">		L=max(L,pos+1);</span><br><span class="line">	&#125;</span><br><span class="line">	cout&lt;&lt;L&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="LCS（最长公共子序列）"><a href="#LCS（最长公共子序列）" class="headerlink" title="LCS（最长公共子序列）"></a><strong>LCS（最长公共子序列）</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">//状态转移方程：</span><br><span class="line">// if( s[i]==t[j] ) </span><br><span class="line">//     dp[i+1][j+1] = dp[i][j] + 1; </span><br><span class="line">// else </span><br><span class="line">//     dp[i+1][j+1] = max(dp[i+1][j], dp[i][j+1]); </span><br><span class="line">int dp[maxn][maxn];</span><br><span class="line">char a[maxn],b[maxn];</span><br><span class="line">int vis[maxn][maxn];//只求长度的时候可以去掉</span><br><span class="line">// 如果要输出公共子序列，把int改成void，并把return去掉</span><br><span class="line">int LCS()</span><br><span class="line">&#123;</span><br><span class="line">	int len1,len2,i,j;</span><br><span class="line">	len1=strlen(a);</span><br><span class="line">	len2=strlen(b);</span><br><span class="line">	memset(dp,0,sizeof(dp));</span><br><span class="line">	for(i=1;i&lt;=len1;i++)</span><br><span class="line">		for(j=1;j&lt;=len2;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			if(a[i-1]==b[j-1])</span><br><span class="line">				dp[i][j]=dp[i-1][j-1]+1;</span><br><span class="line">			else if(dp[i-1][j]&gt;=dp[i][j-1])</span><br><span class="line">			&#123;</span><br><span class="line">				dp[i][j]=dp[i-1][j];</span><br><span class="line">				vis[i][j]=1;</span><br><span class="line">			&#125;</span><br><span class="line">			else </span><br><span class="line">			&#123;</span><br><span class="line">				dp[i][j]=dp[i][j-1];</span><br><span class="line">				vis[i][j]=-1;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	return dp[len1][len2];</span><br><span class="line">&#125;</span><br><span class="line">// 这个函数可以将LCS打印出来</span><br><span class="line">void Print(int i, int j)//i，j分别代表a，b字符串的长度</span><br><span class="line">&#123;</span><br><span class="line">	if(i==0||j==0)</span><br><span class="line">		return;</span><br><span class="line">	if(!vis[i][j])//如果a[i]和b[j]子母相同，输出</span><br><span class="line">	&#123;</span><br><span class="line">		Print(i-1,j-1);</span><br><span class="line">		printf(&quot;%c&quot;,a[i-1]);</span><br><span class="line">	&#125;</span><br><span class="line">	else if(vis[i][j]==1)//如果dp[i-1][j]&gt;dp[i][j-1]</span><br><span class="line">		Print(i-1,j);</span><br><span class="line">	else//如果dp[i][j-1]&gt;=dp[i-1][j]</span><br><span class="line">		Print(i,j-1);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数论"><a href="#数论" class="headerlink" title="数论"></a><strong>数论</strong></h1><h2 id="GCD"><a href="#GCD" class="headerlink" title="GCD"></a><strong>GCD</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int gcd(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">	return b==0?a:gcd(b,a%b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="LCM"><a href="#LCM" class="headerlink" title="LCM"></a><strong>LCM</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">int lcm(int a,int b)</span><br><span class="line">&#123;</span><br><span class="line">	return a/gcd(a,b)*b;//如果先运算a*b，很可能超数据范围</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="快速幂"><a href="#快速幂" class="headerlink" title="快速幂"></a><strong>快速幂</strong></h2><p><em>时间复杂度O(log(n))</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">int Pow(int a,int b,int c)</span><br><span class="line">&#123;</span><br><span class="line">	int res=1;</span><br><span class="line">	while(b&gt;0)</span><br><span class="line">	&#123;</span><br><span class="line">		if(b&amp;1) res=res*a%c;</span><br><span class="line">		a=a*a%c;</span><br><span class="line">		b&gt;&gt;=1;</span><br><span class="line">	&#125;</span><br><span class="line">	return res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="中国剩余定理（CRT）"><a href="#中国剩余定理（CRT）" class="headerlink" title="中国剩余定理（CRT）"></a><strong>中国剩余定理（CRT）</strong></h2><p><em>求M%A=a,M%B=b,…中的M，其中A,B,C…互质</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//chu是除数，yu是余数</span><br><span class="line">//注意只适用于除数两两互质</span><br><span class="line">#define ll long long</span><br><span class="line">int ex_gcd(ll a, ll b, ll &amp;x, ll &amp;y) </span><br><span class="line">&#123;</span><br><span class="line">    ll d;</span><br><span class="line">    if(b == 0) </span><br><span class="line">	&#123;</span><br><span class="line">		x = 1; </span><br><span class="line">		y = 0;</span><br><span class="line">		 return a;</span><br><span class="line">	&#125;</span><br><span class="line">    d = ex_gcd(b, a % b, y, x);</span><br><span class="line">    y -= a / b * x;</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br><span class="line">ll chinese_remainder(ll b[], ll w[], ll len) </span><br><span class="line">&#123; </span><br><span class="line">    ll i, d, x, y, m, n, ret;</span><br><span class="line">    ret = 0; n = 1; </span><br><span class="line">    for(i=0; i &lt; len ;i++) </span><br><span class="line">    	n *= w[i];</span><br><span class="line">    for(i=0; i &lt; len ;i++) </span><br><span class="line">    &#123; </span><br><span class="line">        m = n / w[i];</span><br><span class="line">        d=ex_gcd(w[i], m, x, y);</span><br><span class="line">        ret = (ret + y*m*b[i]) % n;</span><br><span class="line">    &#125;</span><br><span class="line">    return (n + ret%n) % n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="中国剩余定理扩展"><a href="#中国剩余定理扩展" class="headerlink" title="中国剩余定理扩展"></a><strong>中国剩余定理扩展</strong></h2><p><em>求M%A=a,M%B=b,…中的M，其中A,B,C…不互质</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">ll a[maxn],b[maxn];//a是除数，b是余数</span><br><span class="line">ll ex_gcd(ll a,ll b,ll &amp;x,ll &amp;y) </span><br><span class="line">&#123;</span><br><span class="line">    ll d;</span><br><span class="line">    if(b==0) </span><br><span class="line">	&#123;</span><br><span class="line">		x=1; </span><br><span class="line">		y=0;</span><br><span class="line">		 return a;</span><br><span class="line">	&#125;</span><br><span class="line">    d=ex_gcd(b,a%b,y,x);</span><br><span class="line">    y-=a/b*x;</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br><span class="line">ll ex_crt(ll *a, ll *b, int n)</span><br><span class="line">&#123;</span><br><span class="line">    ll M=a[1],R=b[1],x,y;</span><br><span class="line">    for (int i=2;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        ll d=ex_gcd(M,a[i],x,y);</span><br><span class="line">        if((b[i]-R)%d) </span><br><span class="line">        	return -1;</span><br><span class="line">        x=(b[i]-R)/d*x%(a[i]/d);</span><br><span class="line">        R+=x*M;</span><br><span class="line">        M=M/d*a[i];</span><br><span class="line">        R%=M;</span><br><span class="line">    &#125;</span><br><span class="line">    return R&gt;0?R:R+M;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="EX-GCD"><a href="#EX-GCD" class="headerlink" title="EX_GCD"></a><strong>EX_GCD</strong></h2><p><em>一般用来求解不定方程，求解线性同余方程，求解模的逆元等</em><br><em>引理：存在 x , y 使得 gcd(a,b)=ax+by</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">int exgcd(int a,int b,int &amp;x,int &amp;y)</span><br><span class="line">&#123;</span><br><span class="line">	// 无最大公约数</span><br><span class="line">	if(a==0&amp;&amp;b==0)</span><br><span class="line">		return -1;</span><br><span class="line">	if(b==0)</span><br><span class="line">	&#123;</span><br><span class="line">		x=1;y=0;</span><br><span class="line">		return a;</span><br><span class="line">	&#125;</span><br><span class="line">	int d=exgcd(a,a%b,y,x);</span><br><span class="line">	y-=a/b*x;</span><br><span class="line">	return d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="求逆元"><a href="#求逆元" class="headerlink" title="求逆元"></a><strong>求逆元</strong></h2><h3 id="EX-GCD求逆元"><a href="#EX-GCD求逆元" class="headerlink" title="EX_GCD求逆元"></a><em>EX_GCD求逆元</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// ax = 1(mod m)</span><br><span class="line">int mod_reverse(int a,int m)</span><br><span class="line">&#123;</span><br><span class="line">	int x,y;</span><br><span class="line">	int d=exgcd(a,m,x,y);</span><br><span class="line">	if(d==1)</span><br><span class="line">		return (x%m+m)%m;</span><br><span class="line">	else</span><br><span class="line">		return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="简洁写法"><a href="#简洁写法" class="headerlink" title="简洁写法"></a><em>简洁写法</em></h3><p><em>注意：这个只能求a&lt;m的情况，而且必须保证a和m互质</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//求 ax = 1( mod m) 的 x 值，就是逆元 (0&lt;a&lt;m)</span><br><span class="line">int inv(int a,int m)</span><br><span class="line">&#123;</span><br><span class="line">	if(a==1)</span><br><span class="line">		return 1;</span><br><span class="line">	return inv(m%a,m)*(m-m/a)%m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="快速幂求逆元"><a href="#快速幂求逆元" class="headerlink" title="快速幂求逆元"></a><em>快速幂求逆元</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// a和m互质，m为素数</span><br><span class="line">int inv(int a,int m)</span><br><span class="line">&#123;</span><br><span class="line">	return Pow(a,m-2,m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="二分乘法（快速乘）"><a href="#二分乘法（快速乘）" class="headerlink" title="二分乘法（快速乘）"></a><strong>二分乘法（快速乘）</strong></h2><p><em>用来解决乘法的结果远超int范围，但需要的结果有取余的乘法运算</em><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">ll qmul(ll a,ll b,ll m)</span><br><span class="line">&#123;</span><br><span class="line">    ll ans=0;</span><br><span class="line">    ll k=a;</span><br><span class="line">    ll f=1;//f是用来存负号的</span><br><span class="line">    if(k&lt;0)</span><br><span class="line">    	&#123;f=-1;k=-k;&#125;</span><br><span class="line">    if(b&lt;0)</span><br><span class="line">    	&#123;f*=-1;b=-b;&#125;</span><br><span class="line">    while(b)&#123;</span><br><span class="line">        if(b&amp;1)</span><br><span class="line">            ans=(ans+k)%m;</span><br><span class="line">        k=(k+k)%m;</span><br><span class="line">        b&gt;&gt;=1;</span><br><span class="line">    &#125;</span><br><span class="line">    return ans*f;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a><strong>欧拉函数</strong></h2><p><em>对于正整数N,少于或等于N ([1,N]),且与N互质的正整数(包括1)的个数，记作φ(n)。</em><br><em>欧拉函数公式：φ(N)=N</em>(1-1/P1)<em>(1-1/P2)</em>…<em>(1-1/Pn)</em></p>
+<h3 id="直接求"><a href="#直接求" class="headerlink" title="直接求"></a><em>直接求</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int Eular(int n)</span><br><span class="line">&#123;</span><br><span class="line">	int eu = n;</span><br><span class="line">	for (int i = 2 ; i * i &lt;= n ; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if (n % i == 0)</span><br><span class="line">		&#123;</span><br><span class="line">			eu -= eu / i;</span><br><span class="line">			while (n % i == 0)</span><br><span class="line">				n /= i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if (n &gt; 1)		//n本身也是个质因子</span><br><span class="line">		eu -= eu / n;</span><br><span class="line">	return eu; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="打表求"><a href="#打表求" class="headerlink" title="打表求"></a><em>打表求</em></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">void Eular()</span><br><span class="line">&#123;</span><br><span class="line">	euler[1]=1;</span><br><span class="line">	for(int i=2;i&lt;maxn;i++)</span><br><span class="line">		euler[i]=i;</span><br><span class="line">	for(int i=2;i&lt;maxn;i++)</span><br><span class="line">		if(euler[i]==i)</span><br><span class="line">			for(int j=i;j&lt;maxn;j+=i)</span><br><span class="line">				euler[j]=euler[j]/i*(i-1);//先进行除法是为了防止中间数据的溢出</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="唯一分解定理"><a href="#唯一分解定理" class="headerlink" title="唯一分解定理"></a><strong>唯一分解定理</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">// pri记录质因子，k记录质因子个数</span><br><span class="line">int pri[maxn],k;</span><br><span class="line">void resolve(int n)</span><br><span class="line">&#123;</span><br><span class="line">	k=0;</span><br><span class="line">	int N=n;</span><br><span class="line">	for(int i=2;i*i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		if(N%i==0)</span><br><span class="line">		&#123;</span><br><span class="line">			pri[k++]=i;</span><br><span class="line">			while(N%i==0)</span><br><span class="line">				N/=i;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	if(N&gt;1)</span><br><span class="line">		num[k++]=N;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+    <div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://friends-a.github.io/uncategorized/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="执念">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="执念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/hello-world/" itemprop="url">
+                  Hello World
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-13 19:39:23" itemprop="dateCreated datePublished" datetime="2018-09-13T19:39:23+08:00">2018-09-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-09-10 12:35:03" itemprop="dateModified" datetime="2018-09-10T12:35:03+08:00">2018-09-10</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+    <div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://friends-a.github.io/uncategorized/AA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="执念">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="执念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/uncategorized/AA/" itemprop="url">
+                  博客
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-09-10 13:03:03 / 修改时间：17:53:38" itemprop="dateCreated datePublished" datetime="2018-09-10T13:03:03+08:00">2018-09-10</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+    <div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.png"
+                alt="执念" />
+            
+              <p class="site-author-name" itemprop="name">执念</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/Friends-A" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">执念</span>
+
+  
+
+  
+</div>
+
+
+
+<!-- 
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
+ -->
+
+<!-- 
+  <span class="post-meta-divider">|</span>
+
+ -->
+<!-- 
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.1</div>
+ -->
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共1.7k字</span>
+</div>
+
+  <span class="post-meta-divider">|</span>
+
+
+
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="true"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="true"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+  
+  <!--  -->
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
