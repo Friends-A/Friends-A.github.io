@@ -167,7 +167,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <meta property="og:site_name" content="执念">
 <meta property="og:description" content="DP01背包（每种物品只有一个）1234567891011//n 物品数量，v 背包容量 //size 单个物品体积，value 单个物品价值void bag01()&amp;#123;    for(int i=0;i&amp;lt;n;i++)    for(int j=v;j&amp;gt;=size[i];j--)    &amp;#123;        dp[j]=max(dp[j],dp[j-size[i]]+va">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-27T11:56:08.098Z">
+<meta property="og:updated_time" content="2018-11-04T08:23:57.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模板整理（未完成）">
 <meta name="twitter:description" content="DP01背包（每种物品只有一个）1234567891011//n 物品数量，v 背包容量 //size 单个物品体积，value 单个物品价值void bag01()&amp;#123;    for(int i=0;i&amp;lt;n;i++)    for(int j=v;j&amp;gt;=size[i];j--)    &amp;#123;        dp[j]=max(dp[j],dp[j-size[i]]+va">
@@ -512,7 +512,7 @@ n=\prod ^{k}_{i=1}p^{a_{i}}_{i}</script><p>则n的正约数个数为：</p>
 <script type="math/tex; mode=display">
 f\left( n\right) =\prod ^{k}_{i=1}\left( a_{i}+1\right)</script><p>如：将278000分解质因数</p>
 <script type="math/tex; mode=display">
-378000=2^{4}\times 3^{3}\times 5^{3}\times 7^{1}</script><p>可以计算出378000的正约数共有</p>
+278000=2^{4}\times 3^{3}\times 5^{3}\times 7^{1}</script><p>可以计算出378000的正约数共有</p>
 <script type="math/tex; mode=display">
 \left( 4+1\right) \times \left( 3+1\right) \times \left( 1+1\right)=160个</script><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">int prime[maxn],nprime;    </span><br><span class="line">int vis[maxn];    </span><br><span class="line">void getprime()&#123;  </span><br><span class="line">    nprime = 0;  </span><br><span class="line">    memset(vis,0,sizeof(vis));  </span><br><span class="line">    for(int i = 2; i &lt;= 450; i++)&#123;  </span><br><span class="line">        int t = 450/i;  </span><br><span class="line">        for(int j = 2; j &lt;=t; j++)  </span><br><span class="line">            vis[i*j] = 1;  </span><br><span class="line">    &#125;  </span><br><span class="line">    for(int i = 2; i &lt;= 450; i++)&#123;  </span><br><span class="line">        if(!vis[i])  </span><br><span class="line">            prime[nprime++] = i;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">int factor_count(int n)&#123;    </span><br><span class="line">    int ans = 1,sum;    </span><br><span class="line">    int k = sqrt(n*1.0);    </span><br><span class="line">    for(int i = 0; prime[i] &lt; k; i++)&#123;    </span><br><span class="line">        if(n % prime[i] == 0)&#123;    </span><br><span class="line">            sum = 0;    </span><br><span class="line">            while(n % prime[i] == 0)&#123;    </span><br><span class="line">                sum++;    </span><br><span class="line">                n /= prime[i];    </span><br><span class="line">            &#125;    </span><br><span class="line">            ans *= (a+1);   //ans为n的约数的个数 </span><br><span class="line">        &#125;    </span><br><span class="line">    &#125;    </span><br><span class="line">    if(n &gt; 1)    </span><br><span class="line">        ans *= 2;    </span><br><span class="line">    return ans;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="约数和定理"><a href="#约数和定理" class="headerlink" title="约数和定理"></a><em>约数和定理</em></h3><p>正整数n的所有正约数的和为</p>
@@ -592,7 +592,7 @@ h\left( n\right) =C^{n}_{2n}-C^{n-1}_{2n} n=\left( 1,2,3\ldots \right)</script><
   <p><span>本文标题:</span><a href="/uncategorized/模板1/">模板整理（未完成）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
   <p><span>发布时间:</span>2018年09月20日 - 12:09</p>
-  <p><span>最后更新:</span>2018年09月27日 - 19:09</p>
+  <p><span>最后更新:</span>2018年11月04日 - 16:11</p>
   <p><span>原始链接:</span><a href="/uncategorized/模板1/" title="模板整理（未完成）">https://friends-a.github.io/uncategorized/模板1/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://friends-a.github.io/uncategorized/模板1/"  aria-label="复制成功！"></i></span>
   </p>
