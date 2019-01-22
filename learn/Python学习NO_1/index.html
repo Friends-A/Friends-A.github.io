@@ -167,7 +167,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <meta property="og:site_name" content="执念">
 <meta property="og:description" content="第一章——Python基础    操作符 操作 例子 求值为     ** 指数 $2**3$ $8$   % 取模 $22\%8$ $6$   // 整除 $22//8$ $2$   / 除法 $22/8$ $2.75$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-22T13:23:53.592Z">
+<meta property="og:updated_time" content="2019-01-22T13:58:58.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习第一天">
 <meta name="twitter:description" content="第一章——Python基础    操作符 操作 例子 求值为     ** 指数 $2**3$ $8$   % 取模 $22\%8$ $6$   // 整除 $22//8$ $2$   / 除法 $22/8$ $2.75$">
@@ -555,6 +555,26 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">4</span>,<span class="number">2</span>):</span><br><span class="line">    print(i)</span><br></pre></td></tr></table></figure>
 <p>输出结果为：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
+<h2 id="导入模块"><a href="#导入模块" class="headerlink" title="导入模块"></a>导入模块</h2><p>用<code>import</code>来导入模块</p>
+<p>用<code>import+模块名称</code>，在引用函数的时候需要加前缀：<code>模块名称.</code></p>
+<p>用<code>from+模块名称+import*</code>，引用的时候不需要加前缀，只需要写函数名即可</p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># import random</span></span><br><span class="line"><span class="comment"># for i in range(5):</span></span><br><span class="line"><span class="comment">#     print(random.randint(1,10))</span></span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span>*</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">	print(randint(<span class="number">1</span>,<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+<p>注释内和注释外的代码均表示生成五个$[1,10]$间的随机数</p>
+<h2 id="用sys-exit-提前结束程序"><a href="#用sys-exit-提前结束程序" class="headerlink" title="用sys.exit()提前结束程序"></a>用sys.exit()提前结束程序</h2><p><code>exit</code>是sys模块里的函数，用来让程序终止或退出</p>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">	print(<span class="string">'Type exit to exit.'</span>)</span><br><span class="line">	response=input()</span><br><span class="line">	<span class="keyword">if</span> response==<span class="string">'exit'</span>:</span><br><span class="line">		sys.exit()</span><br><span class="line">	print(<span class="string">'You tryed '</span>+response+<span class="string">'.'</span>)</span><br></pre></td></tr></table></figure>
+<p>当输入<code>exit</code>的时候程序停止，否则将一直循环下去</p>
+<p><strong>与OJ刷题相关</strong></p>
+<p>判断文件结束符<code>EOF</code></p>
+<ol>
+<li><p>对于只输入一个字符串或数字，可以用<code>sys.stdin</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys </span><br><span class="line"><span class="keyword">for</span> line <span class="keyword">in</span> sys.stdin: </span><br><span class="line">    a=int(line) </span><br><span class="line">    <span class="keyword">if</span> a!=<span class="number">0</span>: </span><br><span class="line">        print(a)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于需要输入多个，可以用<code>try...except</code>：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">while</span> <span class="keyword">True</span>:</span><br><span class="line">        s = input()</span><br><span class="line">        print(s)</span><br><span class="line"><span class="keyword">except</span> EOFError:</span><br><span class="line"><span class="comment"># 或者excepr:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
       
     </div>
@@ -847,7 +867,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章——Python基础"><span class="nav-number">1.</span> <span class="nav-text">第一章——Python基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章——控制流"><span class="nav-number">2.</span> <span class="nav-text">第二章——控制流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环和range-函数"><span class="nav-number">2.1.</span> <span class="nav-text">for循环和range()函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章——Python基础"><span class="nav-number">1.</span> <span class="nav-text">第一章——Python基础</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章——控制流"><span class="nav-number">2.</span> <span class="nav-text">第二章——控制流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#for循环和range-函数"><span class="nav-number">2.1.</span> <span class="nav-text">for循环和range()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#导入模块"><span class="nav-number">2.2.</span> <span class="nav-text">导入模块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用sys-exit-提前结束程序"><span class="nav-number">2.3.</span> <span class="nav-text">用sys.exit()提前结束程序</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -897,7 +917,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共24.2k字</span>
+  <span class="post-count">博客全站共24.5k字</span>
 </div>
 <!-- 
   <span class="post-meta-divider">|</span>
