@@ -168,7 +168,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <meta property="og:site_name" content="执念">
 <meta property="og:description" content="NumPy函数库基础from numpy import*导入numpy模块 random.rand()用来生成一个随机数组">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-23T06:58:45.826Z">
+<meta property="og:updated_time" content="2019-01-23T07:28:24.091Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习第一天">
 <meta name="twitter:description" content="NumPy函数库基础from numpy import*导入numpy模块 random.rand()用来生成一个随机数组">
@@ -510,7 +510,10 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <p><code>eye(4)</code>用来创建$4\times 4$的单位矩阵，可以用来检测误差值</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>eye(<span class="number">4</span>)</span><br><span class="line">array([[<span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>, <span class="number">0.</span>],</span><br><span class="line">       [<span class="number">0.</span>, <span class="number">0.</span>, <span class="number">0.</span>, <span class="number">1.</span>]])</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>deviation=randmat*invmat</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>deviation-eye(<span class="number">4</span>)</span><br><span class="line">matrix([[ <span class="number">0.00000000e+00</span>,  <span class="number">0.00000000e+00</span>,  <span class="number">5.55111512e-17</span>,</span><br><span class="line">          <span class="number">2.77555756e-17</span>],</span><br><span class="line">        [ <span class="number">1.11022302e-16</span>, <span class="number">-2.22044605e-16</span>,  <span class="number">0.00000000e+00</span>,</span><br><span class="line">          <span class="number">8.32667268e-17</span>],</span><br><span class="line">        [<span class="number">-2.77555756e-16</span>, <span class="number">-5.55111512e-17</span>,  <span class="number">0.00000000e+00</span>,</span><br><span class="line">          <span class="number">9.02056208e-17</span>],</span><br><span class="line">        [<span class="number">-1.66533454e-16</span>,  <span class="number">2.22044605e-16</span>,  <span class="number">4.44089210e-16</span>,</span><br><span class="line">          <span class="number">0.00000000e+00</span>]])</span><br></pre></td></tr></table></figure>
-<h1 id="K-近邻算法"><a href="#K-近邻算法" class="headerlink" title="K-近邻算法"></a>K-近邻算法</h1>
+<h1 id="K-近邻算法"><a href="#K-近邻算法" class="headerlink" title="K-近邻算法"></a>K-近邻算法</h1><p>优点：精度高、对异常值不敏感、无数据输入假定</p>
+<p>缺点：计算复杂度高、空间复杂度高</p>
+<p>适用数据范围：数值型和标称型</p>
+
       
     </div>
 
@@ -536,7 +539,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   <p><span>本文标题:</span><a href="/learn/机器学习NO_1/">机器学习第一天</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
   <p><span>发布时间:</span>2019年01月23日 - 14:01</p>
-  <p><span>最后更新:</span>2019年01月23日 - 14:01</p>
+  <p><span>最后更新:</span>2019年01月23日 - 15:01</p>
   <p><span>原始链接:</span><a href="/learn/机器学习NO_1/" title="机器学习第一天">https://friends-a.github.io/learn/机器学习NO_1/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://friends-a.github.io/learn/机器学习NO_1/"  aria-label="复制成功！"></i></span>
   </p>
