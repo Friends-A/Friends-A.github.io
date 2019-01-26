@@ -311,7 +311,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">7</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">8</span></a>
   </li>
         
         
@@ -385,6 +385,175 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://friends-a.github.io/learn/Python学习NO_3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="执念">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="执念">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/learn/Python学习NO_3/" itemprop="url">
+                  Python学习第三天
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-01-25 17:10:42" itemprop="dateCreated datePublished" datetime="2019-01-25T17:10:42+08:00">2019-01-25</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/learn/" itemprop="url" rel="index"><span itemprop="name">learn</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+      
+        
+          
+            <h1 id="第五章——字典和结构化数据"><a href="#第五章——字典和结构化数据" class="headerlink" title="第五章——字典和结构化数据"></a>第五章——字典和结构化数据</h1><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><ul>
+<li><p>字典的索引被称为<code>键</code>，键及其关联的值称为<code>键-值</code>。字典输入的时候要带花括号<code>{}</code>，在使用的时候和列表一样使用中括号<code>[]</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>myCat=&#123;<span class="string">'size'</span>:<span class="string">'fat'</span>,<span class="string">'color'</span>:<span class="string">'gray'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>myCat[<span class="string">'size'</span>]</span><br><span class="line"><span class="string">'fat'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断两个列表相同，要看两个列表中的对应位置的元素是否相同；判断两个字典是否相同，只需看两个字典的<code>键-值</code>是否相同即可</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>List=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>List1=[<span class="string">'b'</span>,<span class="string">'a'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>List==List1</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic1=&#123;<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic==dic1</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果访问字典中不存在的键，则会导致<code>KeyError</code></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+    <div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -1623,7 +1792,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">7</span>
+                    <span class="site-state-item-count">8</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1683,7 +1852,17 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 </span>
               
                 <span class="links-of-author-item">
-                  <a href="http://wpa.qq.com/msgrd?v=3&uin=2697097900&site=qq&menu=yes" target="_blank" title="QQ(｡◕ˇ∀ˇ◕)"><i class="fa fa-fw fa-QQ"></i>QQ(｡◕ˇ∀ˇ◕)</a>
+                  <a href="http://wpa.qq.com/msgrd?v=3&uin=2697097900&site=qq&menu=yes" target="_blank" title="QQ"><i class="fa fa-fw fa-qq"></i>QQ</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/wang-zhong-yu-79-58/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-globe"></i>知乎</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://blog.csdn.net/wang_123_zy" target="_blank" title="CSDN"><i class="fa fa-fw fa-creative-commons"></i>CSDN</a>
                   
                 </span>
               
@@ -1714,11 +1893,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
               <ul class="links-of-blogroll-list">
                 
                   <li class="links-of-blogroll-item">
-                    <a href="https://blog.csdn.net/wang_123_zy" title="---------我的CSDN博客---------" target="_blank">---------我的CSDN博客---------</a>
-                  </li>
-                
-                  <li class="links-of-blogroll-item">
-                    <a href="https://blog.todest.cn/" title="航巨" target="_blank">航巨</a>
+                    <a href="https://blog.todest.cn/" title="todest" target="_blank">todest</a>
                   </li>
                 
                   <li class="links-of-blogroll-item">
@@ -1731,6 +1906,26 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
                   <li class="links-of-blogroll-item">
                     <a href="https://blog.csdn.net/l18339702017" title="源神" target="_blank">源神</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.laugh12321.cn/" title="Laugh" target="_blank">Laugh</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hpumengzhao.github.io/" title="Codancer" target="_blank">Codancer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dicer-zz.github.io/" title="Dicer" target="_blank">Dicer</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hongjay233.github.io/" title="HongJay" target="_blank">HongJay</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://dreamatom.top/" title="JQM" target="_blank">JQM</a>
                   </li>
                 
               </ul>
@@ -1789,7 +1984,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共26.4k字</span>
+  <span class="post-count">博客全站共26.6k字</span>
 </div>
 <!-- 
   <span class="post-meta-divider">|</span>
@@ -2301,6 +2496,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
     
       
         
+      
+    
       
     
       
