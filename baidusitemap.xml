@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://blog.wzy1999.wang/slove/codevs1010/</loc>
+    <loc>https://blog.wzy1999.wang/solve/codevs1148/</loc>
     <lastmod>2019-02-03</lastmod>
   </url>  <url>
-    <loc>https://blog.wzy1999.wang/slove/POJ3126/</loc>
-    <lastmod>2019-02-02</lastmod>
+    <loc>https://blog.wzy1999.wang/solve/POJ3126/</loc>
+    <lastmod>2019-02-03</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/codevs1010/</loc>
+    <lastmod>2019-02-03</lastmod>
   </url>  <url>
     <loc>https://blog.wzy1999.wang/learn/Python%E5%AD%A6%E4%B9%A0NO_4/</loc>
     <lastmod>2019-01-27</lastmod>
