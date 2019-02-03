@@ -153,25 +153,27 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 
 
-  <meta name="description" content="第三章——函数 None表示没有值，是NoneType数据类型的唯一值。print的返回值就是None  print()函数有可选的变元end和sep，分别指定在参数末尾打印什么，在参数之间打印什么来隔开它们">
-<meta name="keywords" content="py_learn">
+  <meta name="description" content="题目链接 ​    如图，A 点有一个过河卒，需要走到目标 B 点。卒行走规则：可以向下、或者向右。同时在棋盘上的任一点有一个对方的马（如上图的C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点。例如上图 C 点上的马可以控制 9 个点（图中的P1，P2 … P8 和 C）。卒不能通过对方马的控制点。">
+<meta name="keywords" content="search,DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习第二天">
-<meta property="og:url" content="https://blog.wzy1999.wang/learn/Python学习NO_2/index.html">
+<meta property="og:title" content="codevs1010——过河卒（DP||DFS）">
+<meta property="og:url" content="https://blog.wzy1999.wang/slove/codevs1010/index.html">
 <meta property="og:site_name" content="执念">
-<meta property="og:description" content="第三章——函数 None表示没有值，是NoneType数据类型的唯一值。print的返回值就是None  print()函数有可选的变元end和sep，分别指定在参数末尾打印什么，在参数之间打印什么来隔开它们">
+<meta property="og:description" content="题目链接 ​    如图，A 点有一个过河卒，需要走到目标 B 点。卒行走规则：可以向下、或者向右。同时在棋盘上的任一点有一个对方的马（如上图的C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点。例如上图 C 点上的马可以控制 9 个点（图中的P1，P2 … P8 和 C）。卒不能通过对方马的控制点。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-23T14:08:38.054Z">
+<meta property="og:image" content="http://codevs.cn/media/image/problem/1010.png">
+<meta property="og:updated_time" content="2019-02-03T07:08:35.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python学习第二天">
-<meta name="twitter:description" content="第三章——函数 None表示没有值，是NoneType数据类型的唯一值。print的返回值就是None  print()函数有可选的变元end和sep，分别指定在参数末尾打印什么，在参数之间打印什么来隔开它们">
+<meta name="twitter:title" content="codevs1010——过河卒（DP||DFS）">
+<meta name="twitter:description" content="题目链接 ​    如图，A 点有一个过河卒，需要走到目标 B 点。卒行走规则：可以向下、或者向右。同时在棋盘上的任一点有一个对方的马（如上图的C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点。例如上图 C 点上的马可以控制 9 个点（图中的P1，P2 … P8 和 C）。卒不能通过对方马的控制点。">
+<meta name="twitter:image" content="http://codevs.cn/media/image/problem/1010.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.wzy1999.wang/learn/Python学习NO_2/"/>
+  <link rel="canonical" href="https://blog.wzy1999.wang/slove/codevs1010/"/>
 
 
 
@@ -181,7 +183,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   };
 </script>
 
-  <title>Python学习第二天 | 执念</title>
+  <title>codevs1010——过河卒（DP||DFS） | 执念</title>
   
 
 
@@ -405,7 +407,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/learn/Python学习NO_2/">
+    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/slove/codevs1010/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="执念">
@@ -422,7 +424,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python学习第二天
+          <h1 class="post-title" itemprop="name headline">codevs1010——过河卒（DP||DFS）
               
             
           </h1>
@@ -447,7 +449,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
               
 
-              <time title="创建时间：2019-01-23 14:28:06" itemprop="dateCreated datePublished" datetime="2019-01-23T14:28:06+08:00">2019-01-23</time>
+              <time title="创建时间：2019-02-03 14:56:07" itemprop="dateCreated datePublished" datetime="2019-02-03T14:56:07+08:00">2019-02-03</time>
             
 
             
@@ -465,7 +467,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/learn/" itemprop="url" rel="index"><span itemprop="name">learn</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/slove/" itemprop="url" rel="index"><span itemprop="name">slove</span></a></span>
 
                 
                 
@@ -480,8 +482,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/learn/Python学习NO_2/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/learn/Python学习NO_2/" itemprop="commentsCount"></span>
+                <a href="/slove/codevs1010/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/slove/codevs1010/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -517,97 +519,24 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
       
       
-        <h1 id="第三章——函数"><a href="#第三章——函数" class="headerlink" title="第三章——函数"></a>第三章——函数</h1><ul>
-<li><p><code>None</code>表示没有值，是<code>NoneType</code>数据类型的唯一值。<code>print</code>的返回值就是<code>None</code></p>
-</li>
-<li><p><code>print()</code>函数有可选的变元<code>end</code>和<code>sep</code>，分别指定在参数末尾打印什么，在参数之间打印什么来隔开它们</p>
+        <p><a href="http://codevs.cn/problem/1010/" target="_blank" rel="noopener">题目链接</a></p>
+<p>​    如图，A 点有一个过河卒，需要走到目标 B 点。卒行走规则：可以向下、或者向右。同时在棋盘上的任一点有一个对方的马（如上图的C点），该马所在的点和所有跳跃一步可达的点称为对方马的控制点。例如上图 C 点上的马可以控制 9 个点（图中的P1，P2 … P8 和 C）。卒不能通过对方马的控制点。</p>
 <a id="more"></a>
-<p>例如：</p>
-<p>end</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'hello'</span>)</span><br><span class="line">print(<span class="string">'word'</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'hello'</span>,end=<span class="string">' '</span>)</span><br><span class="line">print(<span class="string">'word'</span>)</span><br></pre></td></tr></table></figure>
-<p>输出分别为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello</span><br><span class="line">word</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello word</span><br></pre></td></tr></table></figure>
-<p>sep</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)</span><br><span class="line">a b c</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,sep=<span class="string">','</span>)</span><br><span class="line">a,b,c</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>全局作用域中的代码不能使用局部变量，局部作用域可以访问全局变量</p>
-</li>
-<li><p>在不同的作用域中，可以用相同的名字命名不同的变量</p>
-</li>
-<li><p><code>global</code>在局部作用域中修改全局变量</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">global</span> eggs</span><br><span class="line">	eggs=<span class="string">'spam'</span></span><br><span class="line">eggs=<span class="string">'global'</span></span><br><span class="line">print(eggs)</span><br><span class="line">spam()</span><br><span class="line">print(eggs)</span><br></pre></td></tr></table></figure>
-<p>在第一次输出的时候，由于eggs未被修改，所以输出<code>global</code>，第二次输出的时候，因为经过了spam，eggs变成了spam，所以输出为<code>spam</code></p>
-</li>
-</ul>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>出现的错误可以用<code>try...except</code>来处理。将可能出错的语句放在<code>try</code>子句中，如果错误发生，程序执行转到接下来的<code>except</code>子句开始处</p>
-<h1 id="第四章——列表"><a href="#第四章——列表" class="headerlink" title="第四章——列表"></a>第四章——列表</h1><ul>
-<li><p>列表的负数下标表示列表中的倒数第几个元素，如：<code>num[-1]</code>表示num列表中的最后一个元素</p>
-</li>
-<li><p>用<code>len()</code>获取列表的长度，方法和字符串相同，返回值为列表中值的个数</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'acb'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(arr)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>改变列表中元素的值时，直接找到对应的下标，进行赋值即可</p>
-</li>
-</ul>
-<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片得到的是一个新的列表，而不是一个值。</p>
-<p>在一个切片中，第一个整数表示切片开始出的下标，第二个整数表示结束的下标</p>
-<p>第一个整数默认为$0$，第二个整数默认为列表中最后一个元素的下标</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr[:]</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr[<span class="number">3</span>:]</span><br><span class="line">[<span class="string">'d'</span>, <span class="string">'e'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr[:<span class="number">3</span>]</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">[<span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="列表的连接和复制"><a href="#列表的连接和复制" class="headerlink" title="列表的连接和复制"></a>列表的连接和复制</h2><p><code>+</code>运算符可以连接两个列表；<code>*</code>运算符可以实现列表的复制</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]+[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]*<span class="number">2</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="列表的使用"><a href="#列表的使用" class="headerlink" title="列表的使用"></a>列表的使用</h2><ul>
-<li><p><code>for i in []</code>表示i从列表的第一个元素开始遍历数组，i对应的值为当前元素的值</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>]:</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">4</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果想要根据获得当前遍历元素的下标，可以先用<code>len()</code>获得列表的长度，然后用<code>range()</code>来遍历下标，<code>arr[i]</code>来访问元素</p>
-</li>
-<li><p>利用<code>in</code>和<code>not in</code>可以快速确定元素是否在列表中，返回值为<code>bool</code>类型</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'d'</span> <span class="keyword">in</span> [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'c'</span> <span class="keyword">in</span> [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="列表中的一些方法"><a href="#列表中的一些方法" class="headerlink" title="列表中的一些方法"></a>列表中的一些方法</h2><ul>
-<li><p><code>index()</code>用来查找某个元素是否在列表中，如果在列表中，返回该元素在列表中第一次出现的下标，否则，会报<code>ValueError</code></p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.index(<span class="string">'a'</span>)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.index(<span class="string">'d'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: <span class="string">'d'</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">in</span> list</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>append()</code>和<code>insert()</code>都可以向列表中加入元素，<code>append()</code>只能把元素加入到列表的尾部，<code>insert()</code>则可以向列表中的任意位置加入元素，<code>insert()</code>的第一个整数表示下标，如果该值超过当前列表的长度，那么元素将会被加到列表的末尾</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.append(<span class="string">'c'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.insert(<span class="number">2</span>,<span class="string">'d'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.insert(<span class="number">10</span>,<span class="string">'e'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'e'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>remove()</code>用来删除列表中第一次出现的元素，如果该元素不在列表中，则会<code>ValueError</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.remove(<span class="string">'a'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.remove(<span class="string">'a'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: list.remove(x): x <span class="keyword">not</span> <span class="keyword">in</span> list</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>sort()</code>用来对列表进行排序，默认为按<code>ASCII</code>码升序排序，<code>sort(reverse=True)</code>可以将排序改为降序，<code>sort(key=str.lower)</code>将排序按照普通字典序排序</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'A'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'A'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'A'</span>,<span class="string">'b'</span>,<span class="string">'B'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.sort(reverse=<span class="keyword">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'B'</span>, <span class="string">'A'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.sort(key=str.lower)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'A'</span>, <span class="string">'b'</span>, <span class="string">'B'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="字符串和元组"><a href="#字符串和元组" class="headerlink" title="字符串和元组"></a>字符串和元组</h2><ul>
-<li><p>字符串和元组都是不可改变的</p>
-</li>
-<li><p>字符串和元组访问元素的方式和列表一样，注意：元组输入要用<code>()</code>而不是<code>[]</code></p>
-</li>
-<li><p>如果元组中只有一个元素，在该元素后面加一个<code>,</code>来告诉程序这是一个元组</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>type((<span class="number">123</span>,))</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt;</span></span><br><span class="line"><span class="class">&gt;&gt;&gt; <span class="title">type</span><span class="params">(<span class="params">(<span class="number">123</span>)</span>)</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">int</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字符串、列表、元组可以相互转换</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>tuple([<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line">(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list((<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>))</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(<span class="string">'abc'</span>)</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果将列表直接赋值给另一个列表，那么改变这两个列表中的其中一个，这两个列表均会被改变。原因是在对列表进行赋值的时候，只是将列表中的元素给了另一个列表，而不是列表本身。两个列表均指向同一个列表，所以当一个列表被修改时，指向的列表会被改变，从而两个列表的元素均会变化。</p>
-</li>
-<li><p>使用<code>copy</code>模块里的<code>copy()</code>和<code>deepcopy()</code>函数可以实现对列表本身的复制，</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> copy</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr1=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr2=copy.copy(arr1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr2[<span class="number">1</span>]=<span class="string">'d'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr2</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr1</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p><img src="http://codevs.cn/media/image/problem/1010.png" alt="img"><br>　　棋盘用坐标表示，A 点（0，0）、B 点（n,m）(n,m 为不超过 20 的整数，并由键盘输入)，同样马的位置坐标是需要给出的（约定: C不等于A，同时C不等于B）。现在要求你计算出卒从 A 点能够到达 B 点的路径的条数。</p>
+<p>$1&lt;=n,m&lt;=15$</p>
+<h2 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h2><p>一行四个数据，分别表示B点坐标和马的坐标。</p>
+<h2 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h2><p>一个数据，表示所有的路径条数。</p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6 6 3 2</span><br></pre></td></tr></table></figure>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">17</span><br></pre></td></tr></table></figure>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>递推写法：</p>
+<p>首先将在马的控制范围内的九个点标记出来，在递推的时候隔开这九个点即可。</p>
+<p>状态转移方程：$dp[i][j]=dp[i-1][j]+dp[i][j-1]​$</p>
+<p>DFS：</p>
+<p>同样需要标记九个点，然后就是可以转换成<code>DFS+回溯</code>的问题了</p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><h3 id="DP"><a href="#DP" class="headerlink" title="DP"></a>DP</h3><p>总时间耗费: <strong>10ms</strong><br>总内存耗费: <strong>364 kB</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ms(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi acos(-1.0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson o&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson o&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> bug cout&lt;&lt;<span class="meta-string">"-------------"</span>&lt;&lt;endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(...) cerr&lt;&lt;<span class="meta-string">"["</span>&lt;&lt;#__VA_ARGS__<span class="meta-string">":"</span>&lt;&lt;(__VA_ARGS__)&lt;&lt;<span class="meta-string">"]"</span>&lt;&lt;<span class="meta-string">"\n"</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> E=<span class="built_in">exp</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e2</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> dp[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> dir[<span class="number">8</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">-2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">2</span>,<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-2</span>,<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">	ms(dp,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y;</span><br><span class="line">	dp[x][y]=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)</span><br><span class="line">		dp[x+dir[i][<span class="number">0</span>]][y+dir[i][<span class="number">1</span>]]=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">if</span>(dp[<span class="number">0</span>][<span class="number">0</span>]==<span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;=m;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(dp[i][j]!=<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(i&amp;&amp;dp[i<span class="number">-1</span>][j]!=<span class="number">-1</span>)</span><br><span class="line">					dp[i][j]+=dp[i<span class="number">-1</span>][j];</span><br><span class="line">				<span class="keyword">if</span>(j&amp;&amp;dp[i][j<span class="number">-1</span>]!=<span class="number">-1</span>)</span><br><span class="line">					dp[i][j]+=dp[i][j<span class="number">-1</span>];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;dp[n][m]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="DFS"><a href="#DFS" class="headerlink" title="DFS"></a>DFS</h3><p>总时间耗费: <strong>934ms</strong><br>总内存耗费: <strong>7 MB</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ms(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi acos(-1.0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson o&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson o&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> bug cout&lt;&lt;<span class="meta-string">"-------------"</span>&lt;&lt;endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(...) cerr&lt;&lt;<span class="meta-string">"["</span>&lt;&lt;#__VA_ARGS__<span class="meta-string">":"</span>&lt;&lt;(__VA_ARGS__)&lt;&lt;<span class="meta-string">"]"</span>&lt;&lt;<span class="meta-string">"\n"</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> E=<span class="built_in">exp</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e3</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> dir[<span class="number">8</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">-2</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">2</span>,<span class="number">-1</span>,<span class="number">-2</span>,<span class="number">-2</span>,<span class="number">1</span>,<span class="number">-2</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> dir1[<span class="number">2</span>][<span class="number">2</span>]=&#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="keyword">int</span> ans;</span><br><span class="line"><span class="keyword">int</span> _map[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> vis[maxn][maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(vis[x][y]==<span class="number">-1</span>||x&lt;<span class="number">0</span>||x&gt;n||y&lt;<span class="number">0</span>||y&gt;m)</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	<span class="keyword">if</span>(x==n&amp;&amp;y==m)</span><br><span class="line">	&#123;</span><br><span class="line">		ans++;</span><br><span class="line">		<span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	vis[x][y]=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">2</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> dx=x+dir1[i][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">int</span> dy=y+dir1[i][<span class="number">1</span>];</span><br><span class="line">		<span class="keyword">if</span>(!vis[dx][dy]&amp;&amp;dx&gt;=<span class="number">0</span>&amp;&amp;dx&lt;=n&amp;&amp;dy&gt;=<span class="number">0</span>&amp;&amp;dy&lt;=m&amp;&amp;_map[dx][dy]!=<span class="number">-1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			dfs(dx,dy);</span><br><span class="line">			vis[dx][dy]=<span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> x,y;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m&gt;&gt;x&gt;&gt;y;</span><br><span class="line">	ms(_map,<span class="number">0</span>);</span><br><span class="line">	ms(vis,<span class="number">0</span>);</span><br><span class="line">	_map[x][y]=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">8</span>;i++)</span><br><span class="line">		_map[x+dir[i][<span class="number">0</span>]][y+dir[i][<span class="number">1</span>]]=<span class="number">-1</span>;</span><br><span class="line">	dfs(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -631,12 +560,12 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/learn/Python学习NO_2/">Python学习第二天</a></p>
+  <p><span>本文标题:</span><a href="/slove/codevs1010/">codevs1010——过河卒（DP||DFS）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
-  <p><span>发布时间:</span>2019年01月23日 - 14:01</p>
-  <p><span>最后更新:</span>2019年01月23日 - 22:01</p>
-  <p><span>原始链接:</span><a href="/learn/Python学习NO_2/" title="Python学习第二天">https://blog.wzy1999.wang/learn/Python学习NO_2/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/learn/Python学习NO_2/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年02月03日 - 14:02</p>
+  <p><span>最后更新:</span>2019年02月03日 - 15:02</p>
+  <p><span>原始链接:</span><a href="/slove/codevs1010/" title="codevs1010——过河卒（DP||DFS）">https://blog.wzy1999.wang/slove/codevs1010/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/slove/codevs1010/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -668,7 +597,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
     <strong>本文作者： </strong>执念</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.wzy1999.wang/learn/Python学习NO_2/" title="Python学习第二天">https://blog.wzy1999.wang/learn/Python学习NO_2/</a>
+    <a href="https://blog.wzy1999.wang/slove/codevs1010/" title="codevs1010——过河卒（DP||DFS）">https://blog.wzy1999.wang/slove/codevs1010/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -689,7 +618,9 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
         <div class="post-tags">
           
-            <a href="/tags/py-learn/" <i class="fa fa-tag"></i> py_learn</a>
+            <a href="/tags/search/" <i class="fa fa-tag"></i> search</a>
+          
+            <a href="/tags/DP/" <i class="fa fa-tag"></i> DP</a>
           
         </div>
       
@@ -702,8 +633,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/learn/Python学习NO_1/" rel="next" title="Python学习第一天">
-                <i class="fa fa-chevron-left"></i> Python学习第一天
+              <a href="/slove/POJ3126/" rel="next" title="POJ 3126：Prime Path（素数+BFS）">
+                <i class="fa fa-chevron-left"></i> POJ 3126：Prime Path（素数+BFS）
               </a>
             
           </div>
@@ -711,10 +642,6 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/learn/机器学习NO_1/" rel="prev" title="机器学习第一天">
-                机器学习第一天 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -959,7 +886,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章——函数"><span class="nav-number">1.</span> <span class="nav-text">第三章——函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.1.</span> <span class="nav-text">异常处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章——列表"><span class="nav-number">2.</span> <span class="nav-text">第四章——列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#切片"><span class="nav-number">2.1.</span> <span class="nav-text">切片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的连接和复制"><span class="nav-number">2.2.</span> <span class="nav-text">列表的连接和复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的使用"><span class="nav-number">2.3.</span> <span class="nav-text">列表的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表中的一些方法"><span class="nav-number">2.4.</span> <span class="nav-text">列表中的一些方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串和元组"><span class="nav-number">2.5.</span> <span class="nav-text">字符串和元组</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#输入描述"><span class="nav-number">1.</span> <span class="nav-text">输入描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出描述"><span class="nav-number">2.</span> <span class="nav-text">输出描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入"><span class="nav-number">3.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出"><span class="nav-number">4.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">5.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码"><span class="nav-number">6.</span> <span class="nav-text">AC代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DP"><span class="nav-number">6.1.</span> <span class="nav-text">DP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DFS"><span class="nav-number">6.2.</span> <span class="nav-text">DFS</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1177,7 +1104,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
     <script type="text/javascript">
       window.livereOptions = {
-        refer: 'learn/Python学习NO_2/'
+        refer: 'slove/codevs1010/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
