@@ -153,53 +153,25 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 
 
-  <meta name="description" content="公元$2018$年已经正式过去了。 过去的一年，发生了很多事情，也经历了很多，得到了很多。在这里写一下总结流水账，并为$2019$定一些小目标吧~">
+  <meta name="description" content="将一个长度为$n$的数组分成不相交的$m$段，求这$m$段的和的最大值">
+<meta name="keywords" content="DP">
 <meta property="og:type" content="article">
-<meta property="og:title" content="菜鸡的2018年度总结">
-<meta property="og:url" content="https://blog.wzy1999.wang/essay/One/index.html">
+<meta property="og:title" content="hdu1024——Max Sum Plus Plus（DP）">
+<meta property="og:url" content="https://blog.wzy1999.wang/solve/hdu1024/index.html">
 <meta property="og:site_name" content="执念">
-<meta property="og:description" content="公元$2018$年已经正式过去了。 过去的一年，发生了很多事情，也经历了很多，得到了很多。在这里写一下总结流水账，并为$2019$定一些小目标吧~">
+<meta property="og:description" content="将一个长度为$n$的数组分成不相交的$m$段，求这$m$段的和的最大值">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5957970a467.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5958cb5d814.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c595aaa71d17.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c595aaa74716.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c595c12cd0ba.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c595cc915b88.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c595e2f1fc68.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c595ff3c5921.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c596040f0a41.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5962ac4f909.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5962ac58715.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5963427999d.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c596342a7bda.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c596342ae834.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5964ed3c2d3.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5964ed62bf1.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5964ed8a3f8.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5964ed89015.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5964ed9567e.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5964ed84ab9.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c59669758a0e.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5966c179c18.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c5964ed912b3.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c59689bbe9e4.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c59689e3c8b2.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c59689b924eb.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c59689f6a26c.jpg">
-<meta property="og:image" content="https://i.loli.net/2019/02/05/5c59689b822b1.jpg">
-<meta property="og:updated_time" content="2019-02-05T12:13:59.579Z">
+<meta property="og:updated_time" content="2019-02-07T13:45:35.343Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="菜鸡的2018年度总结">
-<meta name="twitter:description" content="公元$2018$年已经正式过去了。 过去的一年，发生了很多事情，也经历了很多，得到了很多。在这里写一下总结流水账，并为$2019$定一些小目标吧~">
-<meta name="twitter:image" content="https://i.loli.net/2019/02/05/5c5957970a467.jpg">
+<meta name="twitter:title" content="hdu1024——Max Sum Plus Plus（DP）">
+<meta name="twitter:description" content="将一个长度为$n$的数组分成不相交的$m$段，求这$m$段的和的最大值">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.wzy1999.wang/essay/One/"/>
+  <link rel="canonical" href="https://blog.wzy1999.wang/solve/hdu1024/"/>
 
 
 
@@ -209,7 +181,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   };
 </script>
 
-  <title>菜鸡的2018年度总结 | 执念</title>
+  <title>hdu1024——Max Sum Plus Plus（DP） | 执念</title>
   
 
 
@@ -433,7 +405,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/essay/One/">
+    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/solve/hdu1024/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="执念">
@@ -450,7 +422,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
         
         
-          <h1 class="post-title" itemprop="name headline">菜鸡的2018年度总结
+          <h1 class="post-title" itemprop="name headline">hdu1024——Max Sum Plus Plus（DP）
               
             
           </h1>
@@ -475,7 +447,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
               
 
-              <time title="创建时间：2019-02-05 17:00:49" itemprop="dateCreated datePublished" datetime="2019-02-05T17:00:49+08:00">2019-02-05</time>
+              <time title="创建时间：2019-02-07 21:43:38" itemprop="dateCreated datePublished" datetime="2019-02-07T21:43:38+08:00">2019-02-07</time>
             
 
             
@@ -493,7 +465,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/essay/" itemprop="url" rel="index"><span itemprop="name">essay</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/solve/" itemprop="url" rel="index"><span itemprop="name">solve</span></a></span>
 
                 
                 
@@ -508,8 +480,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/essay/One/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/essay/One/" itemprop="commentsCount"></span>
+                <a href="/solve/hdu1024/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/solve/hdu1024/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -545,59 +517,29 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
       
       
-        <p>公元$2018$年已经正式过去了。</p>
-<p>过去的一年，发生了很多事情，也经历了很多，得到了很多。在这里写一下总结<del>流水账</del>，并为$2019$定一些小目标吧~</p>
+        <p><strong>Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/32768 K (Java/Others)Total Submission(s): 39886    Accepted Submission(s): 14338</strong></p>
+<h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><p>Now I think you have got an AC in Ignatius.L’s “Max Sum” problem. To be a brave ACMer, we always challenge ourselves to more difficult problems. Now you are faced with a more difficult problem.</p>
 <a id="more"></a>
-<ul>
-<li><p><strong>四月一日</strong>，在新乡<code>河南科技学院</code>参加了蓝桥杯省赛，<code>ACM</code>生涯的第一场校级以上的比赛，并拿到了二等奖</p>
-<p><img src="https://i.loli.net/2019/02/05/5c5957970a467.jpg" alt="4_1.jpg" title="4_1.jpg" width="40%" heigh="40%"><img src="https://i.loli.net/2019/02/05/5c5958cb5d814.jpg" alt="1.jpg" title="1.jpg" width="40%" heigh="40%"></p>
-</li>
-<li><p><strong>五月二十日、二十一日</strong>，在<code>西北工业大学</code>和LF、THJ参加了<code>区域赛邀请赛</code>，第一次参加与全国性质的ACM比赛，虽然是邀请赛，虽然打了铁，但是我学到了很多</p>
-<p><img src="https://i.loli.net/2019/02/05/5c595aaa71d17.jpg" alt="2.jpg" title="2.jpg" width="40%" height="40%"><img src="https://i.loli.net/2019/02/05/5c595aaa74716.jpg" alt="3.jpg" title="3.jpg" width="40%" height="40%"></p>
-</li>
-<li><p><strong>五月二十六日、二十七日</strong>，在<code>信阳师范学院</code>依旧是和LF、THJ一起参加<code>ACM省赛</code>，并在帆神的带领下顺利拿到了铜奖<del>如果不是我演了几发的话可能会银也说不定23333333</del>。然后在接下来的的考试周里成功的三门考试成绩加起来没考到100分</p>
-<p><img src="https://i.loli.net/2019/02/05/5c595c12cd0ba.jpg" alt="5.jpg" title="5.jpg" width="40%" height="40%"><img src="https://i.loli.net/2019/02/05/5c595cc915b88.jpg" alt="6_proc.jpg" title="6_proc.jpg" width="40%"></p>
-</li>
-<li><p><strong>七月十八日</strong>，返校进行暑期培训，在学校度过了愉快的一个月，在场场积分赛打的极其差的情况下苟到了所谓的<code>三队</code>，与sdx，gyh组了新的队伍</p>
-<p><img src="https://i.loli.net/2019/02/05/5c595e2f1fc68.jpg" alt="7.jpg" title="7.jpg" width=""></p>
-</li>
-<li><p><strong>八月二十六日</strong>，在校培训的最后一次比赛，也是新队伍第一次比赛，拿到了第三名的“喜人”成绩，并得到了第一个奖品</p>
-<p><img src="https://i.loli.net/2019/02/05/5c595ff3c5921.jpg" alt="8.jpg" title="8.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c596040f0a41.jpg" alt="9.jpg" title="9.jpg" width="50%"><del>奖品是U盘，不是键盘</del></p>
-</li>
-<li><p><strong>十月二十六日~二十八日</strong>，在徐州<code>中国矿业大学</code>参加亚洲区域赛，并在人品爆棚+赛前20年单身flag的作用下拿到了银牌<del>一题银到铁真鸡儿刺激</del></p>
-<p>不得不说矿大的小姐姐真漂亮</p>
-</li>
-</ul>
-<p>  <img src="https://i.loli.net/2019/02/05/5c5962ac4f909.jpg" alt="11.jpg" title="11.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c5962ac58715.jpg" alt="10.jpg" title="10.jpg" width="50%"></p>
-<p>  <img src="https://i.loli.net/2019/02/05/5c5963427999d.jpg" alt="12.jpg" title="12.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c596342a7bda.jpg" alt="13.jpg" title="13.jpg" width="50%"><br>  <img src="https://i.loli.net/2019/02/05/5c596342ae834.jpg" alt="14.jpg" title="14.jpg"></p>
-<p>  银牌必须要给一个原尺寸大小</p>
-<ul>
-<li><p><strong>十一月二十四、二十五</strong>，亚洲区域赛焦作赛区顺利举办，并因为餐券可以买牛奶而获得广大JBer的好评。作为志愿者，学到了很多，也看清了很多</p>
-<p>工作牌和河南特色的马甲</p>
-<p><img src="https://i.loli.net/2019/02/05/5c5964ed3c2d3.jpg" alt="3.jpg" title="3.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c5964ed62bf1.jpg" alt="2.jpg" title="2.jpg" width="50%"><br>赛前、赛中、赛后<br><img src="https://i.loli.net/2019/02/05/5c5964ed8a3f8.jpg" alt="1.jpg" title="1.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c5964ed89015.jpg" alt="5.jpg" title="5.jpg" width="50%"><br><img src="https://i.loli.net/2019/02/05/5c5964ed9567e.jpg" alt="4.jpg" title="4.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c5964ed84ab9.jpg" alt="7.jpg" title="7.jpg" width="50%"><br>划水时偷拍后台的气球和奖牌<del>其实还有奖牌，就不放出来了</del></p>
-<p><img src="https://i.loli.net/2019/02/05/5c59669758a0e.jpg" alt="8.jpg" title="8.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c5966c179c18.jpg" alt="9.jpg" title="9.jpg" width="50%"></p>
-<p><img src="https://i.loli.net/2019/02/05/5c5964ed912b3.jpg" alt="6.jpg" title="6.jpg" width=""></p>
-</li>
-<li><p><strong>十二月十五日、十六日</strong>，<code>EC-final</code>依旧是<code>西工大</code>，依旧是铁牌。<br>本来还幻想着能够继续运气爆棚一次拿个铜，结果死于计算几何，死因 为菜<br>西安的泡馍真的好吃，虽然很贵；发的衣服和书包也不错，唯一的遗憾是没有拿到牌子</p>
-<p><img src="https://i.loli.net/2019/02/05/5c59689bbe9e4.jpg" alt="1.jpg" title="1.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c59689e3c8b2.jpg" alt="2.jpg" title="2.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c59689b924eb.jpg" alt="3.jpg" title="3.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c59689f6a26c.jpg" alt="4.jpg" title="4.jpg" width="50%"><img src="https://i.loli.net/2019/02/05/5c59689b822b1.jpg" alt="5.jpg" title="5.jpg" width=""></p>
-</li>
-</ul>
-<hr>
-<p>流水账到此结束</p>
-<p>2018真的是值得纪念的一年，在这一年中，有成功，也有失败。收获了很多也失去了很多。这一年，我因为ACM膨胀过，迷茫过，伤心过，但是从来没有后悔过</p>
-<p>希望在2019年，我能够做的更好，能够变得稍微更强一些</p>
-<p>最后，给我的2019年定下一些小目标：</p>
+<p>Given a consecutive number sequence $S_1, S_2, S_3, S_4 … S_x, … S_n (1 ≤ x ≤ n ≤ 1,000,000, -32768 ≤ S_x ≤ 32767)$. We define a function $sum(i, j) = S_i + … + S_j (1 ≤ i ≤ j ≤ n)$.</p>
+<p>Now given an integer $m (m &gt; 0)$, your task is to find m pairs of i and j which make $sum(i_1, j_1) + sum(i_2, j_2) + sum(i_3, j_3) + … + sum(i_m, j_m)$ maximal ($i_x ≤ i_y ≤ j_x$ or $i_x≤ j_y ≤ j_x$ is not allowed).</p>
+<p>But I`m lazy, I don’t want to write a special-judge module, so you don’t have to output m pairs of $i$ and $j$, just output the maximal summation of $sum(i_x, j_x)(1 ≤ x ≤ m)$ instead. </p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>Each test case will begin with two integers $m$ and $n$, followed by $n$ integers $S_1, S_2, S_3 … S_n$.<br>Process to the end of file.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Output the maximal summation described above in one line.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1 3 1 2 3</span><br><span class="line">2 6 -1 4 -2 3 -2 3</span><br></pre></td></tr></table></figure>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">6</span><br><span class="line">8</span><br></pre></td></tr></table></figure>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>将一个长度为$n$的数组分成不相交的$m$段，求这$m$段的和的最大值</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>状态：$dp[i][j]$表示在前$j$个数中取出$i$段的最大和</p>
+<p>状态转移方程：$dp[i][j]=max(dp[i-1][k],dp[i][j-1])+num[j]  (i-1\leq k \leq j-1)$</p>
+<p>由于$m$范围未知，$n\leq 10^6$，所以二维的dp方程无论是在时间上还是在空间上都是不允许的。</p>
+<p>那么我们就需要对这个方程进行优化：</p>
+<p>不难发现当前状态只与两个状态有关：</p>
 <ol>
-<li>蓝桥杯省赛一等奖+国赛三等奖以上</li>
-<li>天梯赛进入一队</li>
-<li>省赛银牌及以上</li>
-<li>如果省赛后不退役的话，希望区域赛能够拿块铜牌</li>
-<li><del>不挂科，拿奖学金</del></li>
-<li><del>脱单</del></li>
-<li>拿到驾照（大雾）</li>
+<li>第$j$个数和前$j-1$个数在一段里</li>
+<li>第$j$个数和前$j-1$个数不在一段里。</li>
 </ol>
-<p>就写这么多吧，好久没有写过这么长的东西了，写的太烂了QAQ</p>
-
+<p>根据这一点，我们把状态降成一维的数组，$dp[j]$表示前$j$个数分$i$段时的最大和，然后用$sum[j-1]$来表示状态一的前$j-1$个数在前$i-1$段的最大和，$dp[j-1]$表示状态二的前$j-1$个数在前$i$段的最大和。</p>
+<p>当前状态的转移方程为：$dp[j]=max(dp[j-1],sum[j-1])+num[j]$，持续更新dp与sum数组的值</p>
+<h2 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;limits.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stack&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ms(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi acos(-1.0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> lson o&lt;&lt;1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> rson o&lt;&lt;1|1</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> bug cout&lt;&lt;<span class="meta-string">"-------------"</span>&lt;&lt;endl</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> debug(...) cerr&lt;&lt;<span class="meta-string">"["</span>&lt;&lt;#__VA_ARGS__<span class="meta-string">":"</span>&lt;&lt;(__VA_ARGS__)&lt;&lt;<span class="meta-string">"]"</span>&lt;&lt;<span class="meta-string">"\n"</span></span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> E=<span class="built_in">exp</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="keyword">int</span> dp[maxn];</span><br><span class="line"><span class="keyword">int</span> sum[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">	    freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	    freopen(<span class="string">"out.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">	    <span class="keyword">double</span> _begin_time = clock();</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	<span class="keyword">int</span> k,n;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;k&gt;&gt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> res;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">		ms(dp,<span class="number">0</span>);</span><br><span class="line">		ms(sum,<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			res=-INF;</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j=i;j&lt;=n;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				dp[j]=max(sum[j<span class="number">-1</span>],dp[j<span class="number">-1</span>])+a[j];</span><br><span class="line">				sum[j<span class="number">-1</span>]=res;</span><br><span class="line">				res=max(res,dp[j]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;res&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">ifndef</span> ONLINE_JUDGE</span></span><br><span class="line">	    <span class="keyword">long</span> _end_time = clock();</span><br><span class="line">	    <span class="built_in">printf</span>(<span class="string">"time = %lf ms."</span>, _end_time - _begin_time);</span><br><span class="line">	<span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -620,12 +562,12 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/essay/One/">菜鸡的2018年度总结</a></p>
+  <p><span>本文标题:</span><a href="/solve/hdu1024/">hdu1024——Max Sum Plus Plus（DP）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
-  <p><span>发布时间:</span>2019年02月05日 - 17:02</p>
-  <p><span>最后更新:</span>2019年02月05日 - 20:02</p>
-  <p><span>原始链接:</span><a href="/essay/One/" title="菜鸡的2018年度总结">https://blog.wzy1999.wang/essay/One/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/essay/One/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年02月07日 - 21:02</p>
+  <p><span>最后更新:</span>2019年02月07日 - 21:02</p>
+  <p><span>原始链接:</span><a href="/solve/hdu1024/" title="hdu1024——Max Sum Plus Plus（DP）">https://blog.wzy1999.wang/solve/hdu1024/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/solve/hdu1024/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -657,7 +599,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
     <strong>本文作者： </strong>执念</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.wzy1999.wang/essay/One/" title="菜鸡的2018年度总结">https://blog.wzy1999.wang/essay/One/</a>
+    <a href="https://blog.wzy1999.wang/solve/hdu1024/" title="hdu1024——Max Sum Plus Plus（DP）">https://blog.wzy1999.wang/solve/hdu1024/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -676,6 +618,12 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 	</div>
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/DP/" <i class="fa fa-tag"></i> DP</a>
+          
+        </div>
+      
 
       
       
@@ -685,8 +633,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/solve/luogu1052/" rel="next" title="洛谷1052——过河（DP+状态压缩）">
-                <i class="fa fa-chevron-left"></i> 洛谷1052——过河（DP+状态压缩）
+              <a href="/solve/luogu1434/" rel="next" title="luogu1434——[SHOI2002]滑雪（DP，记忆化搜索）">
+                <i class="fa fa-chevron-left"></i> luogu1434——[SHOI2002]滑雪（DP，记忆化搜索）
               </a>
             
           </div>
@@ -694,10 +642,6 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/solve/luogu1434/" rel="prev" title="luogu1434——[SHOI2002]滑雪（DP，记忆化搜索）">
-                luogu1434——[SHOI2002]滑雪（DP，记忆化搜索） <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -747,8 +691,17 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -925,6 +878,22 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         </div>
       </section>
       
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Problem-Description"><span class="nav-number">1.</span> <span class="nav-text">Problem Description</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">3.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Input"><span class="nav-number">4.</span> <span class="nav-text">Sample Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sample-Output"><span class="nav-number">5.</span> <span class="nav-text">Sample Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">6.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">7.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC代码"><span class="nav-number">8.</span> <span class="nav-text">AC代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1137,7 +1106,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
     <script type="text/javascript">
       window.livereOptions = {
-        refer: 'essay/One/'
+        refer: 'solve/hdu1024/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
