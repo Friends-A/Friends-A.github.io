@@ -153,25 +153,25 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 
 
-  <meta name="description" content="第三章——函数 None表示没有值，是NoneType数据类型的唯一值。print的返回值就是None  print()函数有可选的变元end和sep，分别指定在参数末尾打印什么，在参数之间打印什么来隔开它们">
+  <meta name="description" content="第六章——字符串操作 字符串以单（双）引号开始，单（双）引号结束  在字符串开始的引号之前加上r，可以将字符串称为原始字符串，打印出字符串中所有的\之类的转义字符">
 <meta name="keywords" content="py_learn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习第二天">
-<meta property="og:url" content="https://blog.wzy1999.wang/learn/Python学习NO_2/index.html">
+<meta property="og:title" content="Python学习（四）">
+<meta property="og:url" content="https://blog.wzy1999.wang/learn/pyl-4/index.html">
 <meta property="og:site_name" content="执念">
-<meta property="og:description" content="第三章——函数 None表示没有值，是NoneType数据类型的唯一值。print的返回值就是None  print()函数有可选的变元end和sep，分别指定在参数末尾打印什么，在参数之间打印什么来隔开它们">
+<meta property="og:description" content="第六章——字符串操作 字符串以单（双）引号开始，单（双）引号结束  在字符串开始的引号之前加上r，可以将字符串称为原始字符串，打印出字符串中所有的\之类的转义字符">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-05T11:30:45.884Z">
+<meta property="og:updated_time" content="2019-02-10T07:25:11.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python学习第二天">
-<meta name="twitter:description" content="第三章——函数 None表示没有值，是NoneType数据类型的唯一值。print的返回值就是None  print()函数有可选的变元end和sep，分别指定在参数末尾打印什么，在参数之间打印什么来隔开它们">
+<meta name="twitter:title" content="Python学习（四）">
+<meta name="twitter:description" content="第六章——字符串操作 字符串以单（双）引号开始，单（双）引号结束  在字符串开始的引号之前加上r，可以将字符串称为原始字符串，打印出字符串中所有的\之类的转义字符">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.wzy1999.wang/learn/Python学习NO_2/"/>
+  <link rel="canonical" href="https://blog.wzy1999.wang/learn/pyl-4/"/>
 
 
 
@@ -181,7 +181,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   };
 </script>
 
-  <title>Python学习第二天 | 执念</title>
+  <title>Python学习（四） | 执念</title>
   
 
 
@@ -315,7 +315,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">18</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">19</span></a>
   </li>
         
         
@@ -405,7 +405,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/learn/Python学习NO_2/">
+    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/learn/pyl-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="执念">
@@ -422,7 +422,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python学习第二天
+          <h1 class="post-title" itemprop="name headline">Python学习（四）
               
             
           </h1>
@@ -447,7 +447,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
               
 
-              <time title="创建时间：2019-01-23 14:28:06" itemprop="dateCreated datePublished" datetime="2019-01-23T14:28:06+08:00">2019-01-23</time>
+              <time title="创建时间：2019-01-27 13:07:37" itemprop="dateCreated datePublished" datetime="2019-01-27T13:07:37+08:00">2019-01-27</time>
             
 
             
@@ -480,8 +480,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/learn/Python学习NO_2/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/learn/Python学习NO_2/" itemprop="commentsCount"></span>
+                <a href="/learn/pyl-4/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/learn/pyl-4/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -517,97 +517,45 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
       
       
-        <h1 id="第三章——函数"><a href="#第三章——函数" class="headerlink" title="第三章——函数"></a>第三章——函数</h1><ul>
-<li><p><code>None</code>表示没有值，是<code>NoneType</code>数据类型的唯一值。<code>print</code>的返回值就是<code>None</code></p>
+        <h1 id="第六章——字符串操作"><a href="#第六章——字符串操作" class="headerlink" title="第六章——字符串操作"></a>第六章——字符串操作</h1><ul>
+<li><p>字符串以单（双）引号开始，单（双）引号结束</p>
 </li>
-<li><p><code>print()</code>函数有可选的变元<code>end</code>和<code>sep</code>，分别指定在参数末尾打印什么，在参数之间打印什么来隔开它们</p>
+<li><p>在字符串开始的引号之前加上<code>r</code>，可以将字符串称为原始字符串，打印出字符串中所有的<code>\</code>之类的转义字符</p>
 <a id="more"></a>
-<p>例如：</p>
-<p>end</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'hello'</span>)</span><br><span class="line">print(<span class="string">'word'</span>)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'hello'</span>,end=<span class="string">' '</span>)</span><br><span class="line">print(<span class="string">'word'</span>)</span><br></pre></td></tr></table></figure>
-<p>输出分别为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hello</span><br><span class="line">word</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello word</span><br></pre></td></tr></table></figure>
-<p>sep</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>)</span><br><span class="line">a b c</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,sep=<span class="string">','</span>)</span><br><span class="line">a,b,c</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">'he\tllo'</span>)</span><br><span class="line">he	llo</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">r'he\tllo'</span>)</span><br><span class="line">he\tllo</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>全局作用域中的代码不能使用局部变量，局部作用域可以访问全局变量</p>
+<li><p>多行字符串以三个单（双）引号开始，三个单（双）引号结束。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'''hello</span></span><br><span class="line"><span class="string">the \n</span></span><br><span class="line"><span class="string">world</span></span><br><span class="line"><span class="string">'''</span>)</span><br></pre></td></tr></table></figure>
+<p>输出为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hello</span><br><span class="line">the </span><br><span class="line"></span><br><span class="line">world</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>在不同的作用域中，可以用相同的名字命名不同的变量</p>
-</li>
-<li><p><code>global</code>在局部作用域中修改全局变量</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">spam</span><span class="params">()</span>:</span></span><br><span class="line">	<span class="keyword">global</span> eggs</span><br><span class="line">	eggs=<span class="string">'spam'</span></span><br><span class="line">eggs=<span class="string">'global'</span></span><br><span class="line">print(eggs)</span><br><span class="line">spam()</span><br><span class="line">print(eggs)</span><br></pre></td></tr></table></figure>
-<p>在第一次输出的时候，由于eggs未被修改，所以输出<code>global</code>，第二次输出的时候，因为经过了spam，eggs变成了spam，所以输出为<code>spam</code></p>
+<li><p>用<code>in</code>和<code>not in</code>可以判断一个字符串是否在另一个字符串中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'bcd'</span> <span class="keyword">in</span> <span class="string">'abcde'</span></span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'ad'</span> <span class="keyword">not</span> <span class="keyword">in</span> <span class="string">'abcd'</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h2 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h2><p>出现的错误可以用<code>try...except</code>来处理。将可能出错的语句放在<code>try</code>子句中，如果错误发生，程序执行转到接下来的<code>except</code>子句开始处</p>
-<h1 id="第四章——列表"><a href="#第四章——列表" class="headerlink" title="第四章——列表"></a>第四章——列表</h1><ul>
-<li><p>列表的负数下标表示列表中的倒数第几个元素，如：<code>num[-1]</code>表示num列表中的最后一个元素</p>
-</li>
-<li><p>用<code>len()</code>获取列表的长度，方法和字符串相同，返回值为列表中值的个数</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'acb'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>len(arr)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>改变列表中元素的值时，直接找到对应的下标，进行赋值即可</p>
-</li>
+<h2 id="字符串的一些方法"><a href="#字符串的一些方法" class="headerlink" title="字符串的一些方法"></a>字符串的一些方法</h2><p><code>upper()</code>将字符串中的字母全变为大写；<code>lower()</code>将字符串中的字母全变为小写；<code>isupper()</code>判断字符串中的所有字母是否是大写；<code>islower()</code>判断字符串中的所有字母是否是小写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'12AbcD'</span>.lower()</span><br><span class="line"><span class="string">'12abcd'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'12AbcD'</span>.upper()</span><br><span class="line"><span class="string">'12ABCD'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'12AbcD'</span>.isupper()</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'12ABCD'</span>.isupper()</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h3 id="isX方法"><a href="#isX方法" class="headerlink" title="isX方法"></a><code>isX</code>方法</h3><ul>
+<li><code>isalpha()</code>返回True，如果字符串只包含字母，并且非空；</li>
+<li><code>isalnum()</code>返回True，如果字符串只包含字母和数字，并且非空：</li>
+<li><code>isdecimal()</code>返回True，如果字符串只包含数字字符，并且非空：</li>
+<li><code>ispace()</code>返回True，如果字符串只包含空格、制表符和换行，并且非空；</li>
+<li><code>istitle()</code>返回True，如果字符串仅包含以大写字母开头、后面都是小写字母的单词。</li>
 </ul>
-<h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片得到的是一个新的列表，而不是一个值。</p>
-<p>在一个切片中，第一个整数表示切片开始出的下标，第二个整数表示结束的下标</p>
-<p>第一个整数默认为$0$，第二个整数默认为列表中最后一个元素的下标</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr[:]</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr[<span class="number">3</span>:]</span><br><span class="line">[<span class="string">'d'</span>, <span class="string">'e'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr[:<span class="number">3</span>]</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr[<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">[<span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="列表的连接和复制"><a href="#列表的连接和复制" class="headerlink" title="列表的连接和复制"></a>列表的连接和复制</h2><p><code>+</code>运算符可以连接两个列表；<code>*</code>运算符可以实现列表的复制</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]+[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]*<span class="number">2</span></span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br></pre></td></tr></table></figure>
-<h2 id="列表的使用"><a href="#列表的使用" class="headerlink" title="列表的使用"></a>列表的使用</h2><ul>
-<li><p><code>for i in []</code>表示i从列表的第一个元素开始遍历数组，i对应的值为当前元素的值</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span>]:</span><br><span class="line">print(i)</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1</span><br><span class="line">4</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果想要根据获得当前遍历元素的下标，可以先用<code>len()</code>获得列表的长度，然后用<code>range()</code>来遍历下标，<code>arr[i]</code>来访问元素</p>
-</li>
-<li><p>利用<code>in</code>和<code>not in</code>可以快速确定元素是否在列表中，返回值为<code>bool</code>类型</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'d'</span> <span class="keyword">in</span> [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'c'</span> <span class="keyword">in</span> [<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="列表中的一些方法"><a href="#列表中的一些方法" class="headerlink" title="列表中的一些方法"></a>列表中的一些方法</h2><ul>
-<li><p><code>index()</code>用来查找某个元素是否在列表中，如果在列表中，返回该元素在列表中第一次出现的下标，否则，会报<code>ValueError</code></p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.index(<span class="string">'a'</span>)</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.index(<span class="string">'d'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: <span class="string">'d'</span> <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">in</span> list</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>append()</code>和<code>insert()</code>都可以向列表中加入元素，<code>append()</code>只能把元素加入到列表的尾部，<code>insert()</code>则可以向列表中的任意位置加入元素，<code>insert()</code>的第一个整数表示下标，如果该值超过当前列表的长度，那么元素将会被加到列表的末尾</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.append(<span class="string">'c'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.insert(<span class="number">2</span>,<span class="string">'d'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.insert(<span class="number">10</span>,<span class="string">'e'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'e'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>remove()</code>用来删除列表中第一次出现的元素，如果该元素不在列表中，则会<code>ValueError</code></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.remove(<span class="string">'a'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.remove(<span class="string">'a'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">ValueError: list.remove(x): x <span class="keyword">not</span> <span class="keyword">in</span> list</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>sort()</code>用来对列表进行排序，默认为按<code>ASCII</code>码升序排序，<code>sort(reverse=True)</code>可以将排序改为降序，<code>sort(key=str.lower)</code>将排序按照普通字典序排序</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'A'</span>,<span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'A'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr=[<span class="string">'a'</span>,<span class="string">'A'</span>,<span class="string">'b'</span>,<span class="string">'B'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.sort()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.sort(reverse=<span class="keyword">True</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'B'</span>, <span class="string">'A'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr.sort(key=str.lower)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'A'</span>, <span class="string">'b'</span>, <span class="string">'B'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="字符串和元组"><a href="#字符串和元组" class="headerlink" title="字符串和元组"></a>字符串和元组</h2><ul>
-<li><p>字符串和元组都是不可改变的</p>
-</li>
-<li><p>字符串和元组访问元素的方式和列表一样，注意：元组输入要用<code>()</code>而不是<code>[]</code></p>
-</li>
-<li><p>如果元组中只有一个元素，在该元素后面加一个<code>,</code>来告诉程序这是一个元组</p>
-<p>例如：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>type((<span class="number">123</span>,))</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">tuple</span>'&gt;</span></span><br><span class="line"><span class="class">&gt;&gt;&gt; <span class="title">type</span><span class="params">(<span class="params">(<span class="number">123</span>)</span>)</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">int</span>'&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>字符串、列表、元组可以相互转换</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>tuple([<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line">(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list((<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>))</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>list(<span class="string">'abc'</span>)</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果将列表直接赋值给另一个列表，那么改变这两个列表中的其中一个，这两个列表均会被改变。原因是在对列表进行赋值的时候，只是将列表中的元素给了另一个列表，而不是列表本身。两个列表均指向同一个列表，所以当一个列表被修改时，指向的列表会被改变，从而两个列表的元素均会变化。</p>
-</li>
-<li><p>使用<code>copy</code>模块里的<code>copy()</code>和<code>deepcopy()</code>函数可以实现对列表本身的复制，</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> copy</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr1=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr2=copy.copy(arr1)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr2[<span class="number">1</span>]=<span class="string">'d'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr2</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>arr1</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<h3 id="startswith-和endswith"><a href="#startswith-和endswith" class="headerlink" title="startswith()和endswith"></a><code>startswith()</code>和<code>endswith</code></h3><p>返回值为布尔类型，用来判断调用的字符串是否以该方法传入的字符串开始或结束</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abcde'</span>.startswith(<span class="string">'ab'</span>)</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abcde'</span>.endswith(<span class="string">'cde'</span>)</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<h3 id="join-和split"><a href="#join-和split" class="headerlink" title="join()和split()"></a><code>join()</code>和<code>split()</code></h3><p><code>join()</code>是将一个字符串列表连接成单独的字符串，<code>split()</code>是将单独的字符串分割成一个字符串列表</p>
+<p><code>join()</code>针对一个字符串调用，传入一个列表值；<code>split()</code>相反</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'-'</span>.join([<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>])</span><br><span class="line"><span class="string">'a-b-c'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'a-b-c'</span>.split(<span class="string">'-'</span>)</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>]</span><br></pre></td></tr></table></figure>
+<h3 id="rjust-、ljust-、center"><a href="#rjust-、ljust-、center" class="headerlink" title="rjust()、ljust()、center()"></a><code>rjust()</code>、<code>ljust()</code>、<code>center()</code></h3><p>这三种方法用来对齐字符串</p>
+<p><code>rjust()</code>、<code>ljust()</code>和<code>center()</code>分别用来右对齐、左对齐、中间对齐字符串；有两个参数：第一个参数是一个整数，代表字符串的长度；第二个参数是<strong>一个</strong>字符，表示除原字符串之外的部分用该字符补齐。</p>
+<p>第二个参数默认为空格</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abc'</span>.rjust(<span class="number">10</span>,<span class="string">'*'</span>)</span><br><span class="line"><span class="string">'*******abc'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abc'</span>.ljust(<span class="number">10</span>,<span class="string">'*'</span>)</span><br><span class="line"><span class="string">'abc*******'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abc'</span>.center(<span class="number">10</span>,<span class="string">'*'</span>)</span><br><span class="line"><span class="string">'***abc****'</span></span><br></pre></td></tr></table></figure>
+<h3 id="strip-、rstrip-、lstrip"><a href="#strip-、rstrip-、lstrip" class="headerlink" title="strip()、rstrip()、lstrip()"></a><code>strip()</code>、<code>rstrip()</code>、<code>lstrip()</code></h3><p>这三种方法用来删除空白字符</p>
+<p>分别表示删除两边字符、删除右边、删除左边。有一个参数，代表需要删除的字符，默认为空格</p>
+<p>参数可以是一个字符串，但同样是看成字符的形式，删除时和字符的顺序无关</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abccbacab123456cabcba'</span>.lstrip(<span class="string">'abc'</span>)</span><br><span class="line"><span class="string">'123456cabcba'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abccbacab123456cabcba'</span>.rstrip(<span class="string">'abc'</span>)</span><br><span class="line"><span class="string">'abccbacab123456'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'abccbacab123456cabcba'</span>.strip(<span class="string">'abc'</span>)</span><br><span class="line"><span class="string">'123456'</span></span><br></pre></td></tr></table></figure>
+<p><code>pyperclip</code>模块里的<code>copy()</code>和<code>paste()</code>函数可以向计算机的剪切板发送和接受文本。<code>pyperclip</code>模块需要安装</p>
 
       
     </div>
@@ -631,12 +579,12 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/learn/Python学习NO_2/">Python学习第二天</a></p>
+  <p><span>本文标题:</span><a href="/learn/pyl-4/">Python学习（四）</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
-  <p><span>发布时间:</span>2019年01月23日 - 14:01</p>
-  <p><span>最后更新:</span>2019年02月05日 - 19:02</p>
-  <p><span>原始链接:</span><a href="/learn/Python学习NO_2/" title="Python学习第二天">https://blog.wzy1999.wang/learn/Python学习NO_2/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/learn/Python学习NO_2/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年01月27日 - 13:01</p>
+  <p><span>最后更新:</span>2019年02月10日 - 15:02</p>
+  <p><span>原始链接:</span><a href="/learn/pyl-4/" title="Python学习（四）">https://blog.wzy1999.wang/learn/pyl-4/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/learn/pyl-4/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -668,7 +616,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
     <strong>本文作者： </strong>执念</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.wzy1999.wang/learn/Python学习NO_2/" title="Python学习第二天">https://blog.wzy1999.wang/learn/Python学习NO_2/</a>
+    <a href="https://blog.wzy1999.wang/learn/pyl-4/" title="Python学习（四）">https://blog.wzy1999.wang/learn/pyl-4/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -702,8 +650,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/learn/Python学习NO_1/" rel="next" title="Python学习第一天">
-                <i class="fa fa-chevron-left"></i> Python学习第一天
+              <a href="/learn/pyl-3/" rel="next" title="Python学习（三）">
+                <i class="fa fa-chevron-left"></i> Python学习（三）
               </a>
             
           </div>
@@ -712,8 +660,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/learn/机器学习NO_1/" rel="prev" title="机器学习第一天">
-                机器学习第一天 <i class="fa fa-chevron-right"></i>
+              <a href="/solve/POJ3126/" rel="prev" title="POJ 3126：Prime Path（素数+BFS）">
+                POJ 3126：Prime Path（素数+BFS） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -793,7 +741,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -961,7 +909,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章——函数"><span class="nav-number">1.</span> <span class="nav-text">第三章——函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#异常处理"><span class="nav-number">1.1.</span> <span class="nav-text">异常处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章——列表"><span class="nav-number">2.</span> <span class="nav-text">第四章——列表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#切片"><span class="nav-number">2.1.</span> <span class="nav-text">切片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的连接和复制"><span class="nav-number">2.2.</span> <span class="nav-text">列表的连接和复制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的使用"><span class="nav-number">2.3.</span> <span class="nav-text">列表的使用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表中的一些方法"><span class="nav-number">2.4.</span> <span class="nav-text">列表中的一些方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串和元组"><span class="nav-number">2.5.</span> <span class="nav-text">字符串和元组</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章——字符串操作"><span class="nav-number">1.</span> <span class="nav-text">第六章——字符串操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串的一些方法"><span class="nav-number">1.1.</span> <span class="nav-text">字符串的一些方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#isX方法"><span class="nav-number">1.1.1.</span> <span class="nav-text">isX方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#startswith-和endswith"><span class="nav-number">1.1.2.</span> <span class="nav-text">startswith()和endswith</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#join-和split"><span class="nav-number">1.1.3.</span> <span class="nav-text">join()和split()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rjust-、ljust-、center"><span class="nav-number">1.1.4.</span> <span class="nav-text">rjust()、ljust()、center()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strip-、rstrip-、lstrip"><span class="nav-number">1.1.5.</span> <span class="nav-text">strip()、rstrip()、lstrip()</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -1011,7 +959,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共35.7k字</span>
+  <span class="post-count">博客全站共37k字</span>
 </div>
 <!-- 
   <span class="post-meta-divider">|</span>
@@ -1179,7 +1127,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
     <script type="text/javascript">
       window.livereOptions = {
-        refer: 'learn/Python学习NO_2/'
+        refer: 'learn/pyl-4/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];

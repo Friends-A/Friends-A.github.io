@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.wzy1999.wang/learn/ml-2/</loc>
+    
+    <lastmod>2019-02-10T07:27:25.775Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/learn/pyl-4/</loc>
+    
+    <lastmod>2019-02-10T07:25:11.887Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/learn/pyl-3/</loc>
+    
+    <lastmod>2019-02-10T07:25:01.376Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/learn/pyl-2/</loc>
+    
+    <lastmod>2019-02-10T07:24:51.447Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/learn/pyl-1/</loc>
+    
+    <lastmod>2019-02-10T07:24:33.604Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/learn/ml-1/</loc>
+    
+    <lastmod>2019-02-10T07:24:20.670Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.wzy1999.wang/solve/niuke368B/</loc>
     
     <lastmod>2019-02-08T14:06:38.771Z</lastmod>
@@ -51,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/learn/Python%E5%AD%A6%E4%B9%A0NO_2/</loc>
-    
-    <lastmod>2019-02-05T11:30:45.884Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.wzy1999.wang/solve/luogu1052/</loc>
     
     <lastmod>2019-02-03T12:00:03.810Z</lastmod>
@@ -82,34 +117,6 @@
     <loc>https://blog.wzy1999.wang/solve/codevs1010/</loc>
     
     <lastmod>2019-02-03T07:38:58.340Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/Python%E5%AD%A6%E4%B9%A0NO_4/</loc>
-    
-    <lastmod>2019-01-27T10:49:31.603Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/Python%E5%AD%A6%E4%B9%A0NO_3/</loc>
-    
-    <lastmod>2019-01-26T14:35:28.919Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0NO_1/</loc>
-    
-    <lastmod>2019-01-23T14:09:31.744Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/Python%E5%AD%A6%E4%B9%A0NO_1/</loc>
-    
-    <lastmod>2019-01-23T06:33:47.751Z</lastmod>
     
   </url>
   

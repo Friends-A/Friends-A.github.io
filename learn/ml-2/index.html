@@ -153,25 +153,28 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 
 
-  <meta name="description" content="第五章——字典和结构化数据字典 字典的索引被称为键，键及其关联的值称为键-值。字典输入的时候要带花括号{}，在使用的时候和列表一样使用中括号[]">
-<meta name="keywords" content="py_learn">
+  <meta name="description" content="使用kNN算法进行分类的原理是：从训练集中选出离待分类点最近的$k$个点，在这$k$个点中所占比重最大的分类即为该点所在的分类。通常$k$不超过$20$">
+<meta name="keywords" content="ml_learn">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python学习第三天">
-<meta property="og:url" content="https://blog.wzy1999.wang/learn/Python学习NO_3/index.html">
+<meta property="og:title" content="《机器学习实战》kNN算法及约会网站代码详解">
+<meta property="og:url" content="https://blog.wzy1999.wang/learn/ml-2/index.html">
 <meta property="og:site_name" content="执念">
-<meta property="og:description" content="第五章——字典和结构化数据字典 字典的索引被称为键，键及其关联的值称为键-值。字典输入的时候要带花括号{}，在使用的时候和列表一样使用中括号[]">
+<meta property="og:description" content="使用kNN算法进行分类的原理是：从训练集中选出离待分类点最近的$k$个点，在这$k$个点中所占比重最大的分类即为该点所在的分类。通常$k$不超过$20$">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-26T14:35:28.919Z">
+<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fc6d925521.png">
+<meta property="og:image" content="https://i.loli.net/2019/02/10/5c5fc9649d3a3.png">
+<meta property="og:updated_time" content="2019-02-10T07:27:25.775Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python学习第三天">
-<meta name="twitter:description" content="第五章——字典和结构化数据字典 字典的索引被称为键，键及其关联的值称为键-值。字典输入的时候要带花括号{}，在使用的时候和列表一样使用中括号[]">
+<meta name="twitter:title" content="《机器学习实战》kNN算法及约会网站代码详解">
+<meta name="twitter:description" content="使用kNN算法进行分类的原理是：从训练集中选出离待分类点最近的$k$个点，在这$k$个点中所占比重最大的分类即为该点所在的分类。通常$k$不超过$20$">
+<meta name="twitter:image" content="https://i.loli.net/2019/02/10/5c5fc6d925521.png">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.wzy1999.wang/learn/Python学习NO_3/"/>
+  <link rel="canonical" href="https://blog.wzy1999.wang/learn/ml-2/"/>
 
 
 
@@ -181,7 +184,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   };
 </script>
 
-  <title>Python学习第三天 | 执念</title>
+  <title>《机器学习实战》kNN算法及约会网站代码详解 | 执念</title>
   
 
 
@@ -315,7 +318,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">18</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">19</span></a>
   </li>
         
         
@@ -405,7 +408,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/learn/Python学习NO_3/">
+    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/learn/ml-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="执念">
@@ -422,7 +425,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python学习第三天
+          <h1 class="post-title" itemprop="name headline">《机器学习实战》kNN算法及约会网站代码详解
               
             
           </h1>
@@ -447,7 +450,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
               
 
-              <time title="创建时间：2019-01-25 17:10:42" itemprop="dateCreated datePublished" datetime="2019-01-25T17:10:42+08:00">2019-01-25</time>
+              <time title="创建时间：2019-02-10 15:25:52" itemprop="dateCreated datePublished" datetime="2019-02-10T15:25:52+08:00">2019-02-10</time>
             
 
             
@@ -480,8 +483,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/learn/Python学习NO_3/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/learn/Python学习NO_3/" itemprop="commentsCount"></span>
+                <a href="/learn/ml-2/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/learn/ml-2/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -517,41 +520,34 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
       
       
-        <h1 id="第五章——字典和结构化数据"><a href="#第五章——字典和结构化数据" class="headerlink" title="第五章——字典和结构化数据"></a>第五章——字典和结构化数据</h1><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><ul>
-<li><p>字典的索引被称为<code>键</code>，键及其关联的值称为<code>键-值</code>。字典输入的时候要带花括号<code>{}</code>，在使用的时候和列表一样使用中括号<code>[]</code></p>
+        <p>使用kNN算法进行分类的原理是：从训练集中选出离待分类点最近的$k$个点，在这$k$个点中所占比重最大的分类即为该点所在的分类。通常$k$不超过$20$</p>
 <a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>myCat=&#123;<span class="string">'size'</span>:<span class="string">'fat'</span>,<span class="string">'color'</span>:<span class="string">'gray'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>myCat[<span class="string">'size'</span>]</span><br><span class="line"><span class="string">'fat'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>判断两个列表相同，要看两个列表中的对应位置的元素是否相同；判断两个字典是否相同，只需看两个字典的<code>键-值</code>是否相同即可</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>List=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>List1=[<span class="string">'b'</span>,<span class="string">'a'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>List==List1</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic1=&#123;<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic==dic1</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>如果访问字典中不存在的键，则会导致<code>KeyError</code></p>
-</li>
-</ul>
-<h2 id="字典中的一些方法"><a href="#字典中的一些方法" class="headerlink" title="字典中的一些方法"></a>字典中的一些方法</h2><h3 id="keys-values-items"><a href="#keys-values-items" class="headerlink" title="keys() values() items()"></a><code>keys()</code> <code>values()</code> <code>items()</code></h3><p>这三种方法分别对应字典的键、值、键-值对。返回的值是类似列表的值，不是真正的列表，不能被修改</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>spam=&#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'age'</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spam.values()</span><br><span class="line">dict_values([<span class="string">'red'</span>, <span class="number">18</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spam.keys()</span><br><span class="line">dict_keys([<span class="string">'color'</span>, <span class="string">'age'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spam.items()</span><br><span class="line">dict_items([(<span class="string">'color'</span>, <span class="string">'red'</span>), (<span class="string">'age'</span>, <span class="number">18</span>)])</span><br></pre></td></tr></table></figure>
-<p>如果想要得到一个列表，可以用<code>list()</code>进行转换</p>
-<p>使用<code>in</code>和<code>not in</code>依旧可以检查值是否在字典中，查询时如果不声明，默认按照<code>keys()</code>进行查询</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> <span class="keyword">in</span> dic.keys()</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'a'</span> <span class="keyword">in</span> dic.values()</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> <span class="keyword">in</span> dic</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span>,<span class="string">'a'</span>) <span class="keyword">in</span> dic.items()</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<h3 id="get-方法"><a href="#get-方法" class="headerlink" title="get()方法"></a><code>get()</code>方法</h3><p><code>get()</code>有两个参数：要取得该值的键和一个备用的返回值。如果查询的键不在字典中，返回备用的值；否则返回该键对应的值。<code>get()</code>的默认返回值为$0$，如果不适用<code>get()</code>方法，在查询失败的时候会返回<code>KeyError</code></p>
-<h3 id="setdefault-方法"><a href="#setdefault-方法" class="headerlink" title="setdefault()方法"></a><code>setdefault()</code>方法</h3><p><code>setdefault()</code>方法存在两个参数。相当于提供了一个if语句：如果字典中存在查找的键（第一个参数），返回键对应的值；否则将第一个参数作为键，第二个参数作为第一个参数对应的值加入到字典中</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line">dic.setdefault(<span class="number">4</span>,<span class="string">'d'</span>)</span><br></pre></td></tr></table></figure>
-<p>相当于：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="keyword">if</span> <span class="number">4</span> <span class="keyword">not</span> <span class="keyword">in</span> dic:</span><br><span class="line">    dic[<span class="number">4</span>]=<span class="string">'d'</span></span><br></pre></td></tr></table></figure>
-<p>输出<code>dic</code>会发现输出均为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>: <span class="string">'a'</span>, <span class="number">2</span>: <span class="string">'b'</span>, <span class="number">3</span>: <span class="string">'c'</span>, <span class="number">4</span>: <span class="string">'d'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>使用<code>setdefault()</code>可以确保一个键的存在</p>
-<p>可以利用<code>setdefault()</code>对字符串中出现的字符进行计数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">'qwertyuioplkjhgfdsazxcvbnm'</span></span><br><span class="line">count=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> s:</span><br><span class="line">    count.setdefault(ch,<span class="number">0</span>)</span><br><span class="line">    count[ch]+=<span class="number">1</span></span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'q'</span>: <span class="number">1</span>, <span class="string">'w'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'t'</span>: <span class="number">1</span>, <span class="string">'y'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>, <span class="string">'i'</span>: <span class="number">1</span>, <span class="string">'o'</span>: <span class="number">1</span>, <span class="string">'p'</span>: <span class="number">1</span>, <span class="string">'l'</span>: <span class="number">1</span>, <span class="string">'k'</span>: <span class="number">1</span>, <span class="string">'j'</span>: <span class="number">1</span>, <span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'g'</span>: <span class="number">1</span>, <span class="string">'f'</span>: <span class="number">1</span>, <span class="string">'d'</span>: <span class="number">1</span>, <span class="string">'s'</span>: <span class="number">1</span>, <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'z'</span>: <span class="number">1</span>, <span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">1</span>, <span class="string">'v'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">1</span>, <span class="string">'n'</span>: <span class="number">1</span>, <span class="string">'m'</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="pprint模块的简单应用"><a href="#pprint模块的简单应用" class="headerlink" title="pprint模块的简单应用"></a><code>pprint</code>模块的简单应用</h2><p>将上述代码导入<code>pprint</code>模块之后，使用<code>pprint()</code>输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  pprint</span><br><span class="line">s=<span class="string">'qwertyuioplkjhgfdsazxcvbnm'</span></span><br><span class="line">count=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> s:</span><br><span class="line">    count.setdefault(ch,<span class="number">0</span>)</span><br><span class="line">    count[ch]+=<span class="number">1</span></span><br><span class="line">pprint.pprint(count)</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;a&apos;: 1,</span><br><span class="line"> &apos;b&apos;: 1,</span><br><span class="line"> &apos;c&apos;: 1,</span><br><span class="line"> &apos;d&apos;: 1,</span><br><span class="line"> &apos;e&apos;: 1,</span><br><span class="line"> &apos;f&apos;: 1,</span><br><span class="line"> &apos;g&apos;: 1,</span><br><span class="line"> &apos;h&apos;: 1,</span><br><span class="line"> &apos;i&apos;: 1,</span><br><span class="line"> &apos;j&apos;: 1,</span><br><span class="line"> &apos;k&apos;: 1,</span><br><span class="line"> &apos;l&apos;: 1,</span><br><span class="line"> &apos;m&apos;: 1,</span><br><span class="line"> &apos;n&apos;: 1,</span><br><span class="line"> &apos;o&apos;: 1,</span><br><span class="line"> &apos;p&apos;: 1,</span><br><span class="line"> &apos;q&apos;: 1,</span><br><span class="line"> &apos;r&apos;: 1,</span><br><span class="line"> &apos;s&apos;: 1,</span><br><span class="line"> &apos;t&apos;: 1,</span><br><span class="line"> &apos;u&apos;: 1,</span><br><span class="line"> &apos;v&apos;: 1,</span><br><span class="line"> &apos;w&apos;: 1,</span><br><span class="line"> &apos;x&apos;: 1,</span><br><span class="line"> &apos;y&apos;: 1,</span><br><span class="line"> &apos;z&apos;: 1&#125;</span><br></pre></td></tr></table></figure>
-<p><code>pprint()</code>对于包含列表等的字典特别有用</p>
-<p>使用<code>pformat()</code>可以将<code>pprint()</code>输出的字典当做字符串来储存。以下两行代码是等效的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pprint.pprint(count)</span><br><span class="line">print(pprint.pformat((count)))</span><br></pre></td></tr></table></figure>
+<h2 id="kNN算法步骤："><a href="#kNN算法步骤：" class="headerlink" title="kNN算法步骤："></a>kNN算法步骤：</h2><ol>
+<li>计算数据集中的点与待分类点之间的距离</li>
+<li>按照距离升序排序</li>
+<li>选出距离最小的$k$个点</li>
+<li>计算这$k$个点所在类别出现的频率（次数）</li>
+<li>返回出现频率最高的点的类别</li>
+</ol>
+<h2 id="代码的实现："><a href="#代码的实现：" class="headerlink" title="代码的实现："></a>代码的实现：</h2><p>首先导入<code>numpy</code>模块和<code>operator</code>模块，建立一个数据集</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> operator</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createDataSet</span><span class="params">()</span>:</span></span><br><span class="line">    group = array([[<span class="number">1.0</span>, <span class="number">1.1</span>], [<span class="number">1.0</span>, <span class="number">1.0</span>], [<span class="number">0</span>, <span class="number">0</span>], [<span class="number">0</span>, <span class="number">0.1</span>]])</span><br><span class="line">    labels = [<span class="string">'A'</span>, <span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'B'</span>]</span><br><span class="line">    <span class="keyword">return</span> group, labels</span><br></pre></td></tr></table></figure>
+<p>kNN算法的核心代码</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># inX-用于分类的输入向量；dataSet-训练样本集；labels-标签向量；k-选择最近邻居的个数</span></span><br><span class="line"><span class="comment"># 实现kNN算法</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classify0</span><span class="params">(inX, dataSet, labels, k)</span>:</span></span><br><span class="line">    <span class="comment"># shape返回各个维度的维数，shape[0]表示最外围的数组的维数，shape[1]表示次外围的数组的维数，数字不断增大，维数由外到内。</span></span><br><span class="line">    <span class="comment"># 例如：二维数组中，shape[0]表示行数，shape[1]表示列数</span></span><br><span class="line">    dataSetSize = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># tile([n1,n2](a,b))表示在行的方向上重复[n1,n2]a次，在列的方向上重复b次</span></span><br><span class="line">    <span class="comment"># 两个矩阵大小相同的矩阵相减</span></span><br><span class="line">    diffMat = tile(inX, (dataSetSize, <span class="number">1</span>)) - dataSet</span><br><span class="line">    <span class="comment"># 对应位置的元素直接相乘</span></span><br><span class="line">    <span class="comment"># 如果需要矩阵乘法，使用dot(a,b)</span></span><br><span class="line">    sqDiffMat = diffMat ** <span class="number">2</span></span><br><span class="line">    <span class="comment"># sum(axis=1)表示按行（第二维度）相加，axis=0表示按列（第一维度）相加</span></span><br><span class="line">    <span class="comment"># 此处得到inX到dataSet各点的距离的平方</span></span><br><span class="line">    sqDistances = sqDiffMat.sum(axis=<span class="number">1</span>)</span><br><span class="line">    distances = sqDistances ** <span class="number">0.5</span></span><br><span class="line">    <span class="comment"># 升序排序后返回其下标</span></span><br><span class="line">    sortedDistIndicies = distances.argsort()</span><br><span class="line">    classCound = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        <span class="comment"># 当前点的标签</span></span><br><span class="line">        voteIlabel = labels[sortedDistIndicies[i]]</span><br><span class="line">        <span class="comment"># 将点的标签数+1</span></span><br><span class="line">        classCound[voteIlabel] = classCound.get(voteIlabel, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">    <span class="comment"># 将字典分解成元组列表，并按照第二个元素进行降序排序</span></span><br><span class="line">    sortedClassCount = sorted(classCound.items(), key=operator.itemgetter(<span class="number">1</span>), reverse=<span class="keyword">True</span>)</span><br><span class="line">    <span class="keyword">return</span> sortedClassCount[<span class="number">0</span>][<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="使用K-近邻算法改进约会网站的配对效果"><a href="#使用K-近邻算法改进约会网站的配对效果" class="headerlink" title="使用K-近邻算法改进约会网站的配对效果"></a>使用K-近邻算法改进约会网站的配对效果</h2><h3 id="数据集的处理"><a href="#数据集的处理" class="headerlink" title="数据集的处理"></a>数据集的处理</h3><p>首先我们需要处理数据集，将其转换成训练样本矩阵和类标签向量</p>
+<p>约会网站的数据集对应的文件名是<code>datingTestSet2.txt</code>，每列对应的标签分别是：每年获得的飞行常客里程数；玩视频游戏所耗时间百分比；每周消费的冰淇淋公升数；属于哪一类型的人</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将文本记录转换成Numpy的解析程序</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">file2matrix</span><span class="params">(filename)</span>:</span></span><br><span class="line">    fr = open(filename)</span><br><span class="line">    arrar0Lines = fr.readlines()</span><br><span class="line">    <span class="comment"># 获得文件行数</span></span><br><span class="line">    number0fLines = len(arrar0Lines)</span><br><span class="line">    <span class="comment"># 创建一个number0fLines行3列的全是0的矩阵</span></span><br><span class="line">    retrunMat = zeros((number0fLines, <span class="number">3</span>))</span><br><span class="line">    classLabelVector = []</span><br><span class="line">    index = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> arrar0Lines:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        listFromLine = line.split(<span class="string">'\t'</span>)</span><br><span class="line">        <span class="comment"># 选取每行的前三个元素放入returnMat中</span></span><br><span class="line">        retrunMat[index, :] = listFromLine[<span class="number">0</span>:<span class="number">3</span>]</span><br><span class="line">        <span class="comment"># 将所属类别放入classLabelVector</span></span><br><span class="line">        classLabelVector.append(int(listFromLine[<span class="number">-1</span>]))</span><br><span class="line">        index += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> retrunMat, classLabelVector</span><br></pre></td></tr></table></figure>
+<h3 id="使用Matplotlib创建散点图"><a href="#使用Matplotlib创建散点图" class="headerlink" title="使用Matplotlib创建散点图"></a>使用Matplotlib创建散点图</h3><p>在命令行环境中，输入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kNN</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> matplotlib</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">datingDataMat,datingLabels=kNN.file2matrix(<span class="string">'datingTestSet2.txt'</span>)</span><br><span class="line"><span class="comment"># 创建一个画布</span></span><br><span class="line">fig=plt.figure()</span><br><span class="line"><span class="comment"># 111的含义是将画布分割成1行1列，画像在从左到右，从上到下第一块</span></span><br><span class="line">ax=fig.add_subplot(<span class="number">111</span>)</span><br><span class="line"><span class="comment"># 以第二列和第三列为x,y轴画出散列点，给予不同的颜色和大小</span></span><br><span class="line"><span class="comment"># scatter（x,y,s=1,c="g",marker="s",linewidths=0）</span></span><br><span class="line"><span class="comment"># s:散列点的大小,c:散列点的颜色，marker：形状，linewidths：边框宽度</span></span><br><span class="line">ax.scatter(datingDataMat[:,<span class="number">1</span>],datingDataMat[:,<span class="number">2</span>],<span class="number">15.0</span>*array(datingLabels),<span class="number">15.0</span>*array(datingLabels))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>此时，可以得到数据集的散点图：（横坐标是<code>玩视频游戏所耗时间百分比</code>，纵坐标是<code>每周消费的冰淇淋公升数</code>）</p>
+<p><img src="https://i.loli.net/2019/02/10/5c5fc6d925521.png" alt="3FS$[O~Y0D31E$89EQGPV7I.png" title="3FS$[O~Y0D31E$89EQGPV7I.png" width="50%"></p>
+<h3 id="归一化数据"><a href="#归一化数据" class="headerlink" title="归一化数据"></a>归一化数据</h3><p><img src="https://i.loli.net/2019/02/10/5c5fc9649d3a3.png" alt="QQ截图20190210144854.png" title="QQ截图20190210144854.png"></p>
+<p>可以看出，在计算点的距离时，里程数对于距离的影响特别大，为了减小这个影响，需要将所有的数据范围处理到$0$到$1$或$-1$到$1$之间，利用下面的公式，可以实现将特征值转化为$[0,1]$区间内的值：</p>
+<script type="math/tex; mode=display">
+newValue=(oldValue-min)/(max-min)</script><p>代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 归一化特征值</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">autoNorm</span><span class="params">(dataSet)</span></span></span><br><span class="line"><span class="function">    # 按列查找最大值和最小值</span></span><br><span class="line">    minVals = dataSet.min(0)</span><br><span class="line">    maxVals = dataSet.max(<span class="number">0</span>)</span><br><span class="line">    ranges = maxVals - minVals</span><br><span class="line">    <span class="comment"># 创建一个和dataSet大小相同的全是0的数组</span></span><br><span class="line">    normDataSet = zeros(shape(dataSet))</span><br><span class="line">    m = dataSet.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 获得值为oldValue-min的数组</span></span><br><span class="line">    normDataSet = dataSet - tile(minVals, (m, <span class="number">1</span>))</span><br><span class="line">    <span class="comment"># 归一化的数组</span></span><br><span class="line">    normDataSet = normDataSet / tile(ranges, (m, <span class="number">1</span>))</span><br><span class="line">    <span class="keyword">return</span> normDataSet, ranges, minVals</span><br></pre></td></tr></table></figure>
+<h3 id="分类器针对约会网站的测试代码"><a href="#分类器针对约会网站的测试代码" class="headerlink" title="分类器针对约会网站的测试代码"></a>分类器针对约会网站的测试代码</h3><p>使用数据集中的$10\%$的数据作为测试数据，剩余的$90\%$作为数据集</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 对于数据的测试</span></span><br><span class="line"><span class="comment"># 选出10%作为测试数据，剩余90%作为数据集</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">datingClassTest</span><span class="params">()</span>:</span></span><br><span class="line">    hoRatio = <span class="number">0.10</span></span><br><span class="line">    datingDataMat, datingLabels = file2matrix(<span class="string">'datingTestSet2.txt'</span>)</span><br><span class="line">    normMat, ranges, minVals = autoNorm(datingDataMat)</span><br><span class="line">    m = normMat.shape[<span class="number">0</span>]</span><br><span class="line">    <span class="comment"># 获得测试数据的组数</span></span><br><span class="line">    numTestVecs = int(m * hoRatio)</span><br><span class="line">    errorCount = <span class="number">0.0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(numTestVecs):</span><br><span class="line">        classifierResult = classify0(normMat[i, :], normMat[numTestVecs:m, :], datingLabels[numTestVecs:m], <span class="number">3</span>)</span><br><span class="line">        print(<span class="string">"the classifier came back with: %d, the real answer is: %d"</span> % (classifierResult, datingLabels[i]))</span><br><span class="line">        <span class="keyword">if</span> (classifierResult != datingLabels[i]):</span><br><span class="line">            errorCount += <span class="number">1.0</span></span><br><span class="line">            print(<span class="string">"the total error rate is: %f"</span> % (errorCount / float(numTestVecs)))</span><br></pre></td></tr></table></figure>
+<h3 id="约会网站预测函数"><a href="#约会网站预测函数" class="headerlink" title="约会网站预测函数"></a>约会网站预测函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">classifyPerson</span><span class="params">()</span>:</span></span><br><span class="line">    resultList = [<span class="string">'not at all'</span>, <span class="string">'in small doses'</span>, <span class="string">'in large doses'</span>]</span><br><span class="line">    percentTats = float(input(<span class="string">"percentage of time spent palying video games?"</span>))</span><br><span class="line">    ffMiles = float(input(<span class="string">"fregunt flier miles earned per year?"</span>))</span><br><span class="line">    iceCream = float(input(<span class="string">"liters of ice cream consumed per year?"</span>))</span><br><span class="line">    datingDataMat, datingLabels = file2matrix(<span class="string">'datingTestSet2.txt'</span>)</span><br><span class="line">    normMat, ranges, minVals = autoNorm(datingDataMat)</span><br><span class="line">    inArr = array([ffMiles, percentTats, iceCream])</span><br><span class="line">    classifierResult = classify0((inArr - minVals) / ranges, normMat, datingLabels, <span class="number">3</span>)</span><br><span class="line">    print(<span class="string">"You will probably like this person: "</span>, resultList[classifierResult - <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -575,12 +571,12 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/learn/Python学习NO_3/">Python学习第三天</a></p>
+  <p><span>本文标题:</span><a href="/learn/ml-2/">《机器学习实战》kNN算法及约会网站代码详解</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
-  <p><span>发布时间:</span>2019年01月25日 - 17:01</p>
-  <p><span>最后更新:</span>2019年01月26日 - 22:01</p>
-  <p><span>原始链接:</span><a href="/learn/Python学习NO_3/" title="Python学习第三天">https://blog.wzy1999.wang/learn/Python学习NO_3/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/learn/Python学习NO_3/"  aria-label="复制成功！"></i></span>
+  <p><span>发布时间:</span>2019年02月10日 - 15:02</p>
+  <p><span>最后更新:</span>2019年02月10日 - 15:02</p>
+  <p><span>原始链接:</span><a href="/learn/ml-2/" title="《机器学习实战》kNN算法及约会网站代码详解">https://blog.wzy1999.wang/learn/ml-2/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/learn/ml-2/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -612,7 +608,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
     <strong>本文作者： </strong>执念</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.wzy1999.wang/learn/Python学习NO_3/" title="Python学习第三天">https://blog.wzy1999.wang/learn/Python学习NO_3/</a>
+    <a href="https://blog.wzy1999.wang/learn/ml-2/" title="《机器学习实战》kNN算法及约会网站代码详解">https://blog.wzy1999.wang/learn/ml-2/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -633,7 +629,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
         <div class="post-tags">
           
-            <a href="/tags/py-learn/" <i class="fa fa-tag"></i> py_learn</a>
+            <a href="/tags/ml-learn/" <i class="fa fa-tag"></i> ml_learn</a>
           
         </div>
       
@@ -646,8 +642,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/learn/机器学习NO_1/" rel="next" title="机器学习第一天">
-                <i class="fa fa-chevron-left"></i> 机器学习第一天
+              <a href="/solve/niuke368B/" rel="next" title="牛客练习赛39 B：选点（二叉树遍历+LIS）">
+                <i class="fa fa-chevron-left"></i> 牛客练习赛39 B：选点（二叉树遍历+LIS）
               </a>
             
           </div>
@@ -655,10 +651,6 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/learn/Python学习NO_4/" rel="prev" title="Python学习第四天">
-                Python学习第四天 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -737,7 +729,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-count">19</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -905,7 +897,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章——字典和结构化数据"><span class="nav-number">1.</span> <span class="nav-text">第五章——字典和结构化数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">1.1.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典中的一些方法"><span class="nav-number">1.2.</span> <span class="nav-text">字典中的一些方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#keys-values-items"><span class="nav-number">1.2.1.</span> <span class="nav-text">keys() values() items()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">get()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setdefault-方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">setdefault()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pprint模块的简单应用"><span class="nav-number">1.3.</span> <span class="nav-text">pprint模块的简单应用</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#kNN算法步骤："><span class="nav-number">1.</span> <span class="nav-text">kNN算法步骤：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码的实现："><span class="nav-number">2.</span> <span class="nav-text">代码的实现：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用K-近邻算法改进约会网站的配对效果"><span class="nav-number">3.</span> <span class="nav-text">使用K-近邻算法改进约会网站的配对效果</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据集的处理"><span class="nav-number">3.1.</span> <span class="nav-text">数据集的处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用Matplotlib创建散点图"><span class="nav-number">3.2.</span> <span class="nav-text">使用Matplotlib创建散点图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#归一化数据"><span class="nav-number">3.3.</span> <span class="nav-text">归一化数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分类器针对约会网站的测试代码"><span class="nav-number">3.4.</span> <span class="nav-text">分类器针对约会网站的测试代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#约会网站预测函数"><span class="nav-number">3.5.</span> <span class="nav-text">约会网站预测函数</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -955,7 +947,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共35.7k字</span>
+  <span class="post-count">博客全站共37k字</span>
 </div>
 <!-- 
   <span class="post-meta-divider">|</span>
@@ -1123,7 +1115,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
     <script type="text/javascript">
       window.livereOptions = {
-        refer: 'learn/Python学习NO_3/'
+        refer: 'learn/ml-2/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
