@@ -161,7 +161,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <meta property="og:site_name" content="执念">
 <meta property="og:description" content="Python中所有的正则表达式的函数都在re模块中  向re.compile()中传入一个字符串（原始字符串），表示正则表达式，将返回一个Regex模式对象">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-11T13:26:02.226Z">
+<meta property="og:updated_time" content="2019-02-11T13:30:49.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模式匹配与正则表达式">
 <meta name="twitter:description" content="Python中所有的正则表达式的函数都在re模块中  向re.compile()中传入一个字符串（原始字符串），表示正则表达式，将返回一个Regex模式对象">
@@ -545,8 +545,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 </li>
 <li><p>正则表达式默认是“贪心”的，会尽可能匹配最长的字符串。在花括号后添加<code>?</code>可以改为非贪心匹配（匹配最短的）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'(a)&#123;3,5&#125;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1=num.search(<span class="string">'aaaaa'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1.group()</span><br><span class="line"><span class="string">'aaaaa'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'(a)&#123;3,5&#125;?'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1=num.search(<span class="string">'aaaaa'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1.group()</span><br><span class="line"><span class="string">'aaa'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><table>
+<table>
     <thead>
         <tr>
             <th>缩写字符分类</th>
@@ -579,8 +578,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
             <td>除空格、制表符和换行符以外的任何字符</td>
         </tr>
     </tbody>
-</table>
-</li>
+</table></li>
 <li><p>可以使用<code>[]</code>来创建自己的字符分类。例如：<code>[0-9]</code>匹配所有的数字，<code>[a-z]</code>匹配所有的小写字母；在字符前加上<code>^</code>表示匹配不在创建字符分类中的所有字符。对于正则表达式符号，不需要进行转义</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">r'[0-9]'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1=re.compile(<span class="string">r'[^0-9]'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=a.findall(<span class="string">'abc123de'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1=a1.findall(<span class="string">'abc123de'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</span><br></pre></td></tr></table></figure>
 </li>
