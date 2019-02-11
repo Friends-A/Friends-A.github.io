@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[模式匹配与正则表达式]]></title>
+    <url>%2Flearn%2Fpyl-5%2F</url>
+    <content type="text"><![CDATA[Python中所有的正则表达式的函数都在re模块中 向re.compile()中传入一个字符串（原始字符串），表示正则表达式，将返回一个Regex模式对象 使用search()方法查找传入的字符串，如果没有匹配到，返回None，匹配到的字符串将会被放在search()返回的Match对象的group()方法中 12345&gt;&gt;&gt; import re&gt;&gt;&gt; num=re.compile(r'\d\d\d\d-\d\d-\d\d')&gt;&gt;&gt; birthday=num.search('birthday is 1926-28-17')&gt;&gt;&gt; print("He's birthday is "+birthday.group())He's birthday is 1926-28-17 如果想要从生日中提取年、月、日等信息的话，可以添加括号在正则表达式中创建分组。向group()中传入0或不传参数，返回匹配到的整个字符串；传入其余正整数$N$返回匹配到的第$N$部分 12345678910111213&gt;&gt;&gt; import re&gt;&gt;&gt; num=re.compile(r'(\d\d\d\d)-(\d\d)-(\d\d)')&gt;&gt;&gt; birthday=num.search('birthday is 1926-28-17')&gt;&gt;&gt; birthday.group()'1926-28-17'&gt;&gt;&gt; birthday.group(0)'1926-28-17'&gt;&gt;&gt; birthday.group(1)'1926'&gt;&gt;&gt; birthday.group(2)'28'&gt;&gt;&gt; birthday.group(3)'17' 如果想要一次性获得所有分组，使用groups()方法，返回值是元组类型 123456&gt;&gt;&gt; type(birthday.group())&lt;class 'str'&gt;&gt;&gt;&gt; type(birthday.groups())&lt;class 'tuple'&gt;&gt;&gt;&gt; birthday.groups()('1926', '28', '17') 如果待匹配的表达式有多个时，在表达式之间使用|（管道）可以达到目的。此时search返回的是第一次匹配到的字符串；如果想要获得所有的匹配，可以使用findall()来代替search()，但是findall()返回的是列表 123456789&gt;&gt;&gt; st=re.compile(r'orange|tangerine')&gt;&gt;&gt; like=st.search('I like eat orange or tangerine.')&gt;&gt;&gt; like.group()'orange'&gt;&gt;&gt; like=st.findall('I like eat orange or tangerine.')&gt;&gt;&gt; type(like)&lt;class 'list'&gt;&gt;&gt;&gt; like['orange', 'tangerine'] 利用(str)?可以实现可选匹配，在匹配的时候，str可以出现零次或一次 1234567&gt;&gt;&gt; num=re.compile(r'b(a)?b')&gt;&gt;&gt; n=num.search('bab')&gt;&gt;&gt; n1=num.search('bb')&gt;&gt;&gt; n.group()'bab'&gt;&gt;&gt; n1.group()'bb' (str)*str部分可以出现零次或多次；(str)+ str部分可以出现一次或多次 12345678910111213141516// 星号匹配&gt;&gt;&gt; num=re.compile(r'b(a)*b')&gt;&gt;&gt; n=num.search('baaaaaaaaab')&gt;&gt;&gt; n1=num.search('bb')&gt;&gt;&gt; n.group()'baaaaaaaaab'&gt;&gt;&gt; n1.group()'bb'// 加号匹配&gt;&gt;&gt; num=re.compile(r'b(a)+b')&gt;&gt;&gt; n=num.search('baaaaaaaaab')&gt;&gt;&gt; n1=num.search('bab')&gt;&gt;&gt; n.group()'baaaaaaaaab'&gt;&gt;&gt; n1.group()'bab' 利用花括号可以实现匹配特定的次数：(str){3,}将str匹配3次或更多次。(str){,5}将str匹配0-5次 1234567&gt;&gt;&gt; num=re.compile(r'(a)&#123;3&#125;')&gt;&gt;&gt; n=num.search('aaa')&gt;&gt;&gt; n1=num.search('aa')&gt;&gt;&gt; n.group()'aaa'&gt;&gt;&gt; n1==NoneTrue 正则表达式默认是“贪心”的，会尽可能匹配最长的字符串。在花括号后添加?可以改为非贪心匹配（匹配最短的） 12345678&gt;&gt;&gt; num=re.compile(r'(a)&#123;3,5&#125;')&gt;&gt;&gt; n1=num.search('aaaaa')&gt;&gt;&gt; n1.group()'aaaaa'&gt;&gt;&gt; num=re.compile(r'(a)&#123;3,5&#125;?')&gt;&gt;&gt; n1=num.search('aaaaa')&gt;&gt;&gt; n1.group()'aaa' | 缩写字符分类 | 表示 || —————— | ——————————————————————————— || \d | $0$到$9$的任何数字 || \D | 除$0$到$9$的数字以外的任何字符 || \w | 任何字母、数字或下划线字符（可以认为是匹配“单词”字符） || \W | 除了字母、数字和下划线以外的任何字符 || \s | 空格、制表符或换行符（可以认为是匹配“空白”字符） || \S | 除空格、制表符和换行符以外的任何字符 | 可以使用[]来创建自己的字符分类。例如：[0-9]匹配所有的数字，[a-z]匹配所有的小写字母；在字符前加上^表示匹配不在创建字符分类中的所有字符。对于正则表达式符号，不需要进行转义 12345678&gt;&gt;&gt; a=re.compile(r'[0-9]')&gt;&gt;&gt; a1=re.compile(r'[^0-9]')&gt;&gt;&gt; b=a.findall('abc123de')&gt;&gt;&gt; b1=a1.findall('abc123de')&gt;&gt;&gt; b['1', '2', '3']&gt;&gt;&gt; b1['a', 'b', 'c', 'd', 'e'] 在正则表达式开始出插入^，表示匹配必须在被查找文本的开始出；在末尾插入$，表示必须以这个正则表达式的模式结束；同时使用二者，表示整个字符串必须匹配该模式r&#39;^\d+$匹配全是数字的字符串 .可以匹配除了换行以外的所有字符，被称为“通配符” 1234&gt;&gt;&gt; a=re.compile(r'.234')&gt;&gt;&gt; b=a.findall('1234 2234 3234')&gt;&gt;&gt; b['1234', '2234', '3234'] 用.*进行组合，可以匹配任意字符，任意长度的文本，默认是贪心的；.*?这种匹配是非贪心的 12345678&gt;&gt;&gt; num=re.compile(r'&lt;.*&gt;')&gt;&gt;&gt; a=num.search('&lt;1+2+3&gt;*&lt;4+5+6&gt;+10')&gt;&gt;&gt; a.group()'&lt;1+2+3&gt;*&lt;4+5+6&gt;'&gt;&gt;&gt; num=re.compile(r'&lt;.*?&gt;')&gt;&gt;&gt; a=num.search('&lt;1+2+3&gt;*&lt;4+5+6&gt;+10')&gt;&gt;&gt; a.group()'&lt;1+2+3&gt;']]></content>
+      <categories>
+        <category>learn</category>
+      </categories>
+      <tags>
+        <tag>py_learn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[codevs1300：文件排版（DP）]]></title>
     <url>%2Fsolve%2Fcodevs1300%2F</url>
     <content type="text"><![CDATA[题目描述写电子邮件是有趣的，但不幸的是经常写不好看，主要是因为所有的行不一样长，你的上司想要发排版精美的电子邮件，你的任务是为他编写一个电子邮件排版程序。 完成这个任务最简单的办法是在太短的行中的单词之间插入空格，但这并不是最好的方法，考虑如下例子： This is the example you are actually considering. 假设我们想将第二行变得和第一行一样长，靠简单地插入空格则我们将得到如下结果： This is the example you are actually considering. 但这太难看了，因为在第二行中有一个非常大的空白，如果将第一行的单词“are”移到下一行我们将得到较好的结果： This is the example you are actually considering. 当然，这必须对难看程度进行量化。因此我们必须给出单词之间的空格的难看程度，一个包含$N$个空格符的空白段，其难看程度值为$(n-1)^2$，程序的目的是使难看程度的总和最小化。例如，第一个例子的难看程度是$1+7\times7=50$，而第二个例子的难看程度仅为$1+1+1+4+1+4=12$。 输出时，每一行的开头和结尾处都必须是一个单词，即每行开头和结尾处不能有空白。唯一例外的是该行仅有一个单词组成的情况，对于这种情况你可将单词放在该行开头处输出，此时如果该单词比该行应有的长度短则我们指定它的最坏程度为$500$，当然在这种情况下，该行的实际长度即为该单词的长度。 输入描述输入文件第一行是一个整数N，表示该段要求达到的宽度，$1\leq N\leq 80$。该段文章由一个或多个单词组成，单词由ASCII码值为$33$到$126$（包含$33$和$126$）的字符组成，单词与单词之间用空格隔开（可能超过一个）。单词长度不会超过段落要求达到的宽度。一段文字所有单词的总长度不会超过$10000$个字符，任何一行都不会超过$100$个字符，任何一个单词都在同一行内。 输出描述对于每个段落，找出使其难看程度最小的排版形式并输出句子：“Minimal badness is B.”,B是指按可能的最好排版形式会发生的难看程度值。注意排版后文本行数任意，多余的空格也可删除。 样例输入123428This is the example you areactually considering. 样例输出1Minimal badness is 12. Solve二维的DP：状态$dp[i][j]$表示第$i$个单词末尾放在$j$位置的最小难看程度 123456789101112131415161718192021222324252627282930313233343536373839404142#include &lt;bits/stdc++.h&gt;#define ll long long#define ull unsigned long long#define ms(a,b) memset(a,b,sizeof(a))#define INF 0x7f7f7f7fconst int maxn=1e3+10;const int mod=1e9+7;using namespace std;char ch[maxn];// dp[i][j]表示第i个单词末尾放到位置j的最小难看程度int dp[maxn][maxn];int len[maxn];int main(int argc, char const *argv[])&#123; ios::sync_with_stdio(false); cin.tie(0); int n; cin&gt;&gt;n; int cnt=0; while(cin&gt;&gt;ch) len[++cnt]=strlen(ch); ms(dp,INF); dp[1][n]=500; dp[1][len[1]]=0; for(int i=2;i&lt;=cnt;i++) for(int j=len[i];j&lt;=n;j++) &#123; int res=j-len[i]; // 如果是某行的第一个单词，继承上一行的最后一个状态 if(!res) dp[i][j]=dp[i-1][n]; else &#123; if(j==n) dp[i][j]=dp[i-1][j]+500; for(int k=0;k&lt;res;k++) dp[i][j]=min(dp[i][j],dp[i-1][k]+(res-k-1)*(res-k-1)); &#125; &#125; cout&lt;&lt;"Minimal badness is "&lt;&lt;dp[cnt][n]&lt;&lt;"."&lt;&lt;endl; return 0;&#125; 一维的DP12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include &lt;bits/stdc++.h&gt;#define ll long long#define ull unsigned long long#define ms(a,b) memset(a,b,sizeof(a))#define INF 0x7f7f7f7fconst int maxn=1e6+10;const int mod=1e9+7;using namespace std;char ch[maxn];// dp[i]表示以第i个单词作为一行的结尾的最小难看程度// dp[i]=min(dp[i]+cost(j,i))// cost(j,i)表示j+1到i在同一行的最小难看程度// 当空格在一行内平分的时候难看程度最小int dp[maxn];int len[maxn];inline int calc(int l,int r,int n)&#123; if(l==r) &#123; if(len[r]-len[l-1]==n) return 0; return 500; &#125; // 一行内的空格数 int res=n-(len[r]-len[l-1]); // 一行内至少要有r-l个空格】 if(res&lt;r-l) return INF; // 将空格平分 int space=res/(r-l); // 多余的空格往之前的空格段中平分,每段至多一个 int more=res%(r-l); space-=1; return space*space*(r-l)+more*(space*2+1);&#125;int main(int argc, char const *argv[])&#123; ios::sync_with_stdio(false); cin.tie(0); int n; int cnt=0; cin&gt;&gt;n; while(cin&gt;&gt;ch) len[++cnt]=len[cnt-1]+strlen(ch); ms(dp,INF); dp[0]=0; for(int i=1;i&lt;=cnt;i++) for(int j=1;j&lt;=i;j++) dp[i]=min(dp[i],dp[j-1]+calc(j,i,n)); cout&lt;&lt;"Minimal badness is "&lt;&lt;dp[cnt]&lt;&lt;"."&lt;&lt;endl; return 0;&#125;]]></content>
@@ -63,8 +74,8 @@
         <category>solve</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>search</tag>
+        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -105,8 +116,8 @@
         <category>solve</category>
       </categories>
       <tags>
-        <tag>DP</tag>
         <tag>search</tag>
+        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -117,8 +128,8 @@
         <category>solve</category>
       </categories>
       <tags>
-        <tag>search</tag>
         <tag>math</tag>
+        <tag>search</tag>
       </tags>
   </entry>
   <entry>
