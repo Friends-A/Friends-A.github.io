@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="zh-CN">
+<html class="theme-next mist use-motion" lang="zh-CN">
 
 <!-- 
 <script type="text/javascript"
@@ -129,9 +129,9 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Gemini',
+    scheme: 'Mist',
     version: '6.4.1',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    sidebar: {"display":"always","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
     fancybox: false,
     fastclick: false,
     lazyload: false,
@@ -163,7 +163,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 
   <meta name="description" content="题目描述Michael喜欢滑雪。这并不奇怪，因为滑雪的确很刺激。可是为了获得速度，滑的区域必须向下倾斜，而且当你滑到坡底，你不得不再次走上坡或者等待升降机来载你。Michael想知道在一个区域中最长的滑坡。区域由一个二维数组给出。数组的每个数字代表点的高度。下面是一个例子：">
-<meta name="keywords" content="search,DP">
+<meta name="keywords" content="DP,search">
 <meta property="og:type" content="article">
 <meta property="og:title" content="luogu1434——[SHOI2002]滑雪（DP，记忆化搜索）">
 <meta property="og:url" content="https://blog.wzy1999.wang/solve/luogu1434/index.html">
@@ -235,10 +235,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
   
   
-    
-  
 
-  <div class="container sidebar-position-left page-post-detail">
+  <div class="container  page-post-detail">
     <div class="headband"></div>
     <!-- <a href="https://github.com/Friends-A"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a> -->
 
@@ -339,6 +337,9 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
 
   
+    
+
+  
 
   
     <div class="site-search">
@@ -381,9 +382,6 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
     <main id="main" class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          
-            
-
           
           <div id="content" class="content">
             
@@ -617,9 +615,9 @@ dp[i][j]=max(dp[i][j+1]+1,dp[i][j]\ \ (if\ dp[i][j]>dp[i][j+1])</script><p>但�
       
         <div class="post-tags">
           
-            <a href="/tags/search/" <i class="fa fa-tag"></i> search</a>
-          
             <a href="/tags/DP/" <i class="fa fa-tag"></i> DP</a>
+          
+            <a href="/tags/search/" <i class="fa fa-tag"></i> search</a>
           
         </div>
       
@@ -733,7 +731,7 @@ dp[i][j]=max(dp[i][j+1]+1,dp[i][j]\ \ (if\ dp[i][j]>dp[i][j+1])</script><p>但�
                 
                 
                 <div class="site-state-item site-state-categories">
-                  <a href="/categories1/index.html">
+                  <a href="/categories/index.html">
                     
                     
                       
@@ -756,7 +754,7 @@ dp[i][j]=max(dp[i][j+1]+1,dp[i][j]\ \ (if\ dp[i][j]>dp[i][j+1])</script><p>但�
                 
                 
                 <div class="site-state-item site-state-tags">
-                  <a href="/tags1/index.html">
+                  <a href="/tags/index.html">
                     
                     
                       
@@ -934,7 +932,7 @@ dp[i][j]=max(dp[i][j+1]+1,dp[i][j]\ \ (if\ dp[i][j]>dp[i][j+1])</script><p>但�
 
  -->
 <!-- 
-  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Gemini</a> v6.4.1</div>
+  <div class="theme-info">主题 – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
  -->
 
 <!--  -->
@@ -1081,13 +1079,6 @@ dp[i][j]=max(dp[i][j+1]+1,dp[i][j]\ \ (if\ dp[i][j]>dp[i][j+1])</script><p>但�
 
   
   
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=6.4.1"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.4.1"></script>
-
-
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
@@ -1462,21 +1453,6 @@ dp[i][j]=max(dp[i][j+1]+1,dp[i][j]\ \ (if\ dp[i][j]>dp[i][j+1])</script><p>但�
   
 
   
-<script>
-(function(){
-    var bp = document.createElement('script');
-    var curProtocol = window.location.protocol.split(':')[0];
-    if (curProtocol === 'https') {
-        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
-    }
-    else {
-        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-    }
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(bp, s);
-})();
-</script>
-
 
   
   
