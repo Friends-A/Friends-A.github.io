@@ -1,70 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.wzy1999.wang/template/%E6%A8%A1%E6%9D%BF1/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/template/%E6%95%B0%E8%AE%BA/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/Configuration/vimrc/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-5/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-4/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-3/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-2/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-1/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/poj3126/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/niuke368B/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/ml-2/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/ml-1/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/luogu1439/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/codevs1010/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/luogu1434/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/luogu1052/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/hdu1024/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/codevs1300/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/codevs1148/</loc>
+    <lastmod>2019-02-14</lastmod>
+  </url>  <url>
     <loc>https://blog.wzy1999.wang/solve/cf919D/</loc>
     <lastmod>2019-02-14</lastmod>
   </url>  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-5/</loc>
-    <lastmod>2019-02-11</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/codevs1300/</loc>
-    <lastmod>2019-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-4/</loc>
-    <lastmod>2019-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-3/</loc>
-    <lastmod>2019-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-2/</loc>
-    <lastmod>2019-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-1/</loc>
-    <lastmod>2019-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/learn/ml-1/</loc>
-    <lastmod>2019-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/learn/ml-2/</loc>
-    <lastmod>2019-02-10</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/niuke368B/</loc>
-    <lastmod>2019-02-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/luogu1439/</loc>
-    <lastmod>2019-02-08</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/hdu1024/</loc>
-    <lastmod>2019-02-07</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/luogu1434/</loc>
-    <lastmod>2019-02-06</lastmod>
-  </url>  <url>
     <loc>https://blog.wzy1999.wang/essay/One/</loc>
     <lastmod>2019-02-05</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/luogu1052/</loc>
-    <lastmod>2019-02-03</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/codevs1148/</loc>
-    <lastmod>2019-02-03</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/POJ3126/</loc>
-    <lastmod>2019-02-03</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/codevs1010/</loc>
-    <lastmod>2019-02-03</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/template/%E6%95%B0%E8%AE%BA/</loc>
-    <lastmod>2019-01-21</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/template/%E6%A8%A1%E6%9D%BF2/</loc>
-    <lastmod>2019-01-21</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/template/%E6%A8%A1%E6%9D%BF1/</loc>
-    <lastmod>2019-01-21</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/Configuration/vimrc/</loc>
-    <lastmod>2019-01-21</lastmod>
   </url>
 </urlset>

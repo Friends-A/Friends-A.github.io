@@ -2,9 +2,142 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.wzy1999.wang/template/%E6%A8%A1%E6%9D%BF1/</loc>
+    
+    <lastmod>2019-02-14T09:20:41.703Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/template/%E6%95%B0%E8%AE%BA/</loc>
+    
+    <lastmod>2019-02-14T09:20:04.502Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/Configuration/vimrc/</loc>
+    
+    <lastmod>2019-02-14T09:19:05.068Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-5/</loc>
+    
+    <lastmod>2019-02-14T09:18:49.981Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-4/</loc>
+    
+    <lastmod>2019-02-14T09:18:39.574Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-3/</loc>
+    
+    <lastmod>2019-02-14T09:18:28.290Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-2/</loc>
+    
+    <lastmod>2019-02-14T09:18:14.727Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/pyl-1/</loc>
+    
+    <lastmod>2019-02-14T09:18:02.135Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/poj3126/</loc>
+    
+    <lastmod>2019-02-14T09:17:38.039Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/niuke368B/</loc>
+    
+    <lastmod>2019-02-14T09:16:56.774Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/ml-2/</loc>
+    
+    <lastmod>2019-02-14T09:16:49.095Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/%E7%AC%94%E8%AE%B0/ml-1/</loc>
+    
+    <lastmod>2019-02-14T09:16:39.168Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/luogu1439/</loc>
+    
+    <lastmod>2019-02-14T09:16:25.239Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/codevs1010/</loc>
+    
+    <lastmod>2019-02-14T09:16:14.712Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/luogu1434/</loc>
+    
+    <lastmod>2019-02-14T09:16:02.321Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/luogu1052/</loc>
+    
+    <lastmod>2019-02-14T09:15:27.020Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/hdu1024/</loc>
+    
+    <lastmod>2019-02-14T09:15:17.833Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/codevs1300/</loc>
+    
+    <lastmod>2019-02-14T09:15:05.322Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/codevs1148/</loc>
+    
+    <lastmod>2019-02-14T09:14:15.851Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.wzy1999.wang/solve/cf919D/</loc>
     
-    <lastmod>2019-02-14T09:04:35.381Z</lastmod>
+    <lastmod>2019-02-14T09:13:36.071Z</lastmod>
     
   </url>
   
@@ -23,13 +156,6 @@
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/tags2/index.html</loc>
-    
-    <lastmod>2019-02-12T06:36:13.291Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.wzy1999.wang/categories2/index.html</loc>
     
     <lastmod>2019-02-12T06:36:13.291Z</lastmod>
@@ -37,86 +163,9 @@
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-5/</loc>
+    <loc>https://blog.wzy1999.wang/tags2/index.html</loc>
     
-    <lastmod>2019-02-11T13:30:49.188Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/solve/codevs1300/</loc>
-    
-    <lastmod>2019-02-10T12:16:25.343Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-4/</loc>
-    
-    <lastmod>2019-02-10T08:04:07.947Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-3/</loc>
-    
-    <lastmod>2019-02-10T08:03:55.512Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-2/</loc>
-    
-    <lastmod>2019-02-10T08:03:37.954Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/pyl-1/</loc>
-    
-    <lastmod>2019-02-10T08:03:22.700Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/ml-1/</loc>
-    
-    <lastmod>2019-02-10T08:02:25.985Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/learn/ml-2/</loc>
-    
-    <lastmod>2019-02-10T07:27:25.775Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/solve/niuke368B/</loc>
-    
-    <lastmod>2019-02-08T14:06:38.771Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/solve/luogu1439/</loc>
-    
-    <lastmod>2019-02-08T08:50:03.569Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/solve/hdu1024/</loc>
-    
-    <lastmod>2019-02-07T13:45:35.343Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/solve/luogu1434/</loc>
-    
-    <lastmod>2019-02-06T14:02:28.872Z</lastmod>
+    <lastmod>2019-02-12T06:36:13.291Z</lastmod>
     
   </url>
   
@@ -142,65 +191,9 @@
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/solve/luogu1052/</loc>
-    
-    <lastmod>2019-02-03T12:00:03.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/solve/codevs1148/</loc>
-    
-    <lastmod>2019-02-03T07:48:21.517Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/solve/POJ3126/</loc>
-    
-    <lastmod>2019-02-03T07:39:14.493Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/solve/codevs1010/</loc>
-    
-    <lastmod>2019-02-03T07:38:58.340Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.wzy1999.wang/links/index.html</loc>
     
     <lastmod>2019-01-22T14:51:06.313Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/template/%E6%95%B0%E8%AE%BA/</loc>
-    
-    <lastmod>2019-01-21T12:28:21.666Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/template/%E6%A8%A1%E6%9D%BF2/</loc>
-    
-    <lastmod>2019-01-21T12:27:18.436Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/template/%E6%A8%A1%E6%9D%BF1/</loc>
-    
-    <lastmod>2019-01-21T12:27:06.687Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/Configuration/vimrc/</loc>
-    
-    <lastmod>2019-01-21T12:26:14.200Z</lastmod>
     
   </url>
   
@@ -212,7 +205,7 @@
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/tags1/index.html</loc>
+    <loc>https://blog.wzy1999.wang/tags/index.html</loc>
     
     <lastmod>2018-09-09T02:19:13.000Z</lastmod>
     
