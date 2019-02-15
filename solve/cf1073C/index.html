@@ -162,20 +162,25 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="执念">
-<meta property="og:url" content="https://blog.wzy1999.wang/categories/Configuration/index.html">
+  <meta name="description" content="一个机器人从$(0,0)$点出发，输入一段指令字符串，和机器人需要在指定步数后到达的终点，问如果机器人需要在指定步数内到达终点，那么需要对原指令字符串做出怎样的改变，假设改变 字符串的最大下标为$maxID$ ,改变字符串的最小下标为$minID$ ，输出最小的 $maxID-minID+1​$ ，即，输出最小的改变字符串的连续区间长度(该区间内的字符不一定要全部发生改变)">
+<meta name="keywords" content="二分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces 1073C：Vasya and Robot（二分）">
+<meta property="og:url" content="https://blog.wzy1999.wang/solve/cf1073C/index.html">
 <meta property="og:site_name" content="执念">
+<meta property="og:description" content="一个机器人从$(0,0)$点出发，输入一段指令字符串，和机器人需要在指定步数后到达的终点，问如果机器人需要在指定步数内到达终点，那么需要对原指令字符串做出怎样的改变，假设改变 字符串的最大下标为$maxID$ ,改变字符串的最小下标为$minID$ ，输出最小的 $maxID-minID+1​$ ，即，输出最小的改变字符串的连续区间长度(该区间内的字符不一定要全部发生改变)">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-02-15T14:31:11.909Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="执念">
+<meta name="twitter:title" content="Codeforces 1073C：Vasya and Robot（二分）">
+<meta name="twitter:description" content="一个机器人从$(0,0)$点出发，输入一段指令字符串，和机器人需要在指定步数后到达的终点，问如果机器人需要在指定步数内到达终点，那么需要对原指令字符串做出怎样的改变，假设改变 字符串的最大下标为$maxID$ ,改变字符串的最小下标为$minID$ ，输出最小的 $maxID-minID+1​$ ，即，输出最小的改变字符串的连续区间长度(该区间内的字符不一定要全部发生改变)">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.wzy1999.wang/categories/Configuration/"/>
+  <link rel="canonical" href="https://blog.wzy1999.wang/solve/cf1073C/"/>
 
 
 
@@ -185,7 +190,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   };
 </script>
 
-  <title>分类: 配置文件 | 执念</title>
+  <title>Codeforces 1073C：Vasya and Robot（二分） | 执念</title>
   
 
 
@@ -231,7 +236,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
   
 
-  <div class="container  ">
+  <div class="container  page-post-detail">
     <div class="headband"></div>
     <!-- <a href="https://github.com/Friends-A"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a> -->
 
@@ -297,7 +302,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">5</span></a>
   </li>
@@ -333,31 +338,6 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -406,59 +386,306 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>配置文件<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/solve/cf1073C/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="执念">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="执念">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/Configuration/vimrc/" itemprop="url">
-              
-                <span itemprop="name">vimrc</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Codeforces 1073C：Vasya and Robot（二分）
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2019-01-21T17:50:31+08:00"
-              content="2019-01-21" >
-          01-21
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-02-15 22:30:01" itemprop="dateCreated datePublished" datetime="2019-02-15T22:30:01+08:00">2019-02-15</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/solve/" itemprop="url" rel="index"><span itemprop="name">题解</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/solve/cf1073C/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/solve/cf1073C/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+      
+      
+        <blockquote>
+<p>time limit per test: 1 second<br>memory limit per test: 256 megabytes<br>input: standard input<br>output: standard output</p>
+</blockquote>
+<p>Vasya has got a robot which is situated on an infinite Cartesian plane, initially in the cell $(0,0)$. Robot can perform the following four kinds of operations:</p>
+<ul>
+<li>U — move from $(x,y)$ to $(x,y+1)$;</li>
+<li>D — move from $(x,y)$ to $(x,y−1)$;</li>
+<li>L — move from $(x,y)$ to $(x−1,y)$;</li>
+<li>R — move from $(x,y)$ to $(x+1,y)$.</li>
+</ul>
+<p>Vasya also has got a sequence of nn operations. Vasya wants to modify this sequence so after performing it the robot will end up in $(x,y)$.</p>
+<p>Vasya wants to change the sequence so the length of changed subsegment is minimum possible. This length can be calculated as follows: $maxID−minID+1$, where $maxID$ is the maximum index of a changed operation, and $minID$ is the minimum index of a changed operation. For example, if Vasya changes <code>RRRRRRR</code> to <code>RLRRLRL</code>, then the operations with indices $2, 5$ and $7$ are changed, so the length of changed subsegment is $7−2+1=6$. Another example: if Vasya changes <code>DDDD</code> to <code>DDRD</code>, then the length of changed subsegment is $1$.</p>
+<p><strong>If there are no changes, then the length of changed subsegment is $0$. Changing an operation means replacing it with some operation (possibly the same); Vasya can’t insert new operations into the sequence or remove them.</strong></p>
+<p>Help Vasya! Tell him the minimum length of subsegment that he needs to change so that the robot will go from $(0,0)$ to $(x,y)$, or tell him that it’s impossible.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line contains one integer number $n (1≤n≤2⋅10^5)$ — the number of operations.</p>
+<p>The second line contains the sequence of operations — a string of $n$ characters. Each character is either U, D, L or R.</p>
+<p>The third line contains two integers $x,y (−10^9≤x,y≤10^9)$ — the coordinates of the cell where the robot should end its path.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Print one integer — the minimum possible length of subsegment that can be changed so the resulting sequence of operations moves the robot from $(0,0)$ to $(x,y)$. If this change is impossible, print $−1$.</p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><p><strong>input</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">5</span><br><span class="line">RURUU</span><br><span class="line">-2 3</span><br></pre></td></tr></table></figure>
+<p><strong>output</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<p><strong>input</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">RULR</span><br><span class="line">1 1</span><br></pre></td></tr></table></figure>
+<p><strong>output</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">0</span><br></pre></td></tr></table></figure>
+<p><strong>input</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">UUU</span><br><span class="line">100 100</span><br></pre></td></tr></table></figure>
+<p><strong>output</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-1</span><br></pre></td></tr></table></figure>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>In the first example the sequence can be changed to <strong>L</strong>U<strong>L</strong>UU. So the length of the changed subsegment is $3−1+1=3$.</p>
+<p>In the second example the given sequence already leads the robot to $(x,y)$, so the length of the changed subsegment is $0$.</p>
+<p>In the third example the robot can’t end his path in the cell $(x,y)$.</p>
+<h2 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h2><p>一个机器人从$(0,0)$点出发，输入一段指令字符串，和机器人需要在指定步数后到达的终点，问如果机器人需要在指定步数内到达终点，那么需要对原指令字符串做出怎样的改变，假设改变 字符串的最大下标为$maxID$ ,改变字符串的最小下标为$minID$ ，输出最小的 $maxID-minID+1​$ ，即，输出最小的改变字符串的连续区间长度(该区间内的字符不一定要全部发生改变)</p>
+<h2 id="Solve"><a href="#Solve" class="headerlink" title="Solve"></a>Solve</h2><p>字符串长度小于原点到指定位置的距离，字符串长度与原点到指定位置具有不同的奇偶性。在这两种情况下，是无论如何都无法到达指定位置的。其余情况都一定有答案。</p>
+<p>因为是要求区间的长度，所以二分枚举区间长度，对于每个区间长度尺取，找出所有可达的情况。如果某个区间长度可行，尝试去缩小当前区间长度；否则，延长区间长度</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*************************************************************************</span></span><br><span class="line"><span class="comment">    &gt; File Name: C.cpp</span></span><br><span class="line"><span class="comment">    &gt; Author: WZY</span></span><br><span class="line"><span class="comment">    &gt; Created Time: 2019年02月15日 15:39:58</span></span><br><span class="line"><span class="comment"> ************************************************************************/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ms(a,b) memset(a,b,sizeof(a))</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi acos(-1.0)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x7f7f7f7f</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">double</span> E=<span class="built_in">exp</span>(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn=<span class="number">1e6</span>+<span class="number">10</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1e9</span>+<span class="number">7</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">char</span> ch[maxn];</span><br><span class="line"><span class="keyword">int</span> sumx[maxn],sumy[maxn];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> x,y;</span><br><span class="line"><span class="comment">// 判断区间是否可行</span></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">1</span>;l+len<span class="number">-1</span>&lt;=n;l++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> r=l+len<span class="number">-1</span>;</span><br><span class="line">		<span class="comment">// 不需要改变的指令个数</span></span><br><span class="line">		<span class="keyword">int</span> _x=sumx[l<span class="number">-1</span>]+sumx[n]-sumx[r];</span><br><span class="line">		<span class="keyword">int</span> _y=sumy[l<span class="number">-1</span>]+sumy[n]-sumy[r];</span><br><span class="line">		<span class="comment">// 计算当前点到指定点的距离</span></span><br><span class="line">		<span class="keyword">int</span> sum=<span class="built_in">abs</span>(_x-x)+<span class="built_in">abs</span>(_y-y);</span><br><span class="line">		<span class="comment">// 当前点到指定点的距离&lt;=len并且多走的路程可以两两抵消</span></span><br><span class="line">		<span class="keyword">if</span>(sum&lt;=len&amp;&amp;(len-sum)%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;(ch+<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(ch[i]==<span class="string">'R'</span>)</span><br><span class="line">			sumx[i]=sumx[i<span class="number">-1</span>]+<span class="number">1</span>,sumy[i]=sumy[i<span class="number">-1</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(ch[i]==<span class="string">'L'</span>)</span><br><span class="line">			sumx[i]=sumx[i<span class="number">-1</span>]<span class="number">-1</span>,sumy[i]=sumy[i<span class="number">-1</span>];</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(ch[i]==<span class="string">'U'</span>)</span><br><span class="line">			sumx[i]=sumx[i<span class="number">-1</span>],sumy[i]=sumy[i<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			sumx[i]=sumx[i<span class="number">-1</span>],sumy[i]=sumy[i<span class="number">-1</span>]<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans,l,r;</span><br><span class="line">	l=<span class="number">0</span>,r=n;</span><br><span class="line">	ans=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">		<span class="keyword">if</span>(check(mid))</span><br><span class="line">			ans=mid,r=mid<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			l=mid+<span class="number">1</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+  
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <p><span>本文标题:</span><a href="/solve/cf1073C/">Codeforces 1073C：Vasya and Robot（二分）</a></p>
+  <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
+  <p><span>发布时间:</span>2019年02月15日 - 22:02</p>
+  <p><span>最后更新:</span>2019年02月15日 - 22:02</p>
+  <p><span>原始链接:</span><a href="/solve/cf1073C/" title="Codeforces 1073C：Vasya and Robot（二分）">https://blog.wzy1999.wang/solve/cf1073C/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/solve/cf1073C/"  aria-label="复制成功！"></i></span>
+  </p>
+  <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
+</div>
+<script> 
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({   
+          title: "",   
+          text: '复制成功',
+          icon: "success", 
+          showConfirmButton: true
+          });
+        });
+    });  
+</script>
 
       
     </div>
 
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>执念</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://blog.wzy1999.wang/solve/cf1073C/" title="Codeforces 1073C：Vasya and Robot（二分）">https://blog.wzy1999.wang/solve/cf1073C/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
+    <div>
+	  
+	    <div>
+    
+        <div style="text-align:center;color: red;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+	  
+	</div>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/二分/" <i class="fa fa-tag"></i> 二分</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/solve/cf919D/" rel="next" title="Codeforces 919D：Substring（拓扑排序+DP）">
+                <i class="fa fa-chevron-left"></i> Codeforces 919D：Substring（拓扑排序+DP）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/solve/cf1073D/" rel="prev" title="Codeforces 1073D：Berland Fair（模拟）">
+                Codeforces 1073D：Berland Fair（模拟） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zOTg4NC8xNjQxMQ=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -479,8 +706,17 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -663,6 +899,22 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         </div>
       </section>
       
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Output"><span class="nav-number">2.</span> <span class="nav-text">Output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">3.</span> <span class="nav-text">Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Note"><span class="nav-number">4.</span> <span class="nav-text">Note</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#题意"><span class="nav-number">5.</span> <span class="nav-text">题意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solve"><span class="nav-number">6.</span> <span class="nav-text">Solve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">7.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -849,6 +1101,10 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -861,6 +1117,20 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 
 
+  
+    <script type="text/javascript">
+      window.livereOptions = {
+        refer: 'solve/cf1073C/'
+      };
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 

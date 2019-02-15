@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.wzy1999.wang/solve/cf1073D/</loc>
+    
+    <lastmod>2019-02-15T14:53:30.914Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.wzy1999.wang/solve/cf1073C/</loc>
+    
+    <lastmod>2019-02-15T14:31:11.909Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.wzy1999.wang/template/%E6%A8%A1%E6%9D%BF1/</loc>
     
     <lastmod>2019-02-14T09:20:41.703Z</lastmod>
@@ -156,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/categories2/index.html</loc>
+    <loc>https://blog.wzy1999.wang/tags2/index.html</loc>
     
     <lastmod>2019-02-12T06:36:13.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/tags2/index.html</loc>
+    <loc>https://blog.wzy1999.wang/categories2/index.html</loc>
     
     <lastmod>2019-02-12T06:36:13.291Z</lastmod>
     
