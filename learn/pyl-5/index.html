@@ -170,7 +170,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <meta property="og:site_name" content="执念">
 <meta property="og:description" content="Python中所有的正则表达式的函数都在re模块中  向re.compile()中传入一个字符串（原始字符串），表示正则表达式，将返回一个Regex模式对象">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-14T09:18:49.981Z">
+<meta property="og:updated_time" content="2019-02-17T11:54:03.481Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="模式匹配与正则表达式">
 <meta name="twitter:description" content="Python中所有的正则表达式的函数都在re模块中  向re.compile()中传入一个字符串（原始字符串），表示正则表达式，将返回一个Regex模式对象">
@@ -575,7 +575,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
             <td>除空格、制表符和换行符以外的任何字符</td>
         </tr>
     </tbody>
-</table></li>
+</table>
+</li>
 <li><p>可以使用<code>[]</code>来创建自己的字符分类。例如：<code>[0-9]</code>匹配所有的数字，<code>[a-z]</code>匹配所有的小写字母；在字符前加上<code>^</code>表示匹配不在创建字符分类中的所有字符。对于正则表达式符号，不需要进行转义</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">r'[0-9]'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1=re.compile(<span class="string">r'[^0-9]'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=a.findall(<span class="string">'abc123de'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1=a1.findall(<span class="string">'abc123de'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</span><br></pre></td></tr></table></figure>
 </li>
@@ -584,10 +585,33 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <li><p><code>.</code>可以匹配除了换行以外的所有字符，被称为“通配符”</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">r'.234'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=a.findall(<span class="string">'1234 2234 3234'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="string">'1234'</span>, <span class="string">'2234'</span>, <span class="string">'3234'</span>]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>用<code>.*</code>进行组合，可以匹配任意字符，任意长度的文本，默认是贪心的；<code>.*?</code>这种匹配是非贪心的</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'&lt;.*&gt;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=num.search(<span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;+10'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.group()</span><br><span class="line"><span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'&lt;.*?&gt;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=num.search(<span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;+10'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.group()</span><br><span class="line"><span class="string">'&lt;1+2+3&gt;'</span></span><br></pre></td></tr></table></figure>
+<li><p>用<code>.*</code>进行组合，可以匹配除<code>\n</code>以外的任意字符，任意长度的文本，默认是贪心的；<code>.*?</code>这种匹配是非贪心的。通过传入<code>re.DOTALL</code>作为第二个参数，可以实现匹配包括<code>\n</code>在内的所有字符</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'&lt;.*&gt;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=num.search(<span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;+10'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.group()</span><br><span class="line"><span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'&lt;.*?&gt;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=num.search(<span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;+10'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.group()</span><br><span class="line"><span class="string">'&lt;1+2+3&gt;'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">'.*'</span>,re.DOTALL)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.search(<span class="string">'123\n456\n'</span>).group()</span><br><span class="line"><span class="string">'123\n456\n'</span></span><br></pre></td></tr></table></figure>
 </li>
-<li></li>
+<li><p>向<code>re.compile()</code>中传入<code>re.IGNORECASE</code>或<code>re.I</code>作为第二个参数，可以让正则表达式匹配的时候忽略大小写</p>
+</li>
+<li><p>Regex对象的 <code>sub()</code>方法需要传入两个参数。第一个参数是一个字符串，用于取代发现的匹配。第二个参数是一个字符串，即正则表达式。<code>sub()</code>方法返回替换完成后的字符串。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">r'I'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.sub(<span class="string">'You'</span>,<span class="string">'I have an apple.'</span>)</span><br><span class="line"><span class="string">'You have an apple.'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果需要匹配复杂的文本模式，可能需要长的、费解的正则表达式。可以传入变量<code>re.VERBOSE</code>作为第二个参数</p>
+</li>
+</ul>
+<h2 id="正则表达式符号的总结"><a href="#正则表达式符号的总结" class="headerlink" title="正则表达式符号的总结"></a>正则表达式符号的总结</h2><ul>
+<li><code>?</code>匹配零次或一次前面的分组。</li>
+<li><code>*</code>匹配零次或多次前面的分组。</li>
+<li><code>+</code>匹配一次或多次前面的分组。</li>
+<li><code>{n}</code>匹配 n 次前面的分组。</li>
+<li><code>{n,}</code>匹配 n 次或更多前面的分组。</li>
+<li><code>{,m}</code>匹配零次到 m 次前面的分组。</li>
+<li><code>{n,m}</code>匹配至少 n 次、至多 m 次前面的分组。</li>
+<li><code>{n,m}</code>?或*?或+?对前面的分组进行非贪心匹配。</li>
+<li><code>^spam</code>意味着字符串必须以 spam 开始。</li>
+<li><code>spam$</code>意味着字符串必须以 spam 结束。</li>
+<li><code>.</code>匹配所有字符，换行符除外。</li>
+<li><code>\d</code>、<code>\w</code> 和<code>\s</code> 分别匹配数字、单词和空格。</li>
+<li><code>\D</code>、<code>\W</code> 和<code>\S</code> 分别匹配出数字、单词和空格外的所有字符。</li>
+<li><code>[abc]</code>匹配方括号内的任意字符（诸如 a、b 或 c）。</li>
+<li><code>[^abc]</code>匹配不在方括号内的任意字符。</li>
 </ul>
 
       
@@ -615,7 +639,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   <p><span>本文标题:</span><a href="/learn/pyl-5/">模式匹配与正则表达式</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
   <p><span>发布时间:</span>2019年02月11日 - 16:02</p>
-  <p><span>最后更新:</span>2019年02月14日 - 17:02</p>
+  <p><span>最后更新:</span>2019年02月17日 - 19:02</p>
   <p><span>原始链接:</span><a href="/learn/pyl-5/" title="模式匹配与正则表达式">https://blog.wzy1999.wang/learn/pyl-5/</a>
     <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/learn/pyl-5/"  aria-label="复制成功！"></i></span>
   </p>
@@ -745,8 +769,17 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -930,6 +963,22 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       </section>
       
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式符号的总结"><span class="nav-number">1.</span> <span class="nav-text">正则表达式符号的总结</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -973,7 +1022,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共38.7k字</span>
+  <span class="post-count">博客全站共39.1k字</span>
 </div>
 <!-- 
   <span class="post-meta-divider">|</span>
