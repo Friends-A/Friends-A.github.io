@@ -162,25 +162,25 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 
 
-  <meta name="description" content="第五章——字典和结构化数据字典 字典的索引被称为键，键及其关联的值称为键-值。字典输入的时候要带花括号{}，在使用的时候和列表一样使用中括号[]">
+  <meta name="description" content="Python中所有的正则表达式的函数都在re模块中  向re.compile()中传入一个字符串（原始字符串），表示正则表达式，将返回一个Regex模式对象">
 <meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="字典和结构化数据">
-<meta property="og:url" content="https://blog.wzy1999.wang/笔记/pyl-3/index.html">
+<meta property="og:title" content="模式匹配与正则表达式">
+<meta property="og:url" content="https://blog.wzy1999.wang/learn/pyl-5/index.html">
 <meta property="og:site_name" content="执念">
-<meta property="og:description" content="第五章——字典和结构化数据字典 字典的索引被称为键，键及其关联的值称为键-值。字典输入的时候要带花括号{}，在使用的时候和列表一样使用中括号[]">
+<meta property="og:description" content="Python中所有的正则表达式的函数都在re模块中  向re.compile()中传入一个字符串（原始字符串），表示正则表达式，将返回一个Regex模式对象">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-14T09:18:28.290Z">
+<meta property="og:updated_time" content="2019-02-14T09:18:49.981Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="字典和结构化数据">
-<meta name="twitter:description" content="第五章——字典和结构化数据字典 字典的索引被称为键，键及其关联的值称为键-值。字典输入的时候要带花括号{}，在使用的时候和列表一样使用中括号[]">
+<meta name="twitter:title" content="模式匹配与正则表达式">
+<meta name="twitter:description" content="Python中所有的正则表达式的函数都在re模块中  向re.compile()中传入一个字符串（原始字符串），表示正则表达式，将返回一个Regex模式对象">
 
 
 
 
 
 
-  <link rel="canonical" href="https://blog.wzy1999.wang/笔记/pyl-3/"/>
+  <link rel="canonical" href="https://blog.wzy1999.wang/learn/pyl-5/"/>
 
 
 
@@ -190,7 +190,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   };
 </script>
 
-  <title>字典和结构化数据 | 执念</title>
+  <title>模式匹配与正则表达式 | 执念</title>
   
 
 
@@ -402,7 +402,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/笔记/pyl-3/">
+    <link itemprop="mainEntityOfPage" href="https://blog.wzy1999.wang/learn/pyl-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="执念">
@@ -419,7 +419,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
         
         
-          <h1 class="post-title" itemprop="name headline">字典和结构化数据
+          <h1 class="post-title" itemprop="name headline">模式匹配与正则表达式
               
             
           </h1>
@@ -444,7 +444,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 
               
 
-              <time title="创建时间：2019-01-25 17:10:42" itemprop="dateCreated datePublished" datetime="2019-01-25T17:10:42+08:00">2019-01-25</time>
+              <time title="创建时间：2019-02-11 16:52:25" itemprop="dateCreated datePublished" datetime="2019-02-11T16:52:25+08:00">2019-02-11</time>
             
 
             
@@ -462,7 +462,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/笔记/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/learn/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a></span>
 
                 
                 
@@ -477,8 +477,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/笔记/pyl-3/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/笔记/pyl-3/" itemprop="commentsCount"></span>
+                <a href="/learn/pyl-5/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count gitment-comments-count" data-xid="/learn/pyl-5/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -514,41 +514,81 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
       
       
-        <h1 id="第五章——字典和结构化数据"><a href="#第五章——字典和结构化数据" class="headerlink" title="第五章——字典和结构化数据"></a>第五章——字典和结构化数据</h1><h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><ul>
-<li><p>字典的索引被称为<code>键</code>，键及其关联的值称为<code>键-值</code>。字典输入的时候要带花括号<code>{}</code>，在使用的时候和列表一样使用中括号<code>[]</code></p>
+        <p>Python中所有的正则表达式的函数都在<strong><code>re</code></strong>模块中</p>
+<ul>
+<li><p>向<code>re.compile()</code>中传入一个字符串（原始字符串），表示正则表达式，将返回一个<code>Regex</code>模式对象</p>
 <a id="more"></a>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>myCat=&#123;<span class="string">'size'</span>:<span class="string">'fat'</span>,<span class="string">'color'</span>:<span class="string">'gray'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>myCat[<span class="string">'size'</span>]</span><br><span class="line"><span class="string">'fat'</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>判断两个列表相同，要看两个列表中的对应位置的元素是否相同；判断两个字典是否相同，只需看两个字典的<code>键-值</code>是否相同即可</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>List=[<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>List1=[<span class="string">'b'</span>,<span class="string">'a'</span>,<span class="string">'c'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>List==List1</span><br><span class="line"><span class="keyword">False</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic1=&#123;<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic==dic1</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+<li><p>使用<code>search()</code>方法查找传入的字符串，如果没有匹配到，返回<code>None</code>，匹配到的字符串将会被放在search()返回的<code>Match</code>对象的<code>group()</code>方法中</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> re</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'\d\d\d\d-\d\d-\d\d'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>birthday=num.search(<span class="string">'birthday is 1926-28-17'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(<span class="string">"He's birthday is "</span>+birthday.group())</span><br><span class="line">He<span class="string">'s birthday is 1926-28-17</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>如果访问字典中不存在的键，则会导致<code>KeyError</code></p>
+<li><p>如果想要从生日中提取年、月、日等信息的话，可以添加括号在正则表达式中创建分组。向group()中传入0或不传参数，返回匹配到的整个字符串；传入其余正整数$N$返回匹配到的第$N$部分</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> re</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'(\d\d\d\d)-(\d\d)-(\d\d)'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>birthday=num.search(<span class="string">'birthday is 1926-28-17'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>birthday.group()</span><br><span class="line"><span class="string">'1926-28-17'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>birthday.group(<span class="number">0</span>)</span><br><span class="line"><span class="string">'1926-28-17'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>birthday.group(<span class="number">1</span>)</span><br><span class="line"><span class="string">'1926'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>birthday.group(<span class="number">2</span>)</span><br><span class="line"><span class="string">'28'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>birthday.group(<span class="number">3</span>)</span><br><span class="line"><span class="string">'17'</span></span><br></pre></td></tr></table></figure>
 </li>
+<li><p>如果想要一次性获得所有分组，使用<code>groups()</code>方法，返回值是元组类型</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(birthday.group())</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">str</span>'&gt;</span></span><br><span class="line"><span class="class">&gt;&gt;&gt; <span class="title">type</span><span class="params">(birthday.groups<span class="params">()</span>)</span></span></span><br><span class="line"><span class="class">&lt;<span class="title">class</span> '<span class="title">tuple</span>'&gt;</span></span><br><span class="line"><span class="class">&gt;&gt;&gt; <span class="title">birthday</span>.<span class="title">groups</span><span class="params">()</span></span></span><br><span class="line"><span class="class"><span class="params">(<span class="string">'1926'</span>, <span class="string">'28'</span>, <span class="string">'17'</span>)</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果待匹配的表达式有多个时，在表达式之间使用<code>|</code>（管道）可以达到目的。此时search返回的是第一次匹配到的字符串；如果想要获得所有的匹配，可以使用<code>findall()</code>来代替search()，但是<code>findall()</code>返回的是列表</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>st=re.compile(<span class="string">r'orange|tangerine'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>like=st.search(<span class="string">'I like eat orange or tangerine.'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>like.group()</span><br><span class="line"><span class="string">'orange'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>like=st.findall(<span class="string">'I like eat orange or tangerine.'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(like)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">list</span>'&gt;</span></span><br><span class="line"><span class="class">&gt;&gt;&gt; <span class="title">like</span></span></span><br><span class="line">['orange', 'tangerine']</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用<code>(str)?</code>可以实现可选匹配，在匹配的时候，str可以出现零次或一次</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'b(a)?b'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=num.search(<span class="string">'bab'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1=num.search(<span class="string">'bb'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n.group()</span><br><span class="line"><span class="string">'bab'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1.group()</span><br><span class="line"><span class="string">'bb'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>(str)*</code>str部分可以出现零次或多次；<code>(str)+</code> str部分可以出现一次或多次</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 星号匹配</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'b(a)*b'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=num.search(<span class="string">'baaaaaaaaab'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1=num.search(<span class="string">'bb'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n.group()</span><br><span class="line"><span class="string">'baaaaaaaaab'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1.group()</span><br><span class="line"><span class="string">'bb'</span></span><br><span class="line">// 加号匹配</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'b(a)+b'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=num.search(<span class="string">'baaaaaaaaab'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1=num.search(<span class="string">'bab'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n.group()</span><br><span class="line"><span class="string">'baaaaaaaaab'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1.group()</span><br><span class="line"><span class="string">'bab'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用花括号可以实现匹配特定的次数：<code>(str){3,}</code>将str匹配3次或更多次。<code>(str){,5}</code>将str匹配0-5次</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'(a)&#123;3&#125;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n=num.search(<span class="string">'aaa'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1=num.search(<span class="string">'aa'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n.group()</span><br><span class="line"><span class="string">'aaa'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1==<span class="keyword">None</span></span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>正则表达式默认是“贪心”的，会尽可能匹配最长的字符串。在花括号后添加<code>?</code>可以改为非贪心匹配（匹配最短的）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'(a)&#123;3,5&#125;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1=num.search(<span class="string">'aaaaa'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1.group()</span><br><span class="line"><span class="string">'aaaaa'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'(a)&#123;3,5&#125;?'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1=num.search(<span class="string">'aaaaa'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>n1.group()</span><br><span class="line"><span class="string">'aaa'</span></span><br></pre></td></tr></table></figure>
+<table>
+    <thead>
+        <tr>
+            <th>缩写字符分类</th>
+            <th>表示</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>\d</td>
+            <td>0到9的任何数字</td>
+        </tr>
+        <tr>
+            <td>\D</td>
+            <td>除0到9的数字以外的任何字符</td>
+        </tr>
+        <tr>
+            <td>\w</td>
+            <td>任何字母、数字或下划线字符（可以认为是匹配“单词”字符）</td>
+        </tr>
+        <tr>
+            <td>\W</td>
+            <td>除了字母、数字和下划线以外的任何字符</td>
+        </tr>
+        <tr>
+            <td>\s</td>
+            <td>空格、制表符或换行符（可以认为是匹配“空白”字符）</td>
+        </tr>
+        <tr>
+            <td>\S</td>
+            <td>除空格、制表符和换行符以外的任何字符</td>
+        </tr>
+    </tbody>
+</table></li>
+<li><p>可以使用<code>[]</code>来创建自己的字符分类。例如：<code>[0-9]</code>匹配所有的数字，<code>[a-z]</code>匹配所有的小写字母；在字符前加上<code>^</code>表示匹配不在创建字符分类中的所有字符。对于正则表达式符号，不需要进行转义</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">r'[0-9]'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1=re.compile(<span class="string">r'[^0-9]'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=a.findall(<span class="string">'abc123de'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1=a1.findall(<span class="string">'abc123de'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在正则表达式开始出插入<code>^</code>，表示匹配必须在被查找文本的开始出；在末尾插入<code>$</code>，表示必须以这个正则表达式的模式结束；同时使用二者，表示整个字符串必须匹配该模式<br><code>r&#39;^\d+$</code>匹配全是数字的字符串</p>
+</li>
+<li><p><code>.</code>可以匹配除了换行以外的所有字符，被称为“通配符”</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">r'.234'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=a.findall(<span class="string">'1234 2234 3234'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="string">'1234'</span>, <span class="string">'2234'</span>, <span class="string">'3234'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>用<code>.*</code>进行组合，可以匹配任意字符，任意长度的文本，默认是贪心的；<code>.*?</code>这种匹配是非贪心的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'&lt;.*&gt;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=num.search(<span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;+10'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.group()</span><br><span class="line"><span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>num=re.compile(<span class="string">r'&lt;.*?&gt;'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=num.search(<span class="string">'&lt;1+2+3&gt;*&lt;4+5+6&gt;+10'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a.group()</span><br><span class="line"><span class="string">'&lt;1+2+3&gt;'</span></span><br></pre></td></tr></table></figure>
+</li>
+<li></li>
 </ul>
-<h2 id="字典中的一些方法"><a href="#字典中的一些方法" class="headerlink" title="字典中的一些方法"></a>字典中的一些方法</h2><h3 id="keys-values-items"><a href="#keys-values-items" class="headerlink" title="keys() values() items()"></a><code>keys()</code> <code>values()</code> <code>items()</code></h3><p>这三种方法分别对应字典的键、值、键-值对。返回的值是类似列表的值，不是真正的列表，不能被修改</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>spam=&#123;<span class="string">'color'</span>:<span class="string">'red'</span>,<span class="string">'age'</span>:<span class="number">18</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spam.values()</span><br><span class="line">dict_values([<span class="string">'red'</span>, <span class="number">18</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spam.keys()</span><br><span class="line">dict_keys([<span class="string">'color'</span>, <span class="string">'age'</span>])</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>spam.items()</span><br><span class="line">dict_items([(<span class="string">'color'</span>, <span class="string">'red'</span>), (<span class="string">'age'</span>, <span class="number">18</span>)])</span><br></pre></td></tr></table></figure>
-<p>如果想要得到一个列表，可以用<code>list()</code>进行转换</p>
-<p>使用<code>in</code>和<code>not in</code>依旧可以检查值是否在字典中，查询时如果不声明，默认按照<code>keys()</code>进行查询</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> <span class="keyword">in</span> dic.keys()</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="string">'a'</span> <span class="keyword">in</span> dic.values()</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="number">1</span> <span class="keyword">in</span> dic</span><br><span class="line"><span class="keyword">True</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>(<span class="number">1</span>,<span class="string">'a'</span>) <span class="keyword">in</span> dic.items()</span><br><span class="line"><span class="keyword">True</span></span><br></pre></td></tr></table></figure>
-<h3 id="get-方法"><a href="#get-方法" class="headerlink" title="get()方法"></a><code>get()</code>方法</h3><p><code>get()</code>有两个参数：要取得该值的键和一个备用的返回值。如果查询的键不在字典中，返回备用的值；否则返回该键对应的值。<code>get()</code>的默认返回值为$0$，如果不适用<code>get()</code>方法，在查询失败的时候会返回<code>KeyError</code></p>
-<h3 id="setdefault-方法"><a href="#setdefault-方法" class="headerlink" title="setdefault()方法"></a><code>setdefault()</code>方法</h3><p><code>setdefault()</code>方法存在两个参数。相当于提供了一个if语句：如果字典中存在查找的键（第一个参数），返回键对应的值；否则将第一个参数作为键，第二个参数作为第一个参数对应的值加入到字典中</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line">dic.setdefault(<span class="number">4</span>,<span class="string">'d'</span>)</span><br></pre></td></tr></table></figure>
-<p>相当于：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">dic=&#123;<span class="number">1</span>:<span class="string">'a'</span>,<span class="number">2</span>:<span class="string">'b'</span>,<span class="number">3</span>:<span class="string">'c'</span>&#125;</span><br><span class="line"><span class="keyword">if</span> <span class="number">4</span> <span class="keyword">not</span> <span class="keyword">in</span> dic:</span><br><span class="line">    dic[<span class="number">4</span>]=<span class="string">'d'</span></span><br></pre></td></tr></table></figure>
-<p>输出<code>dic</code>会发现输出均为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="number">1</span>: <span class="string">'a'</span>, <span class="number">2</span>: <span class="string">'b'</span>, <span class="number">3</span>: <span class="string">'c'</span>, <span class="number">4</span>: <span class="string">'d'</span>&#125;</span><br></pre></td></tr></table></figure>
-<p>使用<code>setdefault()</code>可以确保一个键的存在</p>
-<p>可以利用<code>setdefault()</code>对字符串中出现的字符进行计数：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">'qwertyuioplkjhgfdsazxcvbnm'</span></span><br><span class="line">count=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> s:</span><br><span class="line">    count.setdefault(ch,<span class="number">0</span>)</span><br><span class="line">    count[ch]+=<span class="number">1</span></span><br><span class="line">print(count)</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="string">'q'</span>: <span class="number">1</span>, <span class="string">'w'</span>: <span class="number">1</span>, <span class="string">'e'</span>: <span class="number">1</span>, <span class="string">'r'</span>: <span class="number">1</span>, <span class="string">'t'</span>: <span class="number">1</span>, <span class="string">'y'</span>: <span class="number">1</span>, <span class="string">'u'</span>: <span class="number">1</span>, <span class="string">'i'</span>: <span class="number">1</span>, <span class="string">'o'</span>: <span class="number">1</span>, <span class="string">'p'</span>: <span class="number">1</span>, <span class="string">'l'</span>: <span class="number">1</span>, <span class="string">'k'</span>: <span class="number">1</span>, <span class="string">'j'</span>: <span class="number">1</span>, <span class="string">'h'</span>: <span class="number">1</span>, <span class="string">'g'</span>: <span class="number">1</span>, <span class="string">'f'</span>: <span class="number">1</span>, <span class="string">'d'</span>: <span class="number">1</span>, <span class="string">'s'</span>: <span class="number">1</span>, <span class="string">'a'</span>: <span class="number">1</span>, <span class="string">'z'</span>: <span class="number">1</span>, <span class="string">'x'</span>: <span class="number">1</span>, <span class="string">'c'</span>: <span class="number">1</span>, <span class="string">'v'</span>: <span class="number">1</span>, <span class="string">'b'</span>: <span class="number">1</span>, <span class="string">'n'</span>: <span class="number">1</span>, <span class="string">'m'</span>: <span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="pprint模块的简单应用"><a href="#pprint模块的简单应用" class="headerlink" title="pprint模块的简单应用"></a><code>pprint</code>模块的简单应用</h2><p>将上述代码导入<code>pprint</code>模块之后，使用<code>pprint()</code>输出：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  pprint</span><br><span class="line">s=<span class="string">'qwertyuioplkjhgfdsazxcvbnm'</span></span><br><span class="line">count=&#123;&#125;</span><br><span class="line"><span class="keyword">for</span> ch <span class="keyword">in</span> s:</span><br><span class="line">    count.setdefault(ch,<span class="number">0</span>)</span><br><span class="line">    count[ch]+=<span class="number">1</span></span><br><span class="line">pprint.pprint(count)</span><br></pre></td></tr></table></figure>
-<p>输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&#123;&apos;a&apos;: 1,</span><br><span class="line"> &apos;b&apos;: 1,</span><br><span class="line"> &apos;c&apos;: 1,</span><br><span class="line"> &apos;d&apos;: 1,</span><br><span class="line"> &apos;e&apos;: 1,</span><br><span class="line"> &apos;f&apos;: 1,</span><br><span class="line"> &apos;g&apos;: 1,</span><br><span class="line"> &apos;h&apos;: 1,</span><br><span class="line"> &apos;i&apos;: 1,</span><br><span class="line"> &apos;j&apos;: 1,</span><br><span class="line"> &apos;k&apos;: 1,</span><br><span class="line"> &apos;l&apos;: 1,</span><br><span class="line"> &apos;m&apos;: 1,</span><br><span class="line"> &apos;n&apos;: 1,</span><br><span class="line"> &apos;o&apos;: 1,</span><br><span class="line"> &apos;p&apos;: 1,</span><br><span class="line"> &apos;q&apos;: 1,</span><br><span class="line"> &apos;r&apos;: 1,</span><br><span class="line"> &apos;s&apos;: 1,</span><br><span class="line"> &apos;t&apos;: 1,</span><br><span class="line"> &apos;u&apos;: 1,</span><br><span class="line"> &apos;v&apos;: 1,</span><br><span class="line"> &apos;w&apos;: 1,</span><br><span class="line"> &apos;x&apos;: 1,</span><br><span class="line"> &apos;y&apos;: 1,</span><br><span class="line"> &apos;z&apos;: 1&#125;</span><br></pre></td></tr></table></figure>
-<p><code>pprint()</code>对于包含列表等的字典特别有用</p>
-<p>使用<code>pformat()</code>可以将<code>pprint()</code>输出的字典当做字符串来储存。以下两行代码是等效的：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pprint.pprint(count)</span><br><span class="line">print(pprint.pformat((count)))</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -572,12 +612,12 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   <!-- JS库 sweetalert 可修改路径 -->
   <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-  <p><span>本文标题:</span><a href="/笔记/pyl-3/">字典和结构化数据</a></p>
+  <p><span>本文标题:</span><a href="/learn/pyl-5/">模式匹配与正则表达式</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
-  <p><span>发布时间:</span>2019年01月25日 - 17:01</p>
+  <p><span>发布时间:</span>2019年02月11日 - 16:02</p>
   <p><span>最后更新:</span>2019年02月14日 - 17:02</p>
-  <p><span>原始链接:</span><a href="/笔记/pyl-3/" title="字典和结构化数据">https://blog.wzy1999.wang/笔记/pyl-3/</a>
-    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/笔记/pyl-3/"  aria-label="复制成功！"></i></span>
+  <p><span>原始链接:</span><a href="/learn/pyl-5/" title="模式匹配与正则表达式">https://blog.wzy1999.wang/learn/pyl-5/</a>
+    <span class="copy-path"  title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/learn/pyl-5/"  aria-label="复制成功！"></i></span>
   </p>
   <p><span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">署名-非商业性使用-禁止演绎 4.0 国际</a> 转载请保留原文链接及作者。</p>  
 </div>
@@ -609,7 +649,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
     <strong>本文作者： </strong>执念</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://blog.wzy1999.wang/笔记/pyl-3/" title="字典和结构化数据">https://blog.wzy1999.wang/笔记/pyl-3/</a>
+    <a href="https://blog.wzy1999.wang/learn/pyl-5/" title="模式匹配与正则表达式">https://blog.wzy1999.wang/learn/pyl-5/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -643,8 +683,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/笔记/ml-1/" rel="next" title="NumPy函数库基础">
-                <i class="fa fa-chevron-left"></i> NumPy函数库基础
+              <a href="/solve/codevs1300/" rel="next" title="codevs1300：文件排版（DP）">
+                <i class="fa fa-chevron-left"></i> codevs1300：文件排版（DP）
               </a>
             
           </div>
@@ -653,8 +693,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/笔记/pyl-4/" rel="prev" title="字符串操作">
-                字符串操作 <i class="fa fa-chevron-right"></i>
+              <a href="/solve/cf919D/" rel="prev" title="Codeforces 919D：Substring（拓扑排序+DP）">
+                Codeforces 919D：Substring（拓扑排序+DP） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -705,17 +745,8 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -898,22 +929,6 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
         </div>
       </section>
       
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章——字典和结构化数据"><span class="nav-number">1.</span> <span class="nav-text">第五章——字典和结构化数据</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字典"><span class="nav-number">1.1.</span> <span class="nav-text">字典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典中的一些方法"><span class="nav-number">1.2.</span> <span class="nav-text">字典中的一些方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#keys-values-items"><span class="nav-number">1.2.1.</span> <span class="nav-text">keys() values() items()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#get-方法"><span class="nav-number">1.2.2.</span> <span class="nav-text">get()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setdefault-方法"><span class="nav-number">1.2.3.</span> <span class="nav-text">setdefault()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pprint模块的简单应用"><span class="nav-number">1.3.</span> <span class="nav-text">pprint模块的简单应用</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -1119,7 +1134,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   
     <script type="text/javascript">
       window.livereOptions = {
-        refer: '笔记/pyl-3/'
+        refer: 'learn/pyl-5/'
       };
       (function(d, s) {
         var j, e = d.getElementsByTagName(s)[0];
