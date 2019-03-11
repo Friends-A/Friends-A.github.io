@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.wzy1999.wang/learn/pyl-6/</loc>
+    
+    <lastmod>2019-02-18T13:33:31.331Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.wzy1999.wang/solve/cf1113C/</loc>
     
     <lastmod>2019-02-17T14:22:16.532Z</lastmod>
@@ -177,14 +184,14 @@
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/categories2/index.html</loc>
+    <loc>https://blog.wzy1999.wang/tags1/index.html</loc>
     
     <lastmod>2019-02-12T06:36:13.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/tags2/index.html</loc>
+    <loc>https://blog.wzy1999.wang/categories1/index.html</loc>
     
     <lastmod>2019-02-12T06:36:13.291Z</lastmod>
     
