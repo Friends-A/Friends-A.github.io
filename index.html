@@ -659,40 +659,18 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
       
         
-          
-            <ul>
+          <ul>
 <li><p><code>os.path.join()</code>返回一个文件路径的字符串，并用正确的路径分隔符分开（Windows下是<code>\\</code>，Linux和OS X系统是<code>/</code>）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> os</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.join(<span class="string">'C:'</span>,<span class="string">'desktop'</span>,<span class="string">'untitled'</span>)</span><br><span class="line"><span class="string">'C:desktop\\untitled'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>利用<code>os.getcwd()</code>可以获得当前工作路径的字符串，并可以用<code>os.chdir()</code>来改变这个字符串</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.getcwd()</span><br><span class="line"><span class="string">'C:\\Program Files\\Sublime Text 3'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.chdir(<span class="string">'C:\\Users\\26970\\Desktop\\untitled'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.getcwd()</span><br><span class="line"><span class="string">'C:\\Users\\26970\\Desktop\\untitled'</span></span><br></pre></td></tr></table></figure>
-<p>如果要更改的路径不存在，则会返回这样的错误：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.chdir(<span class="string">'C:\\Desktop'</span>)</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">FileNotFoundError: [WinError <span class="number">2</span>] 系统找不到指定的文件。: <span class="string">'C:\\Desktop'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>绝对路径和相对路径：</p>
-<p><code>绝对路径</code>是从根文件夹开始的，<code>相对路径</code>相对于程序的当前文件夹<img src="https://i.loli.net/2019/02/18/5c6a8723135a8.png" alt="QQ截图20190218182049.png"></p>
-</li>
-<li><p>用<code>os.makedirs()</code>可以创建新的文件夹</p>
-<p>例如：在桌面一个名为<code>learn</code>的文件夹下创建一个名为<code>test</code>的文件夹</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> os</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.makedirs(<span class="string">'C:\\Users\\26970\\Desktop\\learn\\test'</span>)</span><br></pre></td></tr></table></figure>
-<p>如果需要创建的文件夹已经存在，会返回错误。如果中间文件夹不存在，则会自动创建</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">  File <span class="string">"C:\Users\26970\AppData\Local\Programs\Python\Python37-32\lib\os.py"</span>, line <span class="number">221</span>, <span class="keyword">in</span> makedirs</span><br><span class="line">    mkdir(name, mode)</span><br><span class="line">FileExistsError: [WinError <span class="number">183</span>] 当文件已存在时，无法创建该文件。: <span class="string">'C:\\Users\\26970\\Desktop\\learn'</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>调用 <code>os.path.abspath(path)</code>将返回参数的绝对路径的字符串。这是将相对路径转换为绝对路径的简便方法。<br>调用 <code>os.path.isabs(path)</code>，如果参数是一个绝对路径，就返回 <code>True</code>，如果参数是一个相对路径，就返回 <code>False</code>。<br>调用 <code>os.path.relpath(path, start)</code>将返回从 start 路径到 path 的相对路径的字符串。如果没有提供 start，就使用当前工作目录作为开始路径</p>
-</li>
-<li><p>调用 <code>os.path.dirname(path)</code>将返回一个字符串，它包含 path 参数中最后一个斜杠<strong>之前</strong>的所有内容。<br>调用 <code>os.path.basename(path)</code>将返回一个字符串，它包含 path 参数中最后一个斜杠<strong>之后</strong>的所有内容。</p>
-</li>
-<li><p>如果同时需要一个路径的目录名称和基本名称，就可以调用<code>os.path.split()</code>，获得这两个字符串的元组</p>
-<p>如果需要获得文件路径的每个文件夹，需要用<code>os.path.sep()</code>进行分割</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>file=<span class="string">'C:\\Users\\26970\\Desktop\\learn\\test\\one.txt'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.split(file)</span><br><span class="line">(<span class="string">'C:\\Users\\26970\\Desktop\\learn\\test'</span>, <span class="string">'one.txt'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>file.split(os.path.sep)</span><br><span class="line">[<span class="string">'C:'</span>, <span class="string">'Users'</span>, <span class="string">'26970'</span>, <span class="string">'Desktop'</span>, <span class="string">'learn'</span>, <span class="string">'test'</span>, <span class="string">'one.txt'</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li></li>
-</ul>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/learn/pyl-6/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </li></ul></div>
 
     
 
