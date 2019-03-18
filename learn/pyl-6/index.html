@@ -171,7 +171,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <meta property="og:description" content="os.path.join()返回一个文件路径的字符串，并用正确的路径分隔符分开（Windows下是\\，Linux和OS X系统是/）">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/02/18/5c6a8723135a8.png">
-<meta property="og:updated_time" content="2019-03-15T03:37:36.889Z">
+<meta property="og:updated_time" content="2019-03-18T13:01:16.743Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="读写文件">
 <meta name="twitter:description" content="os.path.join()返回一个文件路径的字符串，并用正确的路径分隔符分开（Windows下是\\，Linux和OS X系统是/）">
@@ -540,7 +540,17 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <p>如果需要获得文件路径的每个文件夹，需要用<code>os.path.sep()</code>进行分割</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>file=<span class="string">'C:\\Users\\26970\\Desktop\\learn\\test\\one.txt'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>os.path.split(file)</span><br><span class="line">(<span class="string">'C:\\Users\\26970\\Desktop\\learn\\test'</span>, <span class="string">'one.txt'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>file.split(os.path.sep)</span><br><span class="line">[<span class="string">'C:'</span>, <span class="string">'Users'</span>, <span class="string">'26970'</span>, <span class="string">'Desktop'</span>, <span class="string">'learn'</span>, <span class="string">'test'</span>, <span class="string">'one.txt'</span>]</span><br></pre></td></tr></table></figure>
 </li>
-<li></li>
+</ul>
+<h2 id="文件的读写操作"><a href="#文件的读写操作" class="headerlink" title="文件的读写操作"></a>文件的读写操作</h2><ul>
+<li><p>使用<code>open()</code>来打开文件，<code>read()</code>方法用来返回文件中的内容（作为一个字符串返回），使用<code>readlines()</code>作为字符串列表返回</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>File=open(<span class="string">'C:\\Users\\26970\\Desktop\\learn\\hello.txt'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>File.read()</span><br><span class="line"><span class="string">'Hello World！'</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>File=open(<span class="string">'C:\\Users\\26970\\Desktop\\learn\\hello.txt'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>File.readlines()</span><br><span class="line">[<span class="string">'Hello World！'</span>]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将<code>w</code>作为第二个参数传递给 <code>open()</code>，以写模式打开该文件，在该模式下，写入的文本将覆盖原文本</p>
+</li>
+<li><p>将<code>a</code>作为第二个参数传递给<code>open()</code>，以添加模式打开文件，该模式下，文本不会覆盖源文件，而是在原文件的末尾添加新的文本</p>
+<p><em>返回值为写入的字符个数，包括换行符</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>File=open(<span class="string">'C:\\Users\\26970\\Desktop\\learn\\test.txt'</span>,<span class="string">'w'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>File.write(<span class="string">'Hello World!'</span>)</span><br><span class="line"><span class="number">12</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>File.close()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>File=open(<span class="string">'C:\\Users\\26970\\Desktop\\learn\\test.txt'</span>,<span class="string">'a'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>File.write(<span class="string">'\n你好！'</span>)</span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>File.close()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test=open(<span class="string">'C:\\Users\\26970\\Desktop\\learn\\test.txt'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>puts=test.read()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>test.close()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>print(puts)</span><br><span class="line">Hello World!</span><br><span class="line">你好！</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
       
@@ -568,7 +578,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
   <p><span>本文标题:</span><a href="/learn/pyl-6/">读写文件</a></p>
   <p><span>文章作者:</span><a href="/" title="访问 执念 的个人博客">执念</a></p>
   <p><span>发布时间:</span>2019年02月18日 - 17:02</p>
-  <p><span>最后更新:</span>2019年03月15日 - 11:03</p>
+  <p><span>最后更新:</span>2019年03月18日 - 21:03</p>
   <p><span>原始链接:</span><a href="/learn/pyl-6/" title="读写文件">https://blog.wzy1999.wang/learn/pyl-6/</a>
     <span class="copy-path" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="https://blog.wzy1999.wang/learn/pyl-6/" aria-label="复制成功！"></i></span>
   </p>
@@ -698,8 +708,17 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -887,6 +906,22 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
       </section>
       
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件的读写操作"><span class="nav-number">1.</span> <span class="nav-text">文件的读写操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -930,7 +965,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共41.2k字</span>
+  <span class="post-count">博客全站共41.5k字</span>
 </div>
 <!-- 
   <span class="post-meta-divider">|</span>
