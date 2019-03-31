@@ -1,14 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛L：最优规划]]></title>
+    <url>%2Fsolve%2Fhpu-contest-L%2F</url>
+    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB 有很多城市之间已经建立了路径，但是有些城市之间没有路径联通。为了联通所有的城市，现在需要添加一些路径，为了节约，需要满足添加总路径是最短的。 输入第一行 $3$ 个整数 $n, m, s$, 分别表示城市的数量、已经存在的路的数量、可修的路的数量。之后的 $m$ 行，每行 $3$ 个整数 $x, y, d$，表示点 $x$ 到点 $y$ 有一条长度为 $d$ 的已经存在的路径。之后的 $s$ 行，每行 $3$ 个整数 $x, y, d$，表示点 $x$ 到点 $y$ 有一条长度为 $d$ 的可修的路径。$0&lt;n,m,s,d≤10^5​$ 。 输出输出一个整数表示需要添加的最短的路径长度。若果无论如何也无法使得所有的城市联通，输出 Concubines can&#39;t do it. 。 样例input 1234565 3 21 2 11 3 21 4 32 3 42 5 5 output 15 Solve最小生成树裸题，前$m$条边的边权变成$0$，后$s$条边的边权不变，进行MST Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e3+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;int f[maxn];struct Edge&#123; int u,v,w;&#125;edge[maxn];int tol;void add(int u,int v,int w)&#123; edge[tol].u=u; edge[tol].v=v; edge[tol++].w=w;&#125;bool cmp(Edge a,Edge b)&#123; return a.w&lt;b.w;&#125;int Find(int x)&#123; if(f[x]==x) return x; else return f[x]=Find(f[x]);&#125;ll kru(int n)&#123; for(int i=0;i&lt;=n;i++) f[i]=i; sort(edge,edge+tol,cmp); int cnt=0; ll ans=0; for(int i=0;i&lt;tol;i++) &#123; int u=edge[i].u; int v=edge[i].v; int w=edge[i].w; int tOne=Find(u); int tTwo=Find(v); if(tOne!=tTwo) &#123; ans+=1LL*w; f[tOne]=tTwo; cnt++; &#125; &#125; if(cnt&lt;n-1) return -1; else return ans;&#125;int main()&#123; ios::sync_with_stdio(false);cin.tie(0); int n,m,s; cin&gt;&gt;n&gt;&gt;m&gt;&gt;s; int res=0; for(int i=0;i&lt;m;i++) &#123; int x,y,d; cin&gt;&gt;x&gt;&gt;y&gt;&gt;d; res=max(max(x,y),res); add(x,y,0); add(y,x,0); &#125; int a1=kru(m); for(int i=0;i&lt;s;i++) &#123; int x,y,d; cin&gt;&gt;x&gt;&gt;y&gt;&gt;d; add(x,y,d); add(y,x,d); &#125; if(kru(n)==-1) cout&lt;&lt;"Concubines can't do it."&lt;&lt;endl; else cout&lt;&lt;1LL*kru(n)&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>图论</tag>
+        <tag>MST</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛K：高度期望]]></title>
+    <url>%2Fsolve%2Fhpu-contest-K%2F</url>
+    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB 这里是 $22$ 世纪，有一款神奇的机器，可以使任意一棵树长到任意高度但不超过 $1000$ cm，但是该机器却只能使用一次。为了提升整片树林的平均树高，使得平均树高大于某个值，请设计提升方案。我们的 Boss 对方案本身不感兴趣，你只需要提供提升后需要的机器数量。 输入第一行 $2$ 个整数 $n$,$ m$, 表示有 $n$ 颗树和期望的最小平均树高 $m$ cm。之后的一行 $n$ 个整数 $a_1 a_2⋯a_n$，表示 $n$ 颗树的高度。$0&lt;n≤10^5, 0&lt;m≤10^3, 0&lt;a_1 a_2⋯a_n≤10^3$ 。 输出输出提升平均树高所需要的最少机器数量。 样例input 125 10001000 1000 1000 500 1000 output 11 Solve贪心，在平均高度不够的时候，将高度最低的变成$1000$ Code123456789101112131415161718192021222324252627282930313233343536#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e3+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;int a[maxn];int main()&#123; ios::sync_with_stdio(false);cin.tie(0); int n,m; cin&gt;&gt;n&gt;&gt;m; int sum=0; for(int i=0;i&lt;n;i++) &#123; cin&gt;&gt;a[i]; sum+=a[i]; &#125; sort(a,a+n); int x=n*m; int ans=0; for(int i=0;i&lt;n;i++) &#123; if(sum&gt;=x) break; if(a[i]&lt;m) &#123; sum+=(1000-a[i]); ans++; &#125; &#125; cout&lt;&lt;ans&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>贪心</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛H：Mo的面积]]></title>
+    <url>%2Fsolve%2Fhpu-contest-H%2F</url>
+    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB Mo的老师给了他两个矩形，让他求两个矩形的面积并。Mo很忙没时间解决这种小case，请你帮他解决。 输入输入两行，每行四个整数$ x,y,x_1,y_1 $。$(x,y)$ 是矩形左下角，$(x1,y1)$ 是矩形的右上角. $(0≤x,y,x1,y1≤1000)$。 输出输出一个整数表示二个矩形的面积并。 样例input 120 1 2 31 0 3 2 output 17 Solve矩形面积并问题，直接抄了个模板就过了2333333 Code123456789101112131415161718192021222324252627282930313233#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e3+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;int main()&#123; ios::sync_with_stdio(false);cin.tie(0); int x[10]; int y[10]; for(int i=0;i&lt;4;i++) cin&gt;&gt;x[i]&gt;&gt;y[i]; int s1=(x[1]-x[0])*(y[1]-y[0]); int s2=(x[3]-x[2])*(y[3]-y[2]); sort(x,x+2); sort(x+2,x+4); sort(y,y+2); sort(y+2,y+4); int flag; if(x[1]&lt;=x[2]||x[0]&gt;=x[3]||y[0]&gt;=y[3]||y[1]&lt;=y[2]) flag=0; else &#123; sort(x,x+4); sort(y,y+4); flag=(x[2]-x[1])*(y[2]-y[1]); &#125; cout&lt;&lt;s1+s2-flag&lt;&lt;endl; return 0;&#125;]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛G：Mo的数学]]></title>
+    <url>%2Fsolve%2Fhpu-contest-G%2F</url>
+    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB Mo偶然间得到一个数学问题，听说你很擅长数学，于是前来虚心请教！求区间 $[1,n]$ 中 与 $m$ 互质的数的乘积。 输入多组输入（不超过$100$组）每行两个整数 $n$ 和 $m$. $( 0&lt;n≤10^6, 0&lt;m≤10^9)​$ 输出每行输出一个答案.(由于答案很大，故请输出对 $10^9+7​$ 取模后的结果) 样例input 13 2 output 13 Solve正解是容斥，但是没有推出来公式，就暴力写了，结果还过了2333333（虽然每个点的时间都在$300$ms以上） 暴力的写法： 对$m$进行质因数分解，在区间$[1,n]$中，对$m$的质因数的倍数进行标记（包括质因数），然后遍历区间$[1,n]$，将未标记过的数乘起来 Code123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e3+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);const int mod=1e9+7;using namespace std;int arr[maxn];int p;int pr[maxn];int mp[maxn];void getp(int n)&#123; p=0; for(int i=2;i*i&lt;=n;i++) &#123; if(n%i==0) &#123; arr[p++]=i; while(n%i==0) n/=i; &#125; &#125; if(n&gt;1) arr[p++]=n;&#125;int main()&#123; ios::sync_with_stdio(false);cin.tie(0); int n,m; while(cin&gt;&gt;n&gt;&gt;m) &#123; ms(mp,0); int cnt=0; getp(m); for(int i=0;i&lt;p;i++) &#123; for(int j=1;j*arr[i]&lt;=n;j++) &#123; mp[arr[i]*j]++; &#125; &#125; ll ans=1; for(int i=1;i&lt;=n;i++) &#123; if(!mp[i]) ans=1LL*(ans%mod*1LL*i%mod)%mod; &#125; cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛 E：Mo的游戏]]></title>
+    <url>%2Fsolve%2Fhpu-contest-E%2F</url>
+    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB Mo翻书看到一种新的连连看游戏：对于一个字符串来说，只有当两个字符相同时候才可以进行相连，得分为字符串的长度减去两个相连字符的距离（如果整个字符串中某一种字符个数为1，那么不能相连故得分为$0$）。Mo现在在玩这个游戏，但是Mo不知道该选择哪一种字符进行相连，所以请你列出每种字符相连可以获得的最大分数，以此来让Mo进行参考。 输入一个字符串$s$ （$0&lt;strlen(s)&lt;10^6$， $s$中只包含大小写字符）。 输出针对$s$中出现过的字符，每行输出一个整数表示用当前字符进行相连可以获得的最大分数, 按照$a−z$，$A−Z​$的顺序。具体格式参见样例。 样例input 1Aabcaabcb output 1234a:8b:7c:5A:0 Solve将每个字母出现的所有位置放进vector中，最后进行遍历，去寻找距离最小的两个位置 没想到什么好的方法，只有这样写了 Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e3+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;vector&lt;int&gt;v[100];int main()&#123; ios::sync_with_stdio(false);cin.tie(0); string s; cin&gt;&gt;s; int l=s.length(); map&lt;char,int&gt;mp; for(int i=0;i&lt;l;i++) &#123; mp[s[i]]++; v[s[i]-'A'].push_back(i); &#125; for(int i='a';i&lt;='z';i++) &#123; if(!mp[i]) continue; cout&lt;&lt;(char)i&lt;&lt;":"; if(mp[i]==1) &#123; cout&lt;&lt;0&lt;&lt;endl; continue; &#125; int minn=inf; for(int j=0;j&lt;v[i-'A'].size()-1;j++) &#123; for(int k=j+1;k&lt;v[i-'A'].size();k++) &#123; minn=min(v[i-'A'][k]-v[i-'A'][j],minn); if(minn==1) break; &#125; &#125; cout&lt;&lt;l-minn&lt;&lt;endl; &#125; for(int i='A';i&lt;='Z';i++) &#123; if(!mp[i]) continue; cout&lt;&lt;(char)i&lt;&lt;":"; if(mp[i]==1) &#123; cout&lt;&lt;0&lt;&lt;endl; continue; &#125; int minn=inf; for(int j=0;j&lt;v[i-'A'].size()-1;j++) &#123; for(int k=j+1;k&lt;v[i-'A'].size();k++) &#123; minn=min(v[i-'A'][k]-v[i-'A'][j],minn); if(minn==1) break; &#125; &#125; cout&lt;&lt;l-minn&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>STL</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[hpu-contest-C]]></title>
+    <url>%2Fsolve%2Fhpu-contest-C%2F</url>
+    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB 远古洪荒时期，女王Alice和战神Bob因爱相恋，一段催人泪下的爱情故事流传民间.相传，女王Alice的美貌惊艳六界，作为对颜值颇有要求的上古灵兽Qaq芳心异动，可是女王早已许配给战神Bob，怎么会移情于己呢，而且单挑自己也不是战神Bob的对手。于是，灵兽Qaq便设计将战神Bob引入洪荒之地，种下十里桃花困住战神Bob。女王Alice得知后，冒着渡劫的天雷赶去营救……实在bian不下去了.简言之，一个 $n\times n$ 的迷宫，Alice站在 $(1,1)$ 位置，Bob被困在 $(n,n)$ 位置，迷宫中会有障碍物，规定障碍物在迷宫中不能同行且不能同列。Alice只能在迷宫中移动且不能跨越障碍物，每次只能移动一个格子且只有上下左右四个方向。Alice能顺利解救Bob么？若成功解救输出 Yes，并输出最少所用步数.否则输出 No. 如图所示，A 代表Alice，B 代表Bob，# 代表障碍物，箭头代表移动的四个方向： 输入第一行一个整数 $T$，代表 $T$ 组测试数据.对于每一组数据，第一行两个整数 $n$ 和 $m$，分别表示 $n×n$ 迷宫大小和 $m$ 个障碍物，接下来 $m$ 行，每一行两个整数 $x$ 和 $y$，表示障碍物坐标 $(x,y)$。数据保证障碍物不同行且不同列，且不在位置 $(1,1),(n,n)$。$(1≤T≤2000，1≤m,n≤10000，1≤x,y≤n)​$ 输出对于每组测试样例，输出占一行。若成功解救输出 Yes，并输出最少所用步数.否则输出 No 。 样例input 12345622 11 22 21 22 1 output 12Yes 2No Solve 注意障碍物在迷宫中不能同行且不能同列这句话 所以走不通的情况就转变成了下图红线标注的情况，可以发现这些位置均为$n\times n​$方针的对角线，并要有$n​$个连续的才可以，所以只需要判断在一条线上的障碍物的个数就可以了 Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e4+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;int vis[maxn];inline void init()&#123; for(int i=2;i&lt;=maxm;i++) vis[i+1]=i;&#125;int arr[maxm];int sum[maxn];int main()&#123; ios::sync_with_stdio(false);cin.tie(0); int t; init(); cin&gt;&gt;t; while(t--) &#123; ms(sum,0); int n,m; cin&gt;&gt;n&gt;&gt;m; int x,y; for(int i=0;i&lt;m;i++) &#123; cin&gt;&gt;x&gt;&gt;y; arr[i]=x+y; sum[x+y]++; &#125; sort(arr,arr+m); m=unique(arr,arr+m)-arr; int flag=0; for(int i=0;i&lt;m;i++) &#123; if(sum[arr[i]]==vis[arr[i]]) &#123; flag=1; break; &#125; &#125; if(flag) cout&lt;&lt;"No"&lt;&lt;endl; else cout&lt;&lt;"Yes "&lt;&lt;2*n-2&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛 B：Asia区域制]]></title>
+    <url>%2Fsolve%2Fhpu-contest-B%2F</url>
+    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB 二进制数据是用 $0$ 和 $1$ 两个数码来表示的数.它的基数为 $2$ ，进位规则是“逢二进一”，借位规则是“借一当二”，由18世纪德国数理哲学大师莱布尼兹发现.十六进制（简写为hex或下标 $16$ ）在数学中是一种逢 $16$ 进 $1$ 的进位制.一般用数字 $0$ 到 $9$ 和字母 $A$ 到 $F$（或 $a$ ~ $f$ ）表示，其中: $a$ ~ $f$ 表示 $10$ ~ $15$ ，这些称作十六进制数字.请将给定的二进制数转为十六进制数，英文字母使用小写形式. 输入第一行一个正整数 $T$， 代表有 $T$ 组测试数据. $(1≤T≤10)$.接下来 $T$ 行，每行输入一串只包含 0 和 1 的字符串（无前导 $0$），字符串长度：$1≤length≤10^6$. 输出对于每组测试样例，输出转化后的十六进制数并单独占一行. 样例input 1232110 output 1212 Solve二进制转换十六进制，从后往前每四位二进制数为一位十六进制数， 注意无前导零，英文字母为小写 Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e3+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;char s[maxn];int ans[maxn];int main()&#123; int t; scanf("%d",&amp;t); while(t--) &#123; ms(ans,0); int cnt=0; scanf("%s",s); int l=strlen(s); int i; for(i=l-1;i&gt;=0;i-=4) &#123; int res=0; for(int j=0;j&lt;4;j++) &#123; if(i&lt;j) break; res+=((s[i-j]-'0')&lt;&lt;j); &#125; ans[cnt++]=res; &#125; if(i) &#123; int res=0; for(int j=i;j&gt;=0;j--) res+=((s[j]-'0')&lt;&lt;j); ans[cnt++]=res; &#125; int flag=0; for(int j=cnt-1;j&gt;=0;j--) &#123; if(!flag&amp;&amp;ans[j]==0) continue; else flag++; if(ans[j]&gt;=10) printf("%c",ans[j]-10+'a'); else printf("%d",ans[j]); &#125; printf("\n"); &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>模拟</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Codeforces1132A——Regular Bracket Sequence（水题）]]></title>
     <url>%2Fsolve%2Fcf1132A%2F</url>
     <content type="text"><![CDATA[time limit per test:1 second memory limit per test:256 megabytes input:standard input output:standard output A string is called bracket sequence if it does not contain any characters other than “(“ and “)”. A bracket sequence is called regular if it is possible to obtain correct arithmetic expression by inserting characters “+” and “1” into this sequence. For example, “”, “(())” and “()()” are regular bracket sequences; “))” and “)((“ are bracket sequences (but not regular ones), and “(a)” and “(1)+(1)” are not bracket sequences at all. You have a number of strings; each string is a bracket sequence of length $2$. So, overall you have $cnt1$ strings “((“, $cnt2$ strings “()”, $cnt3$ strings “)(“ and $cnt4$ strings “))”. You want to write all these strings in some order, one after another; after that, you will get a long bracket sequence of length $2(cnt1+cnt2+cnt3+cnt4)$. You wonder: is it possible to choose some order of the strings you have such that you will get a regular bracket sequence? Note that you may not remove any characters or strings, and you may not add anything either. InputThe input consists of four lines, $i$-th of them contains one integer $cnt_i$ $(0≤cnt_i≤10^9)$. OutputPrint one integer: $1$ if it is possible to form a regular bracket sequence by choosing the correct order of the given strings, $0$ otherwise. Examplesinput 12343143 output 11 input 12340000 output 11 input 12341234 output 10 NoteIn the first example it is possible to construct a string “(())()(()((()()()())))”, which is a regular bracket sequence. In the second example it is possible to construct a string “”, which is a regular bracket sequence. Solve你有四种括号，”((“，”()”，”)(“，”))”， 给出四种括号的数量， 问能否将这些括号以某种顺序连接起来， 使得每个左括号都有与之匹配的右括号。 观察可以发现：如果要完全匹配，()是不会对结果产生影响的，然后可以推出一个关系式：$cnt1=2\times cnt3+cnt4,cnt4=2\times cnt3+cnt1​$ 即：当$cnt3\neq0,cnt1=cnt4\neq0$或$cnt3=0,cnt1=cnt2$时，才会完全匹配 Code1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980/************************************************************************* &gt; Author: WZY &gt; School: HPU &gt; Created Time: 2019-03-15 10:34:53 ************************************************************************/#include &lt;cmath&gt;#include &lt;cstdio&gt;#include &lt;time.h&gt;#include &lt;cstring&gt;#include &lt;limits.h&gt;#include &lt;iostream&gt;#include &lt;algorithm&gt;#include &lt;random&gt;#include &lt;iomanip&gt;#include &lt;map&gt;#include &lt;set&gt;#include &lt;stack&gt;#include &lt;queue&gt;#include &lt;vector&gt;#include &lt;string&gt;#include &lt;random&gt;#define ll long long#define ull unsigned long long#define lson o&lt;&lt;1#define rson o&lt;&lt;1|1#define ms(a,b) memset(a,b,sizeof(a))#define SE(N) setprecision(N)#define PSE(N) fixed&lt;&lt;setprecision(N)#define bug cerr&lt;&lt;"-------------"&lt;&lt;endl#define debug(...) cerr&lt;&lt;"["&lt;&lt;#__VA_ARGS__":"&lt;&lt;(__VA_ARGS__)&lt;&lt;"]"&lt;&lt;"\n"#define LEN(A) strlen(A)const double E=exp(1);const double eps=1e-9;const double pi=acos(-1.0);const int mod=1e9+7;const int maxn=1e6+10;const int maxm=1e3+10;const int moha=19260817;const int inf=1&lt;&lt;30;const ll INF=1LL&lt;&lt;60;using namespace std;inline void Debug()&#123;cerr&lt;&lt;'\n';&#125;inline void MIN(int &amp;x,int y) &#123;if(y&lt;x) x=y;&#125;inline void MAX(int &amp;x,int y) &#123;if(y&gt;x) x=y;&#125;inline void MIN(ll &amp;x,ll y) &#123;if(y&lt;x) x=y;&#125;inline void MAX(ll &amp;x,ll y) &#123;if(y&gt;x) x=y;&#125;template&lt;class FIRST, class... REST&gt;void Debug(FIRST arg, REST... rest)&#123; cerr&lt;&lt;arg&lt;&lt;"";Debug(rest...);&#125;int main(int argc, char const *argv[])&#123; ios::sync_with_stdio(false);cin.tie(0); cout.precision(20); #ifndef ONLINE_JUDGE freopen("in.txt", "r", stdin); freopen("out.txt", "w", stdout); srand((unsigned int)time(NULL)); #endif int cnt1,cnt2,cnt3,cnt4; while(cin&gt;&gt;cnt1&gt;&gt;cnt2&gt;&gt;cnt3&gt;&gt;cnt4) &#123; if(cnt1+cnt4==0) &#123; if(cnt3) cout&lt;&lt;0&lt;&lt;endl; else cout&lt;&lt;1&lt;&lt;endl; continue; &#125; if(cnt1==cnt4) cout&lt;&lt;1&lt;&lt;endl; else cout&lt;&lt;0&lt;&lt;endl; &#125; #ifndef ONLINE_JUDGE cerr&lt;&lt;"Time elapsed: "&lt;&lt;1.0*clock()/CLOCKS_PER_SEC&lt;&lt;" s.\n"; #endif return 0;&#125;]]></content>
       <categories>
-        <category>solve</category>
+        <category>题解</category>
       </categories>
       <tags>
-        <tag>easy</tag>
+        <tag>水题</tag>
       </tags>
   </entry>
   <entry>
