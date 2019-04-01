@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.wzy1999.wang/solve/hpu-contest-B/</loc>
+    <lastmod>2019-04-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/hpu-contest-C/</loc>
+    <lastmod>2019-04-01</lastmod>
+  </url>  <url>
+    <loc>https://blog.wzy1999.wang/solve/cf189A/</loc>
+    <lastmod>2019-04-01</lastmod>
+  </url>  <url>
     <loc>https://blog.wzy1999.wang/solve/hpu-contest-H/</loc>
     <lastmod>2019-03-31</lastmod>
   </url>  <url>
@@ -16,13 +25,7 @@
     <loc>https://blog.wzy1999.wang/solve/hpu-contest-E/</loc>
     <lastmod>2019-03-31</lastmod>
   </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/hpu-contest-C/</loc>
-    <lastmod>2019-03-31</lastmod>
-  </url>  <url>
     <loc>https://blog.wzy1999.wang/solve/cf1132A/</loc>
-    <lastmod>2019-03-31</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/solve/hpu-contest-B/</loc>
     <lastmod>2019-03-31</lastmod>
   </url>  <url>
     <loc>https://blog.wzy1999.wang/learn/pyl-6/</loc>
