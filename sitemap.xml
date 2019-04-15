@@ -2,9 +2,9 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.wzy1999.wang//404.html</loc>
+    <loc>https://blog.wzy1999.wang/404/index.html</loc>
     
-    <lastmod>2019-04-15T12:21:27.595Z</lastmod>
+    <lastmod>2019-04-15T12:29:42.105Z</lastmod>
     
   </url>
   
@@ -243,13 +243,6 @@
     <loc>https://blog.wzy1999.wang/search/index.html</loc>
     
     <lastmod>2019-02-12T13:44:09.797Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang/404/index.html</loc>
-    
-    <lastmod>2019-02-12T13:42:21.418Z</lastmod>
     
   </url>
   
