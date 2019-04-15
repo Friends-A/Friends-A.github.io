@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.wzy1999.wang//404.html</loc>
+    
+    <lastmod>2019-04-15T12:21:27.595Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.wzy1999.wang/solve/hpu-contest-B/</loc>
     
     <lastmod>2019-04-01T12:08:45.263Z</lastmod>
@@ -247,14 +254,14 @@
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/categories1/index.html</loc>
+    <loc>https://blog.wzy1999.wang/tags1/index.html</loc>
     
     <lastmod>2019-02-12T06:36:13.291Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://blog.wzy1999.wang/tags1/index.html</loc>
+    <loc>https://blog.wzy1999.wang/categories1/index.html</loc>
     
     <lastmod>2019-02-12T06:36:13.291Z</lastmod>
     
@@ -264,13 +271,6 @@
     <loc>https://blog.wzy1999.wang/about/index.html</loc>
     
     <lastmod>2019-02-05T13:11:03.590Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.wzy1999.wang//404.html</loc>
-    
-    <lastmod>2019-02-05T12:52:06.331Z</lastmod>
     
   </url>
   
