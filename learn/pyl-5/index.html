@@ -577,7 +577,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 <li><p>可以使用<code>[]</code>来创建自己的字符分类。例如：<code>[0-9]</code>匹配所有的数字，<code>[a-z]</code>匹配所有的小写字母；在字符前加上<code>^</code>表示匹配不在创建字符分类中的所有字符。对于正则表达式符号，不需要进行转义</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">r'[0-9]'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>a1=re.compile(<span class="string">r'[^0-9]'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=a.findall(<span class="string">'abc123de'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1=a1.findall(<span class="string">'abc123de'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b1</span><br><span class="line">[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'e'</span>]</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>在正则表达式开始出插入<code>^</code>，表示匹配必须在被查找文本的开始出；在末尾插入<script type="math/tex">`，表示必须以这个正则表达式的模式结束；同时使用二者，表示整个字符串必须匹配该模式<br>`r'^\d+</script>匹配全是数字的字符串</p>
+<li><p>在正则表达式开始出插入<code>^</code>，表示匹配必须在被查找文本的开始出；在末尾插入<code>$</code>，表示必须以这个正则表达式的模式结束；同时使用二者，表示整个字符串必须匹配该模式<br><code>r&#39;^\d+$</code>匹配全是数字的字符串</p>
 </li>
 <li><p><code>.</code>可以匹配除了换行以外的所有字符，被称为“通配符”</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>a=re.compile(<span class="string">r'.234'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b=a.findall(<span class="string">'1234 2234 3234'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>b</span><br><span class="line">[<span class="string">'1234'</span>, <span class="string">'2234'</span>, <span class="string">'3234'</span>]</span><br></pre></td></tr></table></figure>
@@ -1031,7 +1031,7 @@ color="0,0,0" opacity='0.9' zIndex="-1" count="150" src="//cdn.bootcss.com/canva
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共49.7k字</span>
+  <span class="post-count">博客全站共49.8k字</span>
 </div>
 <!-- 
   <span class="post-meta-divider">|</span>

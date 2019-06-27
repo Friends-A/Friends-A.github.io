@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.wzy1999.wang/template/%E6%95%B0%E8%AE%BA/</loc>
+    <lastmod>2019-06-27</lastmod>
+  </url>  <url>
     <loc>https://blog.wzy1999.wang/solve/zoj3872/</loc>
     <lastmod>2019-04-21</lastmod>
   </url>  <url>
@@ -59,9 +62,6 @@
     <lastmod>2019-02-15</lastmod>
   </url>  <url>
     <loc>https://blog.wzy1999.wang/template/%E6%A8%A1%E6%9D%BF1/</loc>
-    <lastmod>2019-02-14</lastmod>
-  </url>  <url>
-    <loc>https://blog.wzy1999.wang/template/%E6%95%B0%E8%AE%BA/</loc>
     <lastmod>2019-02-14</lastmod>
   </url>  <url>
     <loc>https://blog.wzy1999.wang/Configuration/vimrc/</loc>
