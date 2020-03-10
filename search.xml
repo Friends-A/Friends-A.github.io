@@ -122,14 +122,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛C：Asia区域宫]]></title>
-    <url>%2Fsolve%2Fhpu-contest-C%2F</url>
-    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB 远古洪荒时期，女王Alice和战神Bob因爱相恋，一段催人泪下的爱情故事流传民间.相传，女王Alice的美貌惊艳六界，作为对颜值颇有要求的上古灵兽Qaq芳心异动，可是女王早已许配给战神Bob，怎么会移情于己呢，而且单挑自己也不是战神Bob的对手。于是，灵兽Qaq便设计将战神Bob引入洪荒之地，种下十里桃花困住战神Bob。女王Alice得知后，冒着渡劫的天雷赶去营救……实在bian不下去了.简言之，一个 $n\times n$ 的迷宫，Alice站在 $(1,1)$ 位置，Bob被困在 $(n,n)$ 位置，迷宫中会有障碍物，规定障碍物在迷宫中不能同行且不能同列。Alice只能在迷宫中移动且不能跨越障碍物，每次只能移动一个格子且只有上下左右四个方向。Alice能顺利解救Bob么？若成功解救输出 Yes，并输出最少所用步数.否则输出 No. 如图所示，A 代表Alice，B 代表Bob，# 代表障碍物，箭头代表移动的四个方向： 输入第一行一个整数 $T$，代表 $T$ 组测试数据.对于每一组数据，第一行两个整数 $n$ 和 $m$，分别表示 $n×n$ 迷宫大小和 $m$ 个障碍物，接下来 $m$ 行，每一行两个整数 $x$ 和 $y$，表示障碍物坐标 $(x,y)$。数据保证障碍物不同行且不同列，且不在位置 $(1,1),(n,n)$。$(1≤T≤2000，1≤m,n≤10000，1≤x,y≤n)​$ 输出对于每组测试样例，输出占一行。若成功解救输出 Yes，并输出最少所用步数.否则输出 No 。 样例input 12345622 11 22 21 22 1 output 12Yes 2No Solve 注意障碍物在迷宫中不能同行且不能同列这句话 所以走不通的情况就转变成了下图红线标注的情况，可以发现这些位置均为$n\times n​$方针的对角线，并要有$n​$个连续的才可以，所以只需要判断在一条线上的障碍物的个数就可以了 Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e4+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;int vis[maxn];inline void init()&#123; for(int i=2;i&lt;=maxm;i++) vis[i+1]=i;&#125;int arr[maxm];int sum[maxn];int main()&#123; ios::sync_with_stdio(false);cin.tie(0); int t; init(); cin&gt;&gt;t; while(t--) &#123; ms(sum,0); int n,m; cin&gt;&gt;n&gt;&gt;m; int x,y; for(int i=0;i&lt;m;i++) &#123; cin&gt;&gt;x&gt;&gt;y; arr[i]=x+y; sum[x+y]++; &#125; sort(arr,arr+m); m=unique(arr,arr+m)-arr; int flag=0; for(int i=0;i&lt;m;i++) &#123; if(sum[arr[i]]==vis[arr[i]]) &#123; flag=1; break; &#125; &#125; if(flag) cout&lt;&lt;"No"&lt;&lt;endl; else cout&lt;&lt;"Yes "&lt;&lt;2*n-2&lt;&lt;endl; &#125; return 0;&#125;]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛 B：Asia区域制]]></title>
     <url>%2Fsolve%2Fhpu-contest-B%2F</url>
     <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB 二进制数据是用 $0$ 和 $1$ 两个数码来表示的数.它的基数为 $2$ ，进位规则是“逢二进一”，借位规则是“借一当二”，由18世纪德国数理哲学大师莱布尼兹发现.十六进制（简写为hex或下标 $16$ ）在数学中是一种逢 $16$ 进 $1$ 的进位制.一般用数字 $0$ 到 $9$ 和字母 $A$ 到 $F$（或 $a$ ~ $f$ ）表示，其中: $a$ ~ $f$ 表示 $10$ ~ $15$ ，这些称作十六进制数字.请将给定的二进制数转为十六进制数，英文字母使用小写形式. 输入第一行一个正整数 $T$， 代表有 $T$ 组测试数据. $(1≤T≤10)$.接下来 $T$ 行，每行输入一串只包含 0 和 1 的字符串（无前导 $0$），字符串长度：$1≤length≤10^6​$. 输出对于每组测试样例，输出转化后的十六进制数并单独占一行. 样例input 1232110 output 1212 Solve二进制转换十六进制，从后往前每四位二进制数为一位十六进制数， 注意无前导零，英文字母为小写 Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e3+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;char s[maxn];int ans[maxn];int main()&#123; int t; scanf("%d",&amp;t); while(t--) &#123; ms(ans,0); int cnt=0; scanf("%s",s); int l=strlen(s); int i; for(i=l-1;i&gt;=0;i-=4) &#123; int res=0; for(int j=0;j&lt;4;j++) &#123; if(i&lt;j) break; res+=((s[i-j]-'0')&lt;&lt;j); &#125; ans[cnt++]=res; &#125; if(i) &#123; int res=0; for(int j=i;j&gt;=0;j--) res+=((s[j]-'0')&lt;&lt;j); ans[cnt++]=res; &#125; int flag=0; for(int j=cnt-1;j&gt;=0;j--) &#123; if(!flag&amp;&amp;ans[j]==0) continue; else flag++; if(ans[j]&gt;=10) printf("%c",ans[j]-10+'a'); else printf("%d",ans[j]); &#125; printf("\n"); &#125; return 0;&#125;]]></content>
@@ -139,6 +131,14 @@
       <tags>
         <tag>模拟</tag>
       </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[第九届河南理工大学算法程序设计大赛 正式赛C：Asia区域宫]]></title>
+    <url>%2Fsolve%2Fhpu-contest-C%2F</url>
+    <content type="text"><![CDATA[单测试点时限: 1.0 秒 内存限制: 512 MB 远古洪荒时期，女王Alice和战神Bob因爱相恋，一段催人泪下的爱情故事流传民间.相传，女王Alice的美貌惊艳六界，作为对颜值颇有要求的上古灵兽Qaq芳心异动，可是女王早已许配给战神Bob，怎么会移情于己呢，而且单挑自己也不是战神Bob的对手。于是，灵兽Qaq便设计将战神Bob引入洪荒之地，种下十里桃花困住战神Bob。女王Alice得知后，冒着渡劫的天雷赶去营救……实在bian不下去了.简言之，一个 $n\times n$ 的迷宫，Alice站在 $(1,1)$ 位置，Bob被困在 $(n,n)$ 位置，迷宫中会有障碍物，规定障碍物在迷宫中不能同行且不能同列。Alice只能在迷宫中移动且不能跨越障碍物，每次只能移动一个格子且只有上下左右四个方向。Alice能顺利解救Bob么？若成功解救输出 Yes，并输出最少所用步数.否则输出 No. 如图所示，A 代表Alice，B 代表Bob，# 代表障碍物，箭头代表移动的四个方向： 输入第一行一个整数 $T$，代表 $T$ 组测试数据.对于每一组数据，第一行两个整数 $n$ 和 $m$，分别表示 $n×n$ 迷宫大小和 $m$ 个障碍物，接下来 $m$ 行，每一行两个整数 $x$ 和 $y$，表示障碍物坐标 $(x,y)$。数据保证障碍物不同行且不同列，且不在位置 $(1,1),(n,n)$。$(1≤T≤2000，1≤m,n≤10000，1≤x,y≤n)​$ 输出对于每组测试样例，输出占一行。若成功解救输出 Yes，并输出最少所用步数.否则输出 No 。 样例input 12345622 11 22 21 22 1 output 12Yes 2No Solve 注意障碍物在迷宫中不能同行且不能同列这句话 所以走不通的情况就转变成了下图红线标注的情况，可以发现这些位置均为$n\times n​$方针的对角线，并要有$n​$个连续的才可以，所以只需要判断在一条线上的障碍物的个数就可以了 Code12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152#include&lt;bits/stdc++.h&gt;#define ll long long#define ms(a,b) memset(a,b,sizeof(a))const int maxn=1e6+10;const int maxm=1e4+10;const int inf=(1&lt;&lt;30);const ll INF=(1LL*1&lt;&lt;60);using namespace std;int vis[maxn];inline void init()&#123; for(int i=2;i&lt;=maxm;i++) vis[i+1]=i;&#125;int arr[maxm];int sum[maxn];int main()&#123; ios::sync_with_stdio(false);cin.tie(0); int t; init(); cin&gt;&gt;t; while(t--) &#123; ms(sum,0); int n,m; cin&gt;&gt;n&gt;&gt;m; int x,y; for(int i=0;i&lt;m;i++) &#123; cin&gt;&gt;x&gt;&gt;y; arr[i]=x+y; sum[x+y]++; &#125; sort(arr,arr+m); m=unique(arr,arr+m)-arr; int flag=0; for(int i=0;i&lt;m;i++) &#123; if(sum[arr[i]]==vis[arr[i]]) &#123; flag=1; break; &#125; &#125; if(flag) cout&lt;&lt;"No"&lt;&lt;endl; else cout&lt;&lt;"Yes "&lt;&lt;2*n-2&lt;&lt;endl; &#125; return 0;&#125;]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[Codeforces1132A——Regular Bracket Sequence（水题）]]></title>
